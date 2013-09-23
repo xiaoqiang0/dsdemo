@@ -5,7 +5,8 @@
 *.map
 *.res
 *.tds
-Graph-1/cd8_3p.~bpr
+*.~bpr
+*Debug*
 *.obj
 *Debug_Build*
 *__history*
