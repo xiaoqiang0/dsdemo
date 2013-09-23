@@ -1,0 +1,13 @@
+.~bpr
+*.obj
+Graph-1/cd8_3p.bpr
+Graph-1/cd8_3p.cbproj
+*.cbproj.local
+*.exe
+*.map
+*.res
+*.tds
+Graph-1/cd8_3p.~bpr
+*.obj
+*Debug_Build*
+*__history*
