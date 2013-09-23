@@ -203,13 +203,12 @@ void __fastcall TForm2::imgMouseUp(TObject * Sender,
     end = searchPoint(X, Y);
     if (start != -1 && end != -1 && start != end) {
         dist = StrToInt(InputBox("节点距离", "请输入节点距离: ", "5"));    //默认值5
-        img->Canvas->MoveTo(x[start], y[start]);
+		img->Canvas->MoveTo(x[start], y[start]);
 		img->Canvas->LineTo(x[end], y[end]);
-//		img->Canvas->TextOutA((x[start] + x[end]) / 2,
-//                (y[start] + y[end]) / 2, dist);
+		img->Canvas->TextOut((x[start] + x[end]) / 2, (y[start] + y[end]) / 2, dist);
 
         //如果是有向图画箭头
-        if (direct == 1) {
+		if (direct == 1) {
             paintArrow(img, x[start], y[start], x[end], y[end]);
             graph[start][end] = dist;    //有向图
         } else {

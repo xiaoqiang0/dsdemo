@@ -205,8 +205,7 @@ void __fastcall TForm1::imgMouseUp(TObject * Sender,
         dist = StrToInt(InputBox("节点距离", "请输入节点距离: ", "5"));    //默认值5
         img->Canvas->MoveTo(x[start], y[start]);
         img->Canvas->LineTo(x[end], y[end]);
-        img->Canvas->TextOutA((x[start] + x[end]) / 2,
-                (y[start] + y[end]) / 2, dist);
+	img->Canvas->TextOut((x[start] + x[end]) / 2, (y[start] + y[end]) / 2, dist);
 
         //如果是有向图画箭头
         if (direct == 1) {
