@@ -9,7 +9,7 @@
 
 #define MAX_NODE     8
 
-TForm1 *Form1;
+TForm2 *Form2;
 
 TShape *sp[MAX_NODE];                           //½ÚµãShapÊı×é
 TLabel *lb[MAX_NODE];                           //½ÚµãShapÉÏµÄ±êÇ©Êı×é£¬»­°å->Shap->Label
@@ -27,12 +27,12 @@ bool input_node = false;
 int node_R = 20;
 
 //---------------------------------------------------------------------------
-__fastcall TForm1::TForm1(TComponent * Owner):TForm(Owner)
+__fastcall TForm2::TForm2(TComponent * Owner):TForm(Owner)
 {
 }
 
 //---------------------------------------------------------------------------
-void __fastcall TForm1::CreateNodeBtClick(TObject * Sender)    //Éú³É¶¥µã°´Å¥µ¥»÷ÊÂ¼ş
+void __fastcall TForm2::CreateNodeBtClick(TObject * Sender)    //Éú³É¶¥µã°´Å¥µ¥»÷ÊÂ¼ş
 {
 
     pnl->Enabled = true;                            //Æô¶¯»­°å¹¦ÄÜ
@@ -76,7 +76,7 @@ int overLap(int X, int Y)                       //ËÑË÷¸ø¶¨×ø±êµã»á¸úÄÄ¸öµêÖØºÏ
     return -1;
 }
 
-void __fastcall TForm1::imgMouseDown(TObject * Sender, //Êó±ê°´ÏÂÊÂ¼ş,¼ÇÂ¼ÆğÊ¼µãµÄÎ»ÖÃ
+void __fastcall TForm2::imgMouseDown(TObject * Sender, //Êó±ê°´ÏÂÊÂ¼ş,¼ÇÂ¼ÆğÊ¼µãµÄÎ»ÖÃ
         TMouseButton Button,
         TShiftState Shift, int X, int Y)
 {
@@ -87,7 +87,7 @@ void __fastcall TForm1::imgMouseDown(TObject * Sender, //Êó±ê°´ÏÂÊÂ¼ş,¼ÇÂ¼ÆğÊ¼µã
                 ShowMessage("Óë½Úµã:" + IntToStr(tmp) + "ÏàÁÚÌ«½ü");
                 return;
             }
-            sp[n] = new TShape(Form1);    //½¨Á¢ĞÂ½áµã¿Ø¼ş
+            sp[n] = new TShape(Form2);    //½¨Á¢ĞÂ½áµã¿Ø¼ş
             sp[n]->Parent = pnl;    //ÉèÖÃĞÂ½áµã¿Ø¼şÊôĞÔ
             sp[n]->Enabled = false;
             sp[n]->Left = X - node_R;    //Ô²ĞÎµÄÖ±¾¶ÊÇ15µÄÔ²
@@ -194,7 +194,7 @@ int paintArrow(TImage * img, float x1, float y1, float x2, float y2)
 }
 
 
-void __fastcall TForm1::imgMouseUp(TObject * Sender,
+void __fastcall TForm2::imgMouseUp(TObject * Sender,
         TMouseButton Button,
         TShiftState Shift, int X, int Y)
 {
@@ -204,9 +204,9 @@ void __fastcall TForm1::imgMouseUp(TObject * Sender,
     if (start != -1 && end != -1 && start != end) {
         dist = StrToInt(InputBox("½Úµã¾àÀë", "ÇëÊäÈë½Úµã¾àÀë: ", "5"));    //Ä¬ÈÏÖµ5
         img->Canvas->MoveTo(x[start], y[start]);
-        img->Canvas->LineTo(x[end], y[end]);
-        img->Canvas->TextOutA((x[start] + x[end]) / 2,
-                (y[start] + y[end]) / 2, dist);
+		img->Canvas->LineTo(x[end], y[end]);
+//		img->Canvas->TextOutA((x[start] + x[end]) / 2,
+//                (y[start] + y[end]) / 2, dist);
 
         //Èç¹ûÊÇÓĞÏòÍ¼»­¼ıÍ·
         if (direct == 1) {
@@ -224,7 +224,7 @@ void __fastcall TForm1::imgMouseUp(TObject * Sender,
 
 
 //---------------------------------------------------------------------------
-void __fastcall TForm1::ShortestPathBtClick(TObject * Sender)    //×î¶ÌÂ·¾¶Çó½âÊÂ¼ş
+void __fastcall TForm2::ShortestPathBtClick(TObject * Sender)    //×î¶ÌÂ·¾¶Çó½âÊÂ¼ş
 {
     bool vst[MAX_NODE] = { false };     //·ÃÎÊ¸¨ÖúÊı×é
     int dte[MAX_NODE] = { 0 };          //µ¥Ô´×î¶ÌÂ·¾¶Ëã·¨´æ´¢×î¶ÌÂ·¾¶dte[i] = x ´ú±í´Ó½Úµã0µ½½ÚµãiµÄ×î¶ÌÂ·¾¶ÊÇx
@@ -270,14 +270,14 @@ void __fastcall TForm1::ShortestPathBtClick(TObject * Sender)    //×î¶ÌÂ·¾¶Çó½âÊ
 
 
 //---------------------------------------------------------------------------
-void __fastcall TForm1::FormCreate(TObject * Sender)    //¶¥µã¼ä³õÊ¼ÉèÖÃÎªÎŞÇî´ó(²»Í¨)
+void __fastcall TForm2::FormCreate(TObject * Sender)    //¶¥µã¼ä³õÊ¼ÉèÖÃÎªÎŞÇî´ó(²»Í¨)
 {
     for (i = 0; i < MAX_NODE; i++)
         for (j = 0; j < MAX_NODE; j++)
             graph[i][j] = 9999;
 }
 
-void __fastcall TForm1::BtClearMemoClick(TObject * Sender)
+void __fastcall TForm2::BtClearMemoClick(TObject * Sender)
 {
     memo->Clear();
 }
@@ -285,7 +285,7 @@ void __fastcall TForm1::BtClearMemoClick(TObject * Sender)
 //---------------------------------------------------------------------------
 
 
-void __fastcall TForm1::RadioButtonDirectClick(TObject * Sender)
+void __fastcall TForm2::RadioButtonDirectClick(TObject * Sender)
 {
     direct = 1;
     PageControl->TabIndex = 0;
@@ -293,7 +293,7 @@ void __fastcall TForm1::RadioButtonDirectClick(TObject * Sender)
 
 //---------------------------------------------------------------------------
 
-void __fastcall TForm1::RadioButtonNoDirectClick(TObject * Sender)
+void __fastcall TForm2::RadioButtonNoDirectClick(TObject * Sender)
 {
     direct = 0;
     PageControl->TabIndex = 1;
@@ -303,7 +303,7 @@ void __fastcall TForm1::RadioButtonNoDirectClick(TObject * Sender)
 
 
 
-void __fastcall TForm1::ResetBtClick(TObject * Sender)
+void __fastcall TForm2::ResetBtClick(TObject * Sender)
 {
     int i;
 

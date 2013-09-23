@@ -11,7 +11,7 @@
 #include <Grids.hpp>
 #include <Vcl.ComCtrls.hpp>
 //---------------------------------------------------------------------------
-class TForm1 : public TForm
+class TForm2 : public TForm
 {
     __published:	// IDE-managed Components
         TPanel *pnl; //Ãæ°å¿Õ¼ä
@@ -52,9 +52,9 @@ class TForm1 : public TForm
 
     private:	        // User declarations
     public:		// User declarations
-        __fastcall TForm1(TComponent* Owner);
+		__fastcall TForm2(TComponent* Owner);
 };
 //---------------------------------------------------------------------------
-extern PACKAGE TForm1 *Form1;
+extern PACKAGE TForm2 *Form2;
 //---------------------------------------------------------------------------
 #endif

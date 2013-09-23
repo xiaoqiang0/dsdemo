@@ -1,4 +1,4 @@
-object Form1: TForm1
+object Form2: TForm2
   Left = 188
   Top = 143
   Caption = #22270#31639#27861#28436#31034
@@ -123,8 +123,6 @@ object Form1: TForm1
     TabWidth = 233
     object TabSheetDirect: TTabSheet
       Caption = #26377#21521#22270
-      ExplicitWidth = 469
-      ExplicitHeight = 382
       object memo: TMemo
         Left = 158
         Top = 16
@@ -208,6 +206,8 @@ object Form1: TForm1
     object TabSheetNoDirect: TTabSheet
       Caption = #26080#21521#22270
       ImageIndex = 1
+      ExplicitLeft = 0
+      ExplicitTop = 0
       ExplicitWidth = 469
       ExplicitHeight = 382
     end
