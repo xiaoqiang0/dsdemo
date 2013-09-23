@@ -1,9 +1,9 @@
 object Form1: TForm1
   Left = 188
   Top = 143
-  Caption = #26368#30701#36335#24452#38382#39064
-  ClientHeight = 493
-  ClientWidth = 925
+  Caption = #22270#31639#27861#28436#31034
+  ClientHeight = 511
+  ClientWidth = 1100
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -14,107 +14,11 @@ object Form1: TForm1
   OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 13
-  object Bevel1: TBevel
-    Left = 528
-    Top = 8
-    Width = 369
-    Height = 401
-  end
-  object img1: TImage
-    Left = 528
-    Top = 8
-    Width = 369
-    Height = 401
-    Cursor = crArrow
-    Hint = #25163#24037#27169#25311#32472#22270#21306
-    ParentShowHint = False
-    ShowHint = True
-    OnMouseDown = img1MouseDown
-    OnMouseMove = img1MouseMove
-    OnMouseUp = img1MouseUp
-  end
-  object gb: TGroupBox
-    Left = 528
-    Top = 428
-    Width = 369
-    Height = 57
-    Caption = #25163#32472#25805#20316#38754#26495
-    TabOrder = 2
-    object pct: TBitBtn
-      Left = 8
-      Top = 20
-      Width = 65
-      Height = 25
-      Caption = #32472#22270
-      Glyph.Data = {
-        76010000424D7601000000000000760000002800000020000000100000000100
-        04000000000000010000120B0000120B00001000000000000000000000000000
-        800000800000008080008000000080008000808000007F7F7F00BFBFBF000000
-        FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00555555555555
-        555555FFFFFFFFFF5F5557777777777505555777777777757F55555555555555
-        055555555555FF5575F555555550055030555555555775F7F7F55555550FB000
-        005555555575577777F5555550FB0BF0F05555555755755757F555550FBFBF0F
-        B05555557F55557557F555550BFBF0FB005555557F55575577F555500FBFBFB0
-        305555577F555557F7F5550E0BFBFB003055557575F55577F7F550EEE0BFB0B0
-        305557FF575F5757F7F5000EEE0BFBF03055777FF575FFF7F7F50000EEE00000
-        30557777FF577777F7F500000E05555BB05577777F75555777F5500000555550
-        3055577777555557F7F555000555555999555577755555577755}
-      NumGlyphs = 2
-      TabOrder = 0
-      OnClick = pctClick
-    end
-    object del: TBitBtn
-      Left = 152
-      Top = 20
-      Width = 65
-      Height = 25
-      Caption = #20462#25913
-      Glyph.Data = {
-        76010000424D7601000000000000760000002800000020000000100000000100
-        04000000000000010000120B0000120B00001000000000000000000000000000
-        800000800000008080008000000080008000808000007F7F7F00BFBFBF000000
-        FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00500005000555
-        555557777F777555F55500000000555055557777777755F75555005500055055
-        555577F5777F57555555005550055555555577FF577F5FF55555500550050055
-        5555577FF77577FF555555005050110555555577F757777FF555555505099910
-        555555FF75777777FF555005550999910555577F5F77777775F5500505509990
-        3055577F75F77777575F55005055090B030555775755777575755555555550B0
-        B03055555F555757575755550555550B0B335555755555757555555555555550
-        BBB35555F55555575F555550555555550BBB55575555555575F5555555555555
-        50BB555555555555575F555555555555550B5555555555555575}
-      NumGlyphs = 2
-      TabOrder = 1
-      OnClick = delClick
-    end
-    object cle: TBitBtn
-      Left = 288
-      Top = 20
-      Width = 65
-      Height = 25
-      Caption = #28165#38500
-      Glyph.Data = {
-        76010000424D7601000000000000760000002800000020000000100000000100
-        04000000000000010000120B0000120B00001000000000000000000000000000
-        800000800000008080008000000080008000808000007F7F7F00BFBFBF000000
-        FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00333000000000
-        3333333777777777F3333330F77777703333333733F3F3F73F33330FF0808077
-        0333337F37F7F7F37F33330FF0807077033333733737F73F73F330FF77808707
-        703337F37F37F37F37F330FF08807807703037F37F37F37F37F700FF08808707
-        700377F37337F37F377330FF778078077033373F73F7F3733733330FF0808077
-        0333337F37F7F7F37F33330FF08070770333337FF7F7F7FF7F33330000000000
-        03333377777777777F33330F888777770333337FFFFFFFFF7F33330000000000
-        033333777777777773333333307770333333333337FFF7F33333333330000033
-        3333333337777733333333333333333333333333333333333333}
-      NumGlyphs = 2
-      TabOrder = 2
-      OnClick = cleClick
-    end
-  end
   object pnl: TPanel
-    Left = 8
+    Left = 479
     Top = 8
-    Width = 497
-    Height = 401
+    Width = 615
+    Height = 495
     Cursor = crCross
     Hint = #31243#12558#38548#30038#31734#29916#36299
     BevelInner = bvLowered
@@ -124,37 +28,188 @@ object Form1: TForm1
     object img: TImage
       Left = 0
       Top = 0
-      Width = 497
-      Height = 409
+      Width = 617
+      Height = 497
       Transparent = True
       OnMouseDown = imgMouseDown
       OnMouseUp = imgMouseUp
     end
   end
   object GroupBox1: TGroupBox
-    Left = 8
-    Top = 423
-    Width = 497
-    Height = 57
+    Left = 187
+    Top = 8
+    Width = 262
+    Height = 53
     Caption = #26500#22270#25805#20316#38754#26495
     TabOrder = 1
-    object ct: TButton
-      Left = 8
-      Top = 20
-      Width = 65
-      Height = 25
-      Caption = #29983#25104#39030#28857
-      TabOrder = 0
-      OnClick = ctClick
-    end
-    object ph: TButton
-      Left = 344
+    object ShortestPathBt: TButton
+      Left = 98
       Top = 20
       Width = 65
       Height = 25
       Caption = #26368#20339#36335#24452
+      TabOrder = 0
+      OnClick = ShortestPathBtClick
+    end
+    object BtClearMemo: TButton
+      Left = 808
+      Top = 16
+      Width = 83
+      Height = 25
+      Caption = #28165#31354#36755#20986#38754#26495
       TabOrder = 1
-      OnClick = phClick
+      OnClick = BtClearMemoClick
+    end
+    object CreateNodeBt: TButton
+      Left = 12
+      Top = 20
+      Width = 74
+      Height = 25
+      Caption = #21019#24314#33410#28857
+      TabOrder = 2
+      OnClick = CreateNodeBtClick
+    end
+    object ResetBt: TButton
+      Left = 176
+      Top = 20
+      Width = 75
+      Height = 25
+      Caption = #37325#32622#30011#26495
+      TabOrder = 3
+      OnClick = ResetBtClick
+    end
+  end
+  object GraphType: TRadioGroup
+    Left = 23
+    Top = 8
+    Width = 145
+    Height = 53
+    Caption = #36873#25321#22270#31867#22411
+    TabOrder = 2
+  end
+  object RadioButtonDirect: TRadioButton
+    Left = 31
+    Top = 30
+    Width = 57
+    Height = 21
+    Caption = #26377#21521#22270
+    Checked = True
+    TabOrder = 3
+    TabStop = True
+    OnClick = RadioButtonDirectClick
+  end
+  object RadioButtonNoDirect: TRadioButton
+    Left = 94
+    Top = 32
+    Width = 58
+    Height = 17
+    Caption = #26080#21521#22270
+    TabOrder = 4
+    OnClick = RadioButtonNoDirectClick
+  end
+  object PageControl: TPageControl
+    Left = 3
+    Top = 67
+    Width = 470
+    Height = 436
+    ActivePage = TabSheetDirect
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'MS Sans Serif'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 5
+    TabWidth = 233
+    object TabSheetDirect: TTabSheet
+      Caption = #26377#21521#22270
+      ExplicitWidth = 469
+      ExplicitHeight = 382
+      object memo: TMemo
+        Left = 158
+        Top = 16
+        Width = 303
+        Height = 366
+        Color = clSilver
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -16
+        Font.Name = 'MS Sans Serif'
+        Font.Style = []
+        ParentFont = False
+        ScrollBars = ssVertical
+        TabOrder = 0
+      end
+      object GroupBox2: TGroupBox
+        Left = 3
+        Top = 16
+        Width = 142
+        Height = 366
+        Caption = #36873#25321#26377#21521#22270#31639#27861
+        TabOrder = 1
+        object Button1: TButton
+          Left = 22
+          Top = 40
+          Width = 104
+          Height = 25
+          Caption = #22270#25628#32034'(BFS)'
+          TabOrder = 0
+        end
+        object Button2: TButton
+          Left = 22
+          Top = 177
+          Width = 104
+          Height = 25
+          Caption = #21333#28304#26368#30701#36335#24452
+          TabOrder = 1
+        end
+        object Button3: TButton
+          Left = 22
+          Top = 317
+          Width = 104
+          Height = 25
+          Caption = #25299#25169#25490#24207
+          TabOrder = 2
+        end
+        object Button4: TButton
+          Left = 22
+          Top = 270
+          Width = 104
+          Height = 25
+          Caption = #20851#38190#36335#24452
+          TabOrder = 3
+        end
+        object Button5: TButton
+          Left = 22
+          Top = 131
+          Width = 104
+          Height = 25
+          Caption = #28857#23545#28857#26368#30701#36335#24452
+          TabOrder = 4
+        end
+        object Button6: TButton
+          Left = 22
+          Top = 221
+          Width = 104
+          Height = 25
+          Caption = #20840#23616#26368#30701#36335#24452
+          TabOrder = 5
+        end
+        object Button7: TButton
+          Left = 22
+          Top = 84
+          Width = 104
+          Height = 25
+          Caption = #22270#25628#32034'(DFS)'
+          TabOrder = 6
+        end
+      end
+    end
+    object TabSheetNoDirect: TTabSheet
+      Caption = #26080#21521#22270
+      ImageIndex = 1
+      ExplicitWidth = 469
+      ExplicitHeight = 382
     end
   end
 end
