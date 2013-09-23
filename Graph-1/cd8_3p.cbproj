@@ -137,13 +137,13 @@
             <BuildOrder>5</BuildOrder>
             <BuildOrder>1</BuildOrder>
         </ResFiles>
-        <CppCompile Include="cd8_3u.cpp">
+        <CppCompile Include="graph_alg_u.cpp">
             <BuildOrder>8</BuildOrder>
             <Form>Form1</Form>
             <DependentOn>cd8_3u.h</DependentOn>
             <BuildOrder>0</BuildOrder>
         </CppCompile>
-        <FormResources Include="cd8_3u.dfm"/>
+        <FormResources Include="graph_alg_u.dfm"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>

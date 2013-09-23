@@ -3,7 +3,7 @@
 #include <vcl.h>
 #pragma hdrstop
 USERES("cd8_3p.res");
-USEFORM("cd8_3u.cpp", Form1);
+USEFORM("graph_alg_u.cpp", Form1);
 //---------------------------------------------------------------------------
 WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 {

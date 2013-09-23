@@ -9,7 +9,7 @@
     <IDLFILES value=""/>
     <IDLGENFILES value=""/>
     <DEFFILE value=""/>
-    <RESDEPEN value="$(RESFILES) cd8_3u.dfm"/>
+    <RESDEPEN value="$(RESFILES) graph_alg_u.dfm"/>
     <LIBFILES value=""/>
     <LIBRARIES value="vcl.lib rtl.lib"/>
     <SPARELIBS value="rtl.lib vcl.lib"/>
@@ -51,7 +51,7 @@
   <FILELIST>
       <FILE FILENAME="cd8_3p.cpp" FORMNAME="" UNITNAME="cd8_3p" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
       <FILE FILENAME="cd8_3p.res" FORMNAME="" UNITNAME="cd8_3p" CONTAINERID="ResTool" DESIGNCLASS="" LOCALCOMMAND=""/>
-      <FILE FILENAME="cd8_3u.cpp" FORMNAME="Form1" UNITNAME="cd8_3u" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="graph_alg_u.cpp" FORMNAME="Form1" UNITNAME="cd8_3u" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
   </FILELIST>
   <BUILDTOOLS>
   </BUILDTOOLS>
