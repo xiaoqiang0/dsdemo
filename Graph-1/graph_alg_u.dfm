@@ -201,6 +201,10 @@ object Form1: TForm1
     object TabSheetNoDirect: TTabSheet
       Caption = #26080#21521#22270
       ImageIndex = 1
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
     end
   end
 end

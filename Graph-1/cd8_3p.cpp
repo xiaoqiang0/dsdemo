@@ -2,7 +2,6 @@
 
 #include <vcl.h>
 #pragma hdrstop
-USERES("cd8_3p.res");
 USEFORM("graph_alg_u.cpp", Form1);
 //---------------------------------------------------------------------------
 WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
@@ -11,7 +10,7 @@ WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
         {
                  Application->Initialize();
                  Application->CreateForm(__classid(TForm1), &Form1);
-                 Application->Run();
+         Application->Run();
         }
         catch (Exception &exception)
         {

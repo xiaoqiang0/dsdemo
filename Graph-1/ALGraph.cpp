@@ -12,7 +12,7 @@ int visit[MAX_VERTEX_NUM];
 
 int CreateALG(ALGraph *G, FILE *fp)
 {
-	
+
 	int from, to;
 	int i;
 	fscanf(fp, "%d\t%d\n", &G->vexnum, &G->arcnum);
