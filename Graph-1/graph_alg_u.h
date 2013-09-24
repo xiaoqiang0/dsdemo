@@ -19,10 +19,9 @@ class TForm1 : public TForm
         TGroupBox *GroupBox1;
         TButton *CreateNodeBt;
         TButton *ShortestPathBt;
-        TButton *BtClearMemo;
         TRadioGroup *GraphType;
-        TRadioButton *RadioButtonDirect;
-        TRadioButton *RadioButtonNoDirect;
+        TRadioButton *DirectBt;
+        TRadioButton *NoDirectBt;
         TMemo *memo;
         TPageControl *PageControl;
         TTabSheet *TabSheetDirect;
@@ -44,9 +43,10 @@ class TForm1 : public TForm
         void __fastcall imgMouseUp(TObject *Sender, TMouseButton Button,
                 TShiftState Shift, int X, int Y);
         void __fastcall BtClearMemoClick(TObject *Sender);
-        void __fastcall RadioButtonNoDirectClick(TObject *Sender);
-        void __fastcall RadioButtonDirectClick(TObject *Sender);
+        void __fastcall NoDirectBtClick(TObject *Sender);
+        void __fastcall DirectBtClick(TObject *Sender);
         void __fastcall ResetBtClick(TObject *Sender);
+    void __fastcall PageControlChange(TObject *Sender);
 
 
 

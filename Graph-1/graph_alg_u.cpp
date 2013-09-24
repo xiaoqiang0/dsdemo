@@ -205,7 +205,7 @@ void __fastcall TForm1::imgMouseUp(TObject * Sender,
         dist = StrToInt(InputBox("节点距离", "请输入节点距离: ", "5"));    //默认值5
         img->Canvas->MoveTo(x[start], y[start]);
         img->Canvas->LineTo(x[end], y[end]);
-	img->Canvas->TextOut((x[start] + x[end]) / 2, (y[start] + y[end]) / 2, dist);
+	    img->Canvas->TextOut((x[start] + x[end]) / 2, (y[start] + y[end]) / 2, dist);
 
         //如果是有向图画箭头
         if (direct == 1) {
@@ -284,7 +284,7 @@ void __fastcall TForm1::BtClearMemoClick(TObject * Sender)
 //---------------------------------------------------------------------------
 
 
-void __fastcall TForm1::RadioButtonDirectClick(TObject * Sender)
+void __fastcall TForm1::DirectBtClick(TObject * Sender)
 {
     direct = 1;
     PageControl->TabIndex = 0;
@@ -292,7 +292,7 @@ void __fastcall TForm1::RadioButtonDirectClick(TObject * Sender)
 
 //---------------------------------------------------------------------------
 
-void __fastcall TForm1::RadioButtonNoDirectClick(TObject * Sender)
+void __fastcall TForm1::NoDirectBtClick(TObject * Sender)
 {
     direct = 0;
     PageControl->TabIndex = 1;
@@ -320,3 +320,13 @@ void __fastcall TForm1::ResetBtClick(TObject * Sender)
 }
 
 //---------------------------------------------------------------------------
+
+void __fastcall TForm1::PageControlChange(TObject *Sender)
+{
+     if (PageControl->TabIndex == 0)
+        DirectBt->Checked = true;
+     else
+         NoDirectBt->Checked = true;
+}
+//---------------------------------------------------------------------------
+

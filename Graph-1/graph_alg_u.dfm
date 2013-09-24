@@ -36,59 +36,41 @@ object Form1: TForm1
     end
   end
   object GroupBox1: TGroupBox
-    Left = 187
+    Left = 304
     Top = 8
-    Width = 262
+    Width = 169
     Height = 53
     Caption = #26500#22270#25805#20316#38754#26495
     TabOrder = 1
-    object ShortestPathBt: TButton
-      Left = 98
-      Top = 20
-      Width = 65
-      Height = 25
-      Caption = #26368#20339#36335#24452
-      TabOrder = 0
-      OnClick = ShortestPathBtClick
-    end
-    object BtClearMemo: TButton
-      Left = 808
-      Top = 16
-      Width = 83
-      Height = 25
-      Caption = #28165#31354#36755#20986#38754#26495
-      TabOrder = 1
-      OnClick = BtClearMemoClick
-    end
     object CreateNodeBt: TButton
-      Left = 12
+      Left = 3
       Top = 20
       Width = 74
       Height = 25
       Caption = #21019#24314#33410#28857
-      TabOrder = 2
+      TabOrder = 0
       OnClick = CreateNodeBtClick
     end
     object ResetBt: TButton
-      Left = 176
+      Left = 83
       Top = 20
       Width = 75
       Height = 25
       Caption = #37325#32622#30011#26495
-      TabOrder = 3
+      TabOrder = 1
       OnClick = ResetBtClick
     end
   end
   object GraphType: TRadioGroup
-    Left = 23
+    Left = 3
     Top = 8
-    Width = 145
+    Width = 121
     Height = 53
     Caption = #36873#25321#22270#31867#22411
     TabOrder = 2
   end
-  object RadioButtonDirect: TRadioButton
-    Left = 31
+  object DirectBt: TRadioButton
+    Left = 6
     Top = 30
     Width = 57
     Height = 21
@@ -96,16 +78,18 @@ object Form1: TForm1
     Checked = True
     TabOrder = 3
     TabStop = True
-    OnClick = RadioButtonDirectClick
+    OnClick = DirectBtClick
   end
-  object RadioButtonNoDirect: TRadioButton
-    Left = 94
+  object NoDirectBt: TRadioButton
+    Left = 63
     Top = 32
     Width = 58
     Height = 17
     Caption = #26080#21521#22270
+    Ctl3D = True
+    ParentCtl3D = False
     TabOrder = 4
-    OnClick = RadioButtonNoDirectClick
+    OnClick = NoDirectBtClick
   end
   object PageControl: TPageControl
     Left = 3
@@ -121,6 +105,7 @@ object Form1: TForm1
     ParentFont = False
     TabOrder = 5
     TabWidth = 233
+    OnChange = PageControlChange
     object TabSheetDirect: TTabSheet
       Caption = #26377#21521#22270
       object memo: TMemo
@@ -147,59 +132,68 @@ object Form1: TForm1
         TabOrder = 1
         object Button1: TButton
           Left = 22
-          Top = 40
+          Top = 58
           Width = 104
-          Height = 25
+          Height = 26
           Caption = #22270#25628#32034'(BFS)'
           TabOrder = 0
         end
         object Button2: TButton
           Left = 22
-          Top = 177
+          Top = 195
           Width = 104
-          Height = 25
+          Height = 26
           Caption = #21333#28304#26368#30701#36335#24452
           TabOrder = 1
         end
         object Button3: TButton
           Left = 22
-          Top = 317
+          Top = 335
           Width = 104
-          Height = 25
+          Height = 26
           Caption = #25299#25169#25490#24207
           TabOrder = 2
         end
         object Button4: TButton
           Left = 22
-          Top = 270
+          Top = 288
           Width = 104
-          Height = 25
+          Height = 26
           Caption = #20851#38190#36335#24452
           TabOrder = 3
         end
         object Button5: TButton
           Left = 22
-          Top = 131
+          Top = 149
           Width = 104
-          Height = 25
+          Height = 26
           Caption = #28857#23545#28857#26368#30701#36335#24452
           TabOrder = 4
         end
         object Button6: TButton
           Left = 22
-          Top = 221
+          Top = 239
           Width = 104
-          Height = 25
+          Height = 26
           Caption = #20840#23616#26368#30701#36335#24452
           TabOrder = 5
         end
         object Button7: TButton
           Left = 22
-          Top = 84
+          Top = 102
           Width = 104
-          Height = 25
+          Height = 26
           Caption = #22270#25628#32034'(DFS)'
           TabOrder = 6
+        end
+        object ShortestPathBt: TButton
+          Left = 22
+          Top = 20
+          Width = 104
+          Height = 25
+          Caption = #26368#20339#36335#24452
+          TabOrder = 7
+          OnClick = ShortestPathBtClick
         end
       end
     end
