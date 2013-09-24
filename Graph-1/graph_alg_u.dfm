@@ -1,4 +1,4 @@
-object Form1: TForm1
+object FormGraphAlgorithm: TFormGraphAlgorithm
   Left = 188
   Top = 143
   Caption = #22270#31639#27861#28436#31034
@@ -201,10 +201,6 @@ object Form1: TForm1
     object TabSheetNoDirect: TTabSheet
       Caption = #26080#21521#22270
       ImageIndex = 1
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
     end
   end
 end

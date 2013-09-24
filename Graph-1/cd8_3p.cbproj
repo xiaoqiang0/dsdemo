@@ -142,7 +142,7 @@
         </ResFiles>
         <CppCompile Include="graph_alg_u.cpp">
             <BuildOrder>8</BuildOrder>
-            <Form>Form1</Form>
+            <Form>FormGraphAlgorithm</Form>
             <DependentOn>cd8_3u.h</DependentOn>
             <BuildOrder>0</BuildOrder>
         </CppCompile>

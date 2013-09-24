@@ -11,7 +11,7 @@
 
 //#define MAX_VERTEX_NUM 8
 
-TForm1 *Form1;
+TFormGraphAlgorithm *FormGraphAlgorithm;
 
 TShape *sp[MAX_VERTEX_NUM];                           //½ÚµãShapÊý×é
 TLabel *lb[MAX_VERTEX_NUM];                           //½ÚµãShapÉÏµÄ±êÇ©Êý×é£¬»­°å->Shap->Label
@@ -33,12 +33,12 @@ ALGraph ALG;    //ÁÙ½ÓÁ´±í´æ´¢
 
 TMemo *memo_local;
 //---------------------------------------------------------------------------
-__fastcall TForm1::TForm1(TComponent * Owner):TForm(Owner)
+__fastcall TFormGraphAlgorithm::TFormGraphAlgorithm(TComponent * Owner):TForm(Owner)
 {
 }
 
 //---------------------------------------------------------------------------
-void __fastcall TForm1::FormCreate(TObject * Sender)    //¶¥µã¼ä³õÊ¼ÉèÖÃÎªÎÞÇî´ó(²»Í¨)
+void __fastcall TFormGraphAlgorithm::FormCreate(TObject * Sender)    //¶¥µã¼ä³õÊ¼ÉèÖÃÎªÎÞÇî´ó(²»Í¨)
 {
     MG.vexnum = 0;
     MG.arcnum = 0;
@@ -50,7 +50,7 @@ void __fastcall TForm1::FormCreate(TObject * Sender)    //¶¥µã¼ä³õÊ¼ÉèÖÃÎªÎÞÇî´ó
 }
 
 //---------------------------------------------------------------------------
-void __fastcall TForm1::CreateNodeBtClick(TObject * Sender)    //Éú³É¶¥µã°´Å¥µ¥»÷ÊÂ¼þ
+void __fastcall TFormGraphAlgorithm::CreateNodeBtClick(TObject * Sender)    //Éú³É¶¥µã°´Å¥µ¥»÷ÊÂ¼þ
 {
 
     pnl->Enabled = true;                            //Æô¶¯»­°å¹¦ÄÜ
@@ -94,7 +94,7 @@ int overLap(int X, int Y)                       //ËÑË÷¸ø¶¨×ø±êµã»á¸úÄÄ¸öµêÖØºÏ
     return -1;
 }
 
-void __fastcall TForm1::imgMouseDown(TObject * Sender, //Êó±ê°´ÏÂÊÂ¼þ,¼ÇÂ¼ÆðÊ¼µãµÄÎ»ÖÃ
+void __fastcall TFormGraphAlgorithm::imgMouseDown(TObject * Sender, //Êó±ê°´ÏÂÊÂ¼þ,¼ÇÂ¼ÆðÊ¼µãµÄÎ»ÖÃ
         TMouseButton Button,
         TShiftState Shift, int X, int Y)
 {
@@ -105,7 +105,7 @@ void __fastcall TForm1::imgMouseDown(TObject * Sender, //Êó±ê°´ÏÂÊÂ¼þ,¼ÇÂ¼ÆðÊ¼µã
                 ShowMessage("Óë½Úµã:" + IntToStr(tmp) + "ÏàÁÚÌ«½ü");
                 return;
             }
-            sp[n] = new TShape(Form1);    //½¨Á¢ÐÂ½áµã¿Ø¼þ
+            sp[n] = new TShape(this);    //½¨Á¢ÐÂ½áµã¿Ø¼þ
             sp[n]->Parent = pnl;    //ÉèÖÃÐÂ½áµã¿Ø¼þÊôÐÔ
             sp[n]->Enabled = false;
             sp[n]->Left = X - node_R;    //Ô²ÐÎµÄÖ±¾¶ÊÇ15µÄÔ²
@@ -213,7 +213,7 @@ int paintArrow(TImage * img, float x1, float y1, float x2, float y2)
 }
 
 
-void __fastcall TForm1::imgMouseUp(TObject * Sender,
+void __fastcall TFormGraphAlgorithm::imgMouseUp(TObject * Sender,
         TMouseButton Button,
         TShiftState Shift, int X, int Y)
 {
@@ -242,13 +242,13 @@ void __fastcall TForm1::imgMouseUp(TObject * Sender,
     start = -1;
     end = -1;            //reset
 }
-void __fastcall TForm1::my_print (String info)
+void __fastcall TFormGraphAlgorithm::my_print (String info)
 {
      memo->Lines->Add(info);
 }
 
 //---------------------------------------------------------------------------
-void __fastcall TForm1::ShortestPathBtClick(TObject * Sender)    //×î¶ÌÂ·¾¶Çó½âÊÂ¼þ
+void __fastcall TFormGraphAlgorithm::ShortestPathBtClick(TObject * Sender)    //×î¶ÌÂ·¾¶Çó½âÊÂ¼þ
 {
     bool vst[MAX_VERTEX_NUM] = { false };     //·ÃÎÊ¸¨ÖúÊý×é
     int dte[MAX_VERTEX_NUM] = { 0 };          //µ¥Ô´×î¶ÌÂ·¾¶Ëã·¨´æ´¢×î¶ÌÂ·¾¶dte[i] = x ´ú±í´Ó½Úµã0µ½½ÚµãiµÄ×î¶ÌÂ·¾¶ÊÇx
@@ -295,7 +295,7 @@ void __fastcall TForm1::ShortestPathBtClick(TObject * Sender)    //×î¶ÌÂ·¾¶Çó½âÊ
 
 
 
-void __fastcall TForm1::BtClearMemoClick(TObject * Sender)
+void __fastcall TFormGraphAlgorithm::BtClearMemoClick(TObject * Sender)
 {
     memo->Clear();
 }
@@ -303,7 +303,7 @@ void __fastcall TForm1::BtClearMemoClick(TObject * Sender)
 //---------------------------------------------------------------------------
 
 
-void __fastcall TForm1::DirectBtClick(TObject * Sender)
+void __fastcall TFormGraphAlgorithm::DirectBtClick(TObject * Sender)
 {
     direct = 1;
     PageControl->TabIndex = 0;
@@ -311,7 +311,7 @@ void __fastcall TForm1::DirectBtClick(TObject * Sender)
 
 //---------------------------------------------------------------------------
 
-void __fastcall TForm1::NoDirectBtClick(TObject * Sender)
+void __fastcall TFormGraphAlgorithm::NoDirectBtClick(TObject * Sender)
 {
     direct = 0;
     PageControl->TabIndex = 1;
@@ -321,7 +321,7 @@ void __fastcall TForm1::NoDirectBtClick(TObject * Sender)
 
 
 
-void __fastcall TForm1::ResetBtClick(TObject * Sender)
+void __fastcall TFormGraphAlgorithm::ResetBtClick(TObject * Sender)
 {
     int i;
 
@@ -340,7 +340,7 @@ void __fastcall TForm1::ResetBtClick(TObject * Sender)
 
 //---------------------------------------------------------------------------
 
-void __fastcall TForm1::PageControlChange(TObject *Sender)
+void __fastcall TFormGraphAlgorithm::PageControlChange(TObject *Sender)
 {
      if (PageControl->TabIndex == 0)
         DirectBt->Checked = true;
@@ -353,7 +353,7 @@ void p(String s)
 {
       memo_local->Lines->Add(s);
 }
-void __fastcall TForm1::Button6Click(TObject *Sender)
+void __fastcall TFormGraphAlgorithm::Button6Click(TObject *Sender)
 {
      memo_local = memo;
      ShortestPath_FLOYD(&MG, &p);
