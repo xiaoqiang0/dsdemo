@@ -35,7 +35,9 @@ class TForm1 : public TForm
         TButton *Button5;
         TButton *Button6;
         TButton *Button7;
+        void __fastcall my_print (String info);
         void __fastcall CreateNodeBtClick(TObject *Sender);   //生成顶点按钮点击函数
+
         void __fastcall ShortestPathBtClick(TObject *Sender);   //最短路径按钮点击函数
         void __fastcall FormCreate(TObject *Sender);
         void __fastcall imgMouseDown(TObject *Sender, TMouseButton Button,
@@ -47,6 +49,7 @@ class TForm1 : public TForm
         void __fastcall DirectBtClick(TObject *Sender);
         void __fastcall ResetBtClick(TObject *Sender);
     void __fastcall PageControlChange(TObject *Sender);
+    void __fastcall Button6Click(TObject *Sender);
 
 
 

@@ -1,34 +1,52 @@
 //---------------------------------------------------------------------------
 #include <vcl.h>
+
 #pragma hdrstop
 
+#include "graph.h"
 #include "graph_alg_u.h"
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 #pragma resource "*.dfm"
 
-#define MAX_NODE     8
+//#define MAX_VERTEX_NUM 8
 
 TForm1 *Form1;
 
-TShape *sp[MAX_NODE];                           //½ÚµãShapÊı×é
-TLabel *lb[MAX_NODE];                           //½ÚµãShapÉÏµÄ±êÇ©Êı×é£¬»­°å->Shap->Label
-int graph[MAX_NODE][MAX_NODE] = { 9999 };       //´æ´¢Í¼µÄ¾ØÕó½á¹¹ graph[i][i] = n:´ú±íµÚi¸ö½Úµãµ½µÚj¸ö½ÚµãµÄ¾àÀëÊÇn
+TShape *sp[MAX_VERTEX_NUM];                           //½ÚµãShapÊı×é
+TLabel *lb[MAX_VERTEX_NUM];                           //½ÚµãShapÉÏµÄ±êÇ©Êı×é£¬»­°å->Shap->Label
+int graph[MAX_VERTEX_NUM][MAX_VERTEX_NUM] = { 9999 };       //´æ´¢Í¼µÄ¾ØÕó½á¹¹ graph[i][i] = n:´ú±íµÚi¸ö½Úµãµ½µÚj¸ö½ÚµãµÄ¾àÀëÊÇn
 
 int direct = 1;                                 //Ä¬ÈÏÊÇÓĞÏòÍ¼
 
-int x[MAX_NODE], y[MAX_NODE];                   //´æ´¢Í¼ÔÚÆÁÄ»µÄ×ø±êÎ»ÖÃ
+int x[MAX_VERTEX_NUM], y[MAX_VERTEX_NUM];                   //´æ´¢Í¼ÔÚÆÁÄ»µÄ×ø±êÎ»ÖÃ
 int n;                                          //n:¼ÇÂ¼½Úµã×ÜÊı
 int start, end;                                 //start:ÉèÖÃÁ¬ÏßÊ±ÆğÊ¼µãµÄË÷Òı, end:ÉèÖÃÁ¬ÏßÊ±½áÊøµãµÄË÷Òı
 
-bool draw = false;
 int i, j;
 bool input_node = false;
 int node_R = 20;
 
+MGraph MG;      //¾ØÕó´æ´¢
+ALGraph ALG;    //ÁÙ½ÓÁ´±í´æ´¢
+
+
+TMemo *memo_local;
 //---------------------------------------------------------------------------
 __fastcall TForm1::TForm1(TComponent * Owner):TForm(Owner)
 {
+}
+
+//---------------------------------------------------------------------------
+void __fastcall TForm1::FormCreate(TObject * Sender)    //¶¥µã¼ä³õÊ¼ÉèÖÃÎªÎŞÇî´ó(²»Í¨)
+{
+    MG.vexnum = 0;
+    MG.arcnum = 0;
+    for (i = 0; i < MAX_VERTEX_NUM; i++)
+        for (j = 0; j < MAX_VERTEX_NUM; j++)
+            graph[i][j] = 9999;
+            MG.arcs[i][j] = 99999;
+
 }
 
 //---------------------------------------------------------------------------
@@ -81,7 +99,7 @@ void __fastcall TForm1::imgMouseDown(TObject * Sender, //Êó±ê°´ÏÂÊÂ¼ş,¼ÇÂ¼ÆğÊ¼µã
         TShiftState Shift, int X, int Y)
 {
     if (CreateNodeBt->Enabled == true && input_node == true) {
-        if (n < MAX_NODE) {    //ÏŞÖÆ×î¶àÊäÈëMAX_NODE¸ö½Úµã
+        if (n < MAX_VERTEX_NUM) {    //ÏŞÖÆ×î¶àÊäÈëMAX_VERTEX_NUM¸ö½Úµã
             int tmp = overLap(X, Y);
             if (tmp != -1) {
                 ShowMessage("Óë½Úµã:" + IntToStr(tmp) + "ÏàÁÚÌ«½ü");
@@ -94,7 +112,7 @@ void __fastcall TForm1::imgMouseDown(TObject * Sender, //Êó±ê°´ÏÂÊÂ¼ş,¼ÇÂ¼ÆğÊ¼µã
             sp[n]->Top = Y - node_R;
             sp[n]->Height = 2 * node_R;
             sp[n]->Width = 2 * node_R;
-            TColor color[MAX_NODE] = {
+            TColor color[MAX_VERTEX_NUM] = {
                 clWhite, clYellow, clLime, clWebLightgrey, clRed, clAqua,
                 clTeal, clWebRoyalBlue
             };
@@ -109,6 +127,7 @@ void __fastcall TForm1::imgMouseDown(TObject * Sender, //Êó±ê°´ÏÂÊÂ¼ş,¼ÇÂ¼ÆğÊ¼µã
             x[n] = X;
             y[n] = Y;        //´æ´¢ĞÂ¶¥µã×ø±ê£¬Ô²µÄÖĞĞÄ
             n++;
+            MGraph_Inc_Node(&MG);
         }
         //¶¥µã¼ÆÊıÆ÷¼Ó1
         return;
@@ -211,23 +230,30 @@ void __fastcall TForm1::imgMouseUp(TObject * Sender,
         if (direct == 1) {
             paintArrow(img, x[start], y[start], x[end], y[end]);
             graph[start][end] = dist;    //ÓĞÏòÍ¼
+            MGraph_Add_Arc(&MG, start, end, dist);
         } else {
             //ÎŞÏòÍ¼ÊÇ¶Ô³Æ¾ØÕó
             graph[start][end] = graph[end][start] = dist;
+            MGraph_Add_Arc(&MG, start, end, dist);
+            MGraph_Add_Arc(&MG, end, start, dist);
         }
     }
 
     start = -1;
     end = -1;            //reset
 }
-
+void __fastcall TForm1::my_print (String info)
+{
+     memo->Lines->Add(info);
+}
 
 //---------------------------------------------------------------------------
 void __fastcall TForm1::ShortestPathBtClick(TObject * Sender)    //×î¶ÌÂ·¾¶Çó½âÊÂ¼ş
 {
-    bool vst[MAX_NODE] = { false };     //·ÃÎÊ¸¨ÖúÊı×é
-    int dte[MAX_NODE] = { 0 };          //µ¥Ô´×î¶ÌÂ·¾¶Ëã·¨´æ´¢×î¶ÌÂ·¾¶dte[i] = x ´ú±í´Ó½Úµã0µ½½ÚµãiµÄ×î¶ÌÂ·¾¶ÊÇx
+    bool vst[MAX_VERTEX_NUM] = { false };     //·ÃÎÊ¸¨ÖúÊı×é
+    int dte[MAX_VERTEX_NUM] = { 0 };          //µ¥Ô´×î¶ÌÂ·¾¶Ëã·¨´æ´¢×î¶ÌÂ·¾¶dte[i] = x ´ú±í´Ó½Úµã0µ½½ÚµãiµÄ×î¶ÌÂ·¾¶ÊÇx
     int target = -1;
+
     if (n == 0) {
         ShowMessage("Í¼»¹Î´´´½¨,Çë´´½¨ÍêÍ¼ºóÔÙ½øĞĞ²Ù×÷");
         return;
@@ -268,13 +294,6 @@ void __fastcall TForm1::ShortestPathBtClick(TObject * Sender)    //×î¶ÌÂ·¾¶Çó½âÊ
 }
 
 
-//---------------------------------------------------------------------------
-void __fastcall TForm1::FormCreate(TObject * Sender)    //¶¥µã¼ä³õÊ¼ÉèÖÃÎªÎŞÇî´ó(²»Í¨)
-{
-    for (i = 0; i < MAX_NODE; i++)
-        for (j = 0; j < MAX_NODE; j++)
-            graph[i][j] = 9999;
-}
 
 void __fastcall TForm1::BtClearMemoClick(TObject * Sender)
 {
@@ -327,6 +346,17 @@ void __fastcall TForm1::PageControlChange(TObject *Sender)
         DirectBt->Checked = true;
      else
          NoDirectBt->Checked = true;
+}
+//---------------------------------------------------------------------------
+
+void p(String s)
+{
+      memo_local->Lines->Add(s);
+}
+void __fastcall TForm1::Button6Click(TObject *Sender)
+{
+     memo_local = memo;
+     ShortestPath_FLOYD(&MG, &p);
 }
 //---------------------------------------------------------------------------
 
