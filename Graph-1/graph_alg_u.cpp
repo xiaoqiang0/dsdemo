@@ -43,9 +43,10 @@ void __fastcall TFormGraphAlgorithm::FormCreate(TObject * Sender)    //∂•µ„º‰≥ı 
     MG.vexnum = 0;
     MG.arcnum = 0;
     for (i = 0; i < MAX_VERTEX_NUM; i++)
-        for (j = 0; j < MAX_VERTEX_NUM; j++)
+        for (j = 0; j < MAX_VERTEX_NUM; j++) {
             graph[i][j] = 9999;
             MG.arcs[i][j] = 99999;
+        }
 
 }
 
@@ -351,7 +352,7 @@ void __fastcall TFormGraphAlgorithm::PageControlChange(TObject *Sender)
 
 void p(String s)
 {
-      memo_local->Lines->Add(s);
+      memo_local->Lines->Append(s)
 }
 void __fastcall TFormGraphAlgorithm::Button6Click(TObject *Sender)
 {

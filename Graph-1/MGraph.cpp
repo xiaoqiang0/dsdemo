@@ -37,7 +37,7 @@ int CreateMG(MGraph *G, FILE *fp)
 
 int MGraph_Inc_Node (MGraph *G)
 {
-    G->vexs[G->vexnum].data = 'A' + G->vexnum;
+    G->vexs[G->vexnum].data = + G->vexnum;
     G->vexnum += 1;
 }
 
@@ -45,17 +45,16 @@ int MGraph_Add_Arc (MGraph *G, int i, int j, int d)
 {
     G->arcs[i][j] = d;
 }
-void Print_Path(MGraph *G,int p[MAX_VERTEX_NUM][MAX_VERTEX_NUM],int i, int j, void (*print)(String))
+String Get_Path(MGraph *G,int p[MAX_VERTEX_NUM][MAX_VERTEX_NUM],int i, int j, void (*print)(String))
 {
 	if (i == j){
-		printf ("%c",G->vexs[i].data);
-		return;
+		return IntToStr(G->vexs[i].data);
+
 	}
 	if (p[i][j] == -1)
-		printf("No Path from %c to %c",G->vexs[i].data,G->vexs[i].data);
+		return ("No Path from" + IntToStr(G->vexs[i].data) + " to " + IntToStr(G->vexs[j].data));
 	else{
-		Print_Path(G, p, i, p[i][j], print);
-		print (IntToStr(G->vexs[j].data));;
+		return Get_Path(G, p, i, p[i][j], print) + " -> "+ IntToStr(G->vexs[j].data);
 	}
 }
 
@@ -115,8 +114,7 @@ void ShortestPath_FLOYD(MGraph *G, void (*print)(String))
 			if (d[i][j] >= 10000||i == j) continue;
 
 			print ("Length " + IntToStr(i) + " -->" + IntToStr(j) + " is: " + IntToStr(d[i][j]) + "\n");
-			print ("Path:");
-			Print_Path(G, P, i, j, print);
+			print ("Path:" + Get_Path(G, P, i, j, print));
 			//printf("\n\n");
 		}
 	}
