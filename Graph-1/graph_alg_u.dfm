@@ -42,23 +42,23 @@ object FormGraphAlgorithm: TFormGraphAlgorithm
     Height = 53
     Caption = #26500#22270#25805#20316#38754#26495
     TabOrder = 1
-    object CreateNodeBt: TButton
+    object CreateNodeBtn: TButton
       Left = 3
       Top = 20
       Width = 74
       Height = 25
       Caption = #21019#24314#33410#28857
       TabOrder = 0
-      OnClick = CreateNodeBtClick
+      OnClick = CreateNodeBtnClick
     end
-    object ResetBt: TButton
+    object ResetBtn: TButton
       Left = 83
       Top = 20
       Width = 75
       Height = 25
       Caption = #37325#32622#30011#26495
       TabOrder = 1
-      OnClick = ResetBtClick
+      OnClick = ResetBtnClick
     end
   end
   object GraphType: TRadioGroup
@@ -69,7 +69,7 @@ object FormGraphAlgorithm: TFormGraphAlgorithm
     Caption = #36873#25321#22270#31867#22411
     TabOrder = 2
   end
-  object DirectBt: TRadioButton
+  object DirectBtn: TRadioButton
     Left = 6
     Top = 30
     Width = 57
@@ -78,9 +78,9 @@ object FormGraphAlgorithm: TFormGraphAlgorithm
     Checked = True
     TabOrder = 3
     TabStop = True
-    OnClick = DirectBtClick
+    OnClick = DirectBtnClick
   end
-  object NoDirectBt: TRadioButton
+  object NoDirectBtn: TRadioButton
     Left = 63
     Top = 32
     Width = 58
@@ -89,7 +89,7 @@ object FormGraphAlgorithm: TFormGraphAlgorithm
     Ctl3D = True
     ParentCtl3D = False
     TabOrder = 4
-    OnClick = NoDirectBtClick
+    OnClick = NoDirectBtnClick
   end
   object PageControl: TPageControl
     Left = 3
@@ -116,7 +116,7 @@ object FormGraphAlgorithm: TFormGraphAlgorithm
         Color = clSilver
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
-        Font.Height = -16
+        Font.Height = -13
         Font.Name = 'MS Sans Serif'
         Font.Style = []
         ParentFont = False
@@ -170,14 +170,14 @@ object FormGraphAlgorithm: TFormGraphAlgorithm
           Caption = #28857#23545#28857#26368#30701#36335#24452
           TabOrder = 4
         end
-        object Button6: TButton
+        object FloydBtn: TButton
           Left = 22
           Top = 239
           Width = 104
           Height = 26
           Caption = #20840#23616#26368#30701#36335#24452
           TabOrder = 5
-          OnClick = Button6Click
+          OnClick = FloydBtnClick
         end
         object Button7: TButton
           Left = 22
@@ -187,23 +187,23 @@ object FormGraphAlgorithm: TFormGraphAlgorithm
           Caption = #22270#25628#32034'(DFS)'
           TabOrder = 6
         end
-        object ShortestPathBt: TButton
+        object ShortestPathBtn: TButton
           Left = 22
-          Top = 20
+          Top = 27
           Width = 104
           Height = 25
           Caption = #26368#20339#36335#24452
           TabOrder = 7
-          OnClick = ShortestPathBtClick
+          OnClick = ShortestPathBtnClick
         end
-        object Button8: TButton
+        object DijBtn: TButton
           Left = 22
           Top = 271
           Width = 104
           Height = 26
           Caption = #20840#23616#26368#30701#36335#24452
           TabOrder = 8
-          OnClick = Button8Click
+          OnClick = DijBtnClick
         end
       end
     end
