@@ -140,6 +140,9 @@
             <BuildOrder>5</BuildOrder>
             <BuildOrder>1</BuildOrder>
         </ResFiles>
+        <None Include="graph.h">
+            <BuildOrder>5</BuildOrder>
+        </None>
         <CppCompile Include="graph_alg_u.cpp">
             <BuildOrder>8</BuildOrder>
             <Form>FormGraphAlgorithm</Form>
