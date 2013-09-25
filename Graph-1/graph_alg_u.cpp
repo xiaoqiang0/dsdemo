@@ -325,7 +325,11 @@ void __fastcall TFormGraphAlgorithm::NoDirectBtClick(TObject * Sender)
 void __fastcall TFormGraphAlgorithm::ResetBtClick(TObject * Sender)
 {
     int i;
-
+//    TColor original_color =  img->Canvas->Brush->Color;
+//    img->Canvas->Brush->Color = clWhite;
+//    img->Canvas->Rectangle(0, 0, img->Width, img->Height);
+//    img->Canvas->Brush->Color =  original_color;
+//    img->Repaint();
     for (i = 0; i < img->Width; i++)
         for (j = 0; j < img->Height; j++)
             img->Canvas->Pixels[i][j] = clWhite;    //将范围内的画板变白

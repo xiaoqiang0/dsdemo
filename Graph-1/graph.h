@@ -15,6 +15,7 @@ typedef struct {
 	struct VertexType	vexs[MAX_VERTEX_NUM];
 	int arcs[MAX_VERTEX_NUM][MAX_VERTEX_NUM];
 	int vexnum, arcnum;
+        void (*print)();
 
 }MGraph;
 
