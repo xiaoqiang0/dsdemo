@@ -156,7 +156,7 @@ object FormGraphAlgorithm: TFormGraphAlgorithm
         end
         object Button4: TButton
           Left = 22
-          Top = 288
+          Top = 303
           Width = 104
           Height = 26
           Caption = #20851#38190#36335#24452
@@ -195,6 +195,15 @@ object FormGraphAlgorithm: TFormGraphAlgorithm
           Caption = #26368#20339#36335#24452
           TabOrder = 7
           OnClick = ShortestPathBtClick
+        end
+        object Button8: TButton
+          Left = 22
+          Top = 271
+          Width = 104
+          Height = 26
+          Caption = #20840#23616#26368#30701#36335#24452
+          TabOrder = 8
+          OnClick = Button8Click
         end
       end
     end

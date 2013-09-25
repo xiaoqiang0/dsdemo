@@ -115,8 +115,8 @@ void ShortestPath_FLOYD(MGraph *G, void (*print)(String))
 
             if (d[i][j] >= 10000||i == j) continue;
 
-            print ("Length " + IntToStr(i) + " -->" + IntToStr(j) + " is: " + IntToStr(d[i][j]) + "\n");
-            print ("Path:" + Get_Path(G, P, i, j, print));
+            print ("节点" + IntToStr(i) + " 到节点" + IntToStr(j) + " 的路径长度是: " + IntToStr(d[i][j]) + "\n");
+            print ("详细路径:" + Get_Path(G, P, i, j, print));
             //printf("\n\n");
         }
     }
@@ -148,7 +148,7 @@ void ShortestPath_DIJ(MGraph * G, int v0)
         memset(P[i], 0, 8);
         len[i] = 0;
         if (D[i] < MAX)
-            P[i][len[i]++] = G->vexs[i].data;
+            P[i][len[i]++] = G->vexs[i].data + '0';
         final[i] = 0;
     }
 
@@ -156,20 +156,24 @@ void ShortestPath_DIJ(MGraph * G, int v0)
     final[v0] = 1;
     for (i = 1 ;i < n; i++){
         int min = MAX;
-        int w,v;
+        int w,v = -1;
         for (w = 0; w < n; w++)
             if (!final[w])
                 if (D[w] < min){
                     v = w;
                     min = D[w];
                 }
+
+        if (v == -1)
+            continue;
+
         final[v] = 1;
         for (w = 0; w < n; w ++){
             if (!final[w]&&(min + G->arcs[v][w] < D[w])){
                 D[w] = min + G->arcs[v][w];
                 memcpy(P[w],P[v],len[v]);
                 len[w] = len[v];
-                P[w][len[w]++] = G->vexs[w].data;
+                P[w][len[w]++] = G->vexs[w].data + '0';
             }
         }
 
@@ -178,10 +182,8 @@ void ShortestPath_DIJ(MGraph * G, int v0)
     for (i = 0; i < n; i++){
         if (D[i] >= MAX || i == v0) continue;
 
-        printf ("Length %d-->%d is %d:\n",v0, i, D[i]);
-        printf ("Path:\t");
-        printf("%c%s\n",G->vexs[v0].data,P[i]);
-        printf("\n");
+        G->print("节点" + IntToStr(v0) + "到节点" + IntToStr(i) + " 的路径长度是:" + IntToStr(D[i]));
+        G->print("详细路径: " + IntToStr(G->vexs[v0].data) + String(P[i]));
     }
 
     /*----------------------------------------------*/

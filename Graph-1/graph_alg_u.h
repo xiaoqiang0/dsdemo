@@ -35,6 +35,7 @@ class TFormGraphAlgorithm : public TForm
         TButton *Button5;
         TButton *Button6;
         TButton *Button7;
+    TButton *Button8;
         void __fastcall my_print (String info);
         void __fastcall CreateNodeBtClick(TObject *Sender);   //生成顶点按钮点击函数
 
@@ -50,6 +51,7 @@ class TFormGraphAlgorithm : public TForm
         void __fastcall ResetBtClick(TObject *Sender);
     void __fastcall PageControlChange(TObject *Sender);
     void __fastcall Button6Click(TObject *Sender);
+    void __fastcall Button8Click(TObject *Sender);
 
 
 

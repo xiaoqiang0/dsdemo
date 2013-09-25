@@ -30,8 +30,37 @@ int node_R = 20;
 MGraph MG;      //¾ØÕó´æ´¢
 ALGraph ALG;    //ÁÙ½ÓÁ´±í´æ´¢
 
-
 TMemo *memo_local;
+
+//---------------------------------------------------------------------------
+int searchPoint(int X, int Y)                   //ËÑË÷¸ø¶¨×ø±êµãÂäÔÚÍ¼ÖÐÄÄ¸öµã
+{
+    for (i = 0; i < n; i++) {
+        int d = sqrt((X - x[i]) * (X - x[i]) + (Y - y[i]) * (Y - y[i]));
+        if (d <= node_R * 1.3) {
+            return i;
+        }
+    }
+    return -1;
+}
+
+int overLap(int X, int Y)                       //ËÑË÷¸ø¶¨×ø±êµã»á¸úÄÄ¸öµêÖØºÏ
+{
+    for (i = 0; i < n; i++) {
+        int d = sqrt((X - x[i]) * (X - x[i]) + (Y - y[i]) * (Y - y[i]));
+        if (d <= node_R * 3.5) {
+            return i;
+        }
+    }
+    return -1;
+}
+
+void showInMemo(String s)
+{
+      memo_local->Lines->Append(s);
+}
+
+
 //---------------------------------------------------------------------------
 __fastcall TFormGraphAlgorithm::TFormGraphAlgorithm(TComponent * Owner):TForm(Owner)
 {
@@ -42,6 +71,8 @@ void __fastcall TFormGraphAlgorithm::FormCreate(TObject * Sender)    //¶¥µã¼ä³õÊ
 {
     MG.vexnum = 0;
     MG.arcnum = 0;
+    memo_local = memo;
+    MG.print = showInMemo;
     for (i = 0; i < MAX_VERTEX_NUM; i++)
         for (j = 0; j < MAX_VERTEX_NUM; j++) {
             graph[i][j] = 9999;
@@ -72,28 +103,6 @@ void __fastcall TFormGraphAlgorithm::CreateNodeBtClick(TObject * Sender)    //Éú
 }
 
 
-//---------------------------------------------------------------------------
-int searchPoint(int X, int Y)                   //ËÑË÷¸ø¶¨×ø±êµãÂäÔÚÍ¼ÖÐÄÄ¸öµã
-{
-    for (i = 0; i < n; i++) {
-        int d = sqrt((X - x[i]) * (X - x[i]) + (Y - y[i]) * (Y - y[i]));
-        if (d <= node_R * 1.3) {
-            return i;
-        }
-    }
-    return -1;
-}
-
-int overLap(int X, int Y)                       //ËÑË÷¸ø¶¨×ø±êµã»á¸úÄÄ¸öµêÖØºÏ
-{
-    for (i = 0; i < n; i++) {
-        int d = sqrt((X - x[i]) * (X - x[i]) + (Y - y[i]) * (Y - y[i]));
-        if (d <= node_R * 3.5) {
-            return i;
-        }
-    }
-    return -1;
-}
 
 void __fastcall TFormGraphAlgorithm::imgMouseDown(TObject * Sender, //Êó±ê°´ÏÂÊÂ¼þ,¼ÇÂ¼ÆðÊ¼µãµÄÎ»ÖÃ
         TMouseButton Button,
@@ -352,16 +361,20 @@ void __fastcall TFormGraphAlgorithm::PageControlChange(TObject *Sender)
      else
          NoDirectBt->Checked = true;
 }
-//---------------------------------------------------------------------------
 
-void p(String s)
-{
-      memo_local->Lines->Append(s);
-}
+//---------------------------------------------------------------------------
 void __fastcall TFormGraphAlgorithm::Button6Click(TObject *Sender)
 {
-     memo_local = memo;
-     ShortestPath_FLOYD(&MG, &p);
+     memo->Lines->Add("Floyd ×î¶ÌÂ·¾¶Çó½â½á¹ûÈçÏÂ");
+     ShortestPath_FLOYD(&MG, &showInMemo);
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TFormGraphAlgorithm::Button8Click(TObject *Sender)
+{
+   memo->Lines->Add("Dijkstra ×î¶ÌÂ·¾¶Çó½â½á¹ûÈçÏÂ");
+   for (i = 0; i < MG.vexnum; i++)
+       ShortestPath_DIJ(&MG, i);
 }
 //---------------------------------------------------------------------------
 

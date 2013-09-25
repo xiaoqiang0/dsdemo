@@ -1,42 +1,42 @@
-﻿#ifndef	_GRAPH_H
+#ifndef  _GRAPH_H
 #define _GRAPH_H
 
 #include <stdio.h>
 #include <Vcl.ComCtrls.hpp>
-#define	MAX_VERTEX_NUM 8
+#define  MAX_VERTEX_NUM 8
 
 
 struct VertexType
 {
-	char data;
+    char data;
 };
 
 typedef struct {
-	struct VertexType	vexs[MAX_VERTEX_NUM];
-	int arcs[MAX_VERTEX_NUM][MAX_VERTEX_NUM];
-	int vexnum, arcnum;
-        void (*print)();
+    struct VertexType  vexs[MAX_VERTEX_NUM];
+    int arcs[MAX_VERTEX_NUM][MAX_VERTEX_NUM];
+    int vexnum, arcnum;
+    void (*print)(String);
 
 }MGraph;
 
 /*-------------------------------------------------------*/
 typedef struct ArcNode
 {
-	int adjvex;
-	struct ArcNode *next;
-	char *ArcInfo;
+    int adjvex;
+    struct ArcNode *next;
+    char *ArcInfo;
 }ArcNode;
 
 typedef struct Vnode
 {
-	struct VertexType	data;
-	ArcNode *firstarc;
+    struct VertexType  data;
+    ArcNode *firstarc;
 }Vnode, AdjList[MAX_VERTEX_NUM];
 
 typedef struct 
 {
-	AdjList vertics;
-	int vexnum, arcnum;
+    AdjList vertics;
+    int vexnum, arcnum;
 }ALGraph;
 
 int CreateALG(ALGraph *G, FILE *fp);
