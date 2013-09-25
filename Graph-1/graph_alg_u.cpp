@@ -352,7 +352,7 @@ void __fastcall TFormGraphAlgorithm::PageControlChange(TObject *Sender)
 
 void p(String s)
 {
-      memo_local->Lines->Append(s)
+      memo_local->Lines->Append(s);
 }
 void __fastcall TFormGraphAlgorithm::Button6Click(TObject *Sender)
 {
