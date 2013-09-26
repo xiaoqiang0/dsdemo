@@ -37,7 +37,7 @@ int CreateMG(MGraph *G, FILE *fp)
 
 int MGraph_Inc_Node (MGraph *G)
 {
-    G->vexs[G->vexnum].data = G->vexnum;
+    G->vexs[G->vexnum].data = G->vexnum + 'A';
     G->vexnum += 1;
 }
 
@@ -49,13 +49,13 @@ int MGraph_Add_Arc (MGraph *G, int i, int j, int d)
 String Get_Path(MGraph *G,int p[MAX_VERTEX_NUM][MAX_VERTEX_NUM],int i, int j)
 {
     if (i == j){
-        return IntToStr(G->vexs[i].data);
+        return G->vexs[i].data;
 
     }
     if (p[i][j] == -1)
         return ("No Path from" + IntToStr(G->vexs[i].data) + " to " + IntToStr(G->vexs[j].data));
     else{
-        return Get_Path(G, p, i, p[i][j]) + " -> "+ IntToStr(G->vexs[j].data);
+        return Get_Path(G, p, i, p[i][j]) + "->" + G->vexs[j].data;
     }
 }
 
@@ -116,7 +116,7 @@ void ShortestPath_FLOYD(MGraph *G)
             if (d[i][j] >= 10000||i == j) continue;
 
             G->print ("节点" + IntToStr(i) + " 到节点" + IntToStr(j) + " 的路径长度是: " + IntToStr(d[i][j]) + "\n");
-            G->print ("详细路径:" + Get_Path(G, P, i, j, print));
+            G->print ("详细路径:" + Get_Path(G, P, i, j));
         }
     }
     printf("\n");
@@ -126,7 +126,7 @@ void ShortestPath_FLOYD(MGraph *G)
 
 void ShortestPath_DIJ(MGraph * G, int v0)
 {
-    int i, n = G->vexnum;
+    int i, j, n = G->vexnum;
     int *len;
     char **P;
     int *D ;
@@ -147,7 +147,7 @@ void ShortestPath_DIJ(MGraph * G, int v0)
         memset(P[i], 0, 8);
         len[i] = 0;
         if (D[i] < MAX)
-            P[i][len[i]++] = G->vexs[i].data + '0';
+            P[i][len[i]++] = G->vexs[i].data;
         final[i] = 0;
     }
 
@@ -172,17 +172,22 @@ void ShortestPath_DIJ(MGraph * G, int v0)
                 D[w] = min + G->arcs[v][w];
                 memcpy(P[w],P[v],len[v]);
                 len[w] = len[v];
-                P[w][len[w]++] = G->vexs[w].data + '0';
+                P[w][len[w]++] = G->vexs[w].data;
             }
         }
 
     }
 
     for (i = 0; i < n; i++){
-        if (D[i] >= MAX || i == v0) continue;
+        String fullpath;
 
+        if (D[i] >= MAX || i == v0) continue;
         G->print("节点" + IntToStr(v0) + "到节点" + IntToStr(i) + " 的路径长度是:" + IntToStr(D[i]));
-        G->print("详细路径: " + IntToStr(G->vexs[v0].data) + String(P[i]));
+        fullpath = G->vexs[v0].data;
+        for (j = 0; j < len[i]; j++) {
+            fullpath = fullpath + "->" + P[i][j];
+        }
+        G->print("详细路径: " + fullpath);
     }
 
     /*----------------------------------------------*/
@@ -195,6 +200,7 @@ void ShortestPath_DIJ(MGraph * G, int v0)
     /*----------------------------------------------*/
     return ;
 }
+
 /*
    int main()
    {

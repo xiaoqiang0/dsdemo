@@ -111,6 +111,7 @@ void __fastcall TFormGraphAlgorithm::imgMouseDown(TObject * Sender, //鼠标按下事
     if (CreateNodeBtn->Enabled == true && input_node == true) {
         if (n < MAX_VERTEX_NUM) {    //限制最多输入MAX_VERTEX_NUM个节点
             int tmp = overLap(X, Y);
+            char data = 'A' + n;
             if (tmp != -1) {
                 ShowMessage("与节点:" + IntToStr(tmp) + "相邻太近");
                 return;
@@ -130,7 +131,7 @@ void __fastcall TFormGraphAlgorithm::imgMouseDown(TObject * Sender, //鼠标按下事
             sp[n]->Shape = stEllipse;    //控件的类型是椭圆，C++builder 中没有圆只有椭圆，高度宽度相等即为圆
             lb[n] = new TLabel(pnl);    //建立新结点标签
             lb[n]->Parent = pnl;    //设置新结点控件属性
-            lb[n]->Caption = n;    //节点的显示内容即节点的下标
+            lb[n]->Caption = data;    //节点的显示内容即节点的下标
             lb[n]->Transparent = true;    //标签透明
             lb[n]->Left = X - 5;    //设置标签的位置
             lb[n]->Top = Y - 5;
@@ -368,6 +369,8 @@ void __fastcall TFormGraphAlgorithm::PageControlChange(TObject *Sender)
 //---------------------------------------------------------------------------
 void __fastcall TFormGraphAlgorithm::FloydBtnClick(TObject *Sender)
 {
+
+     memo->Lines->Add("===================================");
      memo->Lines->Add("Floyd 最短路径求解结果如下");
      ShortestPath_FLOYD(&MG);
 }
@@ -375,6 +378,7 @@ void __fastcall TFormGraphAlgorithm::FloydBtnClick(TObject *Sender)
 
 void __fastcall TFormGraphAlgorithm::DijBtnClick(TObject *Sender)
 {
+   memo->Lines->Add("===================================");
    memo->Lines->Add("Dijkstra 最短路径求解结果如下");
    for (i = 0; i < MG.vexnum; i++)
        ShortestPath_DIJ(&MG, i);
