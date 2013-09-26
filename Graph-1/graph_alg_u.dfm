@@ -149,7 +149,7 @@ object FormGraphAlgorithm: TFormGraphAlgorithm
         end
         object Button3: TButton
           Left = 22
-          Top = 359
+          Top = 373
           Width = 104
           Height = 26
           Caption = #25299#25169#25490#24207
@@ -157,7 +157,7 @@ object FormGraphAlgorithm: TFormGraphAlgorithm
         end
         object Button4: TButton
           Left = 22
-          Top = 321
+          Top = 329
           Width = 104
           Height = 26
           Caption = #20851#38190#36335#24452
@@ -176,7 +176,7 @@ object FormGraphAlgorithm: TFormGraphAlgorithm
           Top = 239
           Width = 104
           Height = 26
-          Caption = #20840#23616#26368#30701#36335#24452
+          Caption = #26368#30701#36335#24452'Floyd'
           TabOrder = 5
           OnClick = FloydBtnClick
         end
@@ -199,10 +199,10 @@ object FormGraphAlgorithm: TFormGraphAlgorithm
         end
         object DijBtn: TButton
           Left = 22
-          Top = 279
+          Top = 287
           Width = 104
           Height = 26
-          Caption = #20840#23616#26368#30701#36335#24452
+          Caption = #26368#30701#36335#24452'Dijkstra'
           TabOrder = 8
           OnClick = DijBtnClick
         end

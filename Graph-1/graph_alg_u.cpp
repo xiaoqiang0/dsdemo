@@ -354,6 +354,7 @@ void __fastcall TFormGraphAlgorithm::ResetBtnClick(TObject * Sender)
 
     n = 0;
     CreateNodeBtn->Enabled = true;
+    CreateNodeBtn->Caption = " ‰»ÎΩ⁄µ„";
 }
 
 //---------------------------------------------------------------------------
