@@ -46,7 +46,7 @@ int MGraph_Add_Arc (MGraph *G, int i, int j, int d)
     G->arcs[i][j] = d;
 }
 
-String Get_Path(MGraph *G,int p[MAX_VERTEX_NUM][MAX_VERTEX_NUM],int i, int j, void (*print)(String))
+String Get_Path(MGraph *G,int p[MAX_VERTEX_NUM][MAX_VERTEX_NUM],int i, int j)
 {
     if (i == j){
         return IntToStr(G->vexs[i].data);
@@ -55,11 +55,11 @@ String Get_Path(MGraph *G,int p[MAX_VERTEX_NUM][MAX_VERTEX_NUM],int i, int j, vo
     if (p[i][j] == -1)
         return ("No Path from" + IntToStr(G->vexs[i].data) + " to " + IntToStr(G->vexs[j].data));
     else{
-        return Get_Path(G, p, i, p[i][j], print) + " -> "+ IntToStr(G->vexs[j].data);
+        return Get_Path(G, p, i, p[i][j]) + " -> "+ IntToStr(G->vexs[j].data);
     }
 }
 
-void ShortestPath_FLOYD(MGraph *G, void (*print)(String))
+void ShortestPath_FLOYD(MGraph *G)
 {
     int d[MAX_VERTEX_NUM][MAX_VERTEX_NUM];
     int P[MAX_VERTEX_NUM][MAX_VERTEX_NUM];
@@ -115,9 +115,8 @@ void ShortestPath_FLOYD(MGraph *G, void (*print)(String))
 
             if (d[i][j] >= 10000||i == j) continue;
 
-            print ("节点" + IntToStr(i) + " 到节点" + IntToStr(j) + " 的路径长度是: " + IntToStr(d[i][j]) + "\n");
-            print ("详细路径:" + Get_Path(G, P, i, j, print));
-            //printf("\n\n");
+            G->print ("节点" + IntToStr(i) + " 到节点" + IntToStr(j) + " 的路径长度是: " + IntToStr(d[i][j]) + "\n");
+            G->print ("详细路径:" + Get_Path(G, P, i, j, print));
         }
     }
     printf("\n");

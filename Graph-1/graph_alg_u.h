@@ -52,6 +52,7 @@ class TFormGraphAlgorithm : public TForm
     void __fastcall PageControlChange(TObject *Sender);
     void __fastcall FloydBtnClick(TObject *Sender);
     void __fastcall DijBtnClick(TObject *Sender);
+    void __fastcall Button1Click(TObject *Sender);
 
 
 

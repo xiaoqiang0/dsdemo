@@ -110,9 +110,9 @@ object FormGraphAlgorithm: TFormGraphAlgorithm
       Caption = #26377#21521#22270
       object memo: TMemo
         Left = 158
-        Top = 16
+        Top = 1
         Width = 303
-        Height = 366
+        Height = 402
         Color = clSilver
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
@@ -125,18 +125,19 @@ object FormGraphAlgorithm: TFormGraphAlgorithm
       end
       object GroupBox2: TGroupBox
         Left = 3
-        Top = 16
+        Top = 0
         Width = 142
-        Height = 366
+        Height = 402
         Caption = #36873#25321#26377#21521#22270#31639#27861
         TabOrder = 1
         object Button1: TButton
           Left = 22
-          Top = 58
+          Top = 63
           Width = 104
           Height = 26
           Caption = #22270#25628#32034'(BFS)'
           TabOrder = 0
+          OnClick = Button1Click
         end
         object Button2: TButton
           Left = 22
@@ -148,7 +149,7 @@ object FormGraphAlgorithm: TFormGraphAlgorithm
         end
         object Button3: TButton
           Left = 22
-          Top = 335
+          Top = 359
           Width = 104
           Height = 26
           Caption = #25299#25169#25490#24207
@@ -156,7 +157,7 @@ object FormGraphAlgorithm: TFormGraphAlgorithm
         end
         object Button4: TButton
           Left = 22
-          Top = 303
+          Top = 321
           Width = 104
           Height = 26
           Caption = #20851#38190#36335#24452
@@ -198,7 +199,7 @@ object FormGraphAlgorithm: TFormGraphAlgorithm
         end
         object DijBtn: TButton
           Left = 22
-          Top = 271
+          Top = 279
           Width = 104
           Height = 26
           Caption = #20840#23616#26368#30701#36335#24452
@@ -210,10 +211,6 @@ object FormGraphAlgorithm: TFormGraphAlgorithm
     object TabSheetNoDirect: TTabSheet
       Caption = #26080#21521#22270
       ImageIndex = 1
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
     end
   end
 end

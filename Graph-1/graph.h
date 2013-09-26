@@ -53,8 +53,8 @@ void freeALGraph(ALGraph *G);
 int CreateMG(MGraph *G, FILE *fp);
 int MGraph_Inc_Node (MGraph *G);
 int MGraph_Add_Arc (MGraph *G, int i, int j, int d);
-String Get_Path(MGraph *G,int p[MAX_VERTEX_NUM][MAX_VERTEX_NUM],int i, int j, void (*print)(String));
-void ShortestPath_FLOYD(MGraph *G, void (*print)(String));
+String Get_Path(MGraph *G,int p[MAX_VERTEX_NUM][MAX_VERTEX_NUM],int i, int j);
+void ShortestPath_FLOYD(MGraph *G);
 void ShortestPath_DIJ(MGraph * G, int v0);
 
 #endif

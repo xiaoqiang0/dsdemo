@@ -369,7 +369,7 @@ void __fastcall TFormGraphAlgorithm::PageControlChange(TObject *Sender)
 void __fastcall TFormGraphAlgorithm::FloydBtnClick(TObject *Sender)
 {
      memo->Lines->Add("Floyd 最短路径求解结果如下");
-     ShortestPath_FLOYD(&MG, &showInMemo);
+     ShortestPath_FLOYD(&MG);
 }
 //---------------------------------------------------------------------------
 
@@ -378,6 +378,13 @@ void __fastcall TFormGraphAlgorithm::DijBtnClick(TObject *Sender)
    memo->Lines->Add("Dijkstra 最短路径求解结果如下");
    for (i = 0; i < MG.vexnum; i++)
        ShortestPath_DIJ(&MG, i);
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TFormGraphAlgorithm::Button1Click(TObject *Sender)
+{
+     char c = 'A';
+     memo->Lines->Add(c);
 }
 //---------------------------------------------------------------------------
 
