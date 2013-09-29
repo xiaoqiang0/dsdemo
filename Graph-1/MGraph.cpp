@@ -123,7 +123,7 @@ void ShortestPath_FLOYD(MGraph *G)
             output << "节点" <<  i << " 到节点" << j << " 的路径长度是: " << d[i][j] << "\r\n";
             output << "详细路径:" ;
             Get_Path(G, P, i, j, output);
-            G->print (output.str().c_str());
+            G->print (output.str());
         }
     }
     printf("\n");
@@ -194,7 +194,7 @@ void ShortestPath_DIJ(MGraph * G, int v0)
         for (j = 0; j < len[i]; j++) {
             output << "->" << P[i][j];
         }
-        G->print(output.str().c_str());
+        G->print(output.str());
     }
 
     /*----------------------------------------------*/

@@ -55,9 +55,9 @@ int overLap(int X, int Y)                       //搜索给定坐标点会跟哪个店重合
     return -1;
 }
 
-void showInMemo(String s)
+void showInMemo(string s)
 {
-      memo_local->Lines->Append(s);
+      memo_local->Lines->Append(s.c_str());
 }
 
 

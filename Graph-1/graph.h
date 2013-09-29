@@ -1,10 +1,9 @@
-#ifndef  _GRAPH_H
+﻿#ifndef  _GRAPH_H
 #define _GRAPH_H
 
 #include <stdio.h>
 #include <iostream>
 #include <sstream>
-#include <Vcl.ComCtrls.hpp>
 #define  MAX_VERTEX_NUM 8
 
 using std::endl;
@@ -20,7 +19,7 @@ typedef struct {
     struct VertexType  vexs[MAX_VERTEX_NUM];
     int arcs[MAX_VERTEX_NUM][MAX_VERTEX_NUM];
     int vexnum, arcnum;
-    void (*print)(String);
+    void (*print)(string);
 
 }MGraph;
 
