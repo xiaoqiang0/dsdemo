@@ -6,6 +6,7 @@
 #include <sstream>
 #define  MAX_VERTEX_NUM 8
 
+using std::cout;
 using std::endl;
 using std::string;
 using std::stringstream;
@@ -41,6 +42,7 @@ typedef struct
 {
     AdjList vertics;
     int vexnum, arcnum;
+    void (*print)(string);
 }ALGraph;
 
 int CreateALG(ALGraph *G, FILE *fp);
@@ -61,4 +63,5 @@ int Get_Path(MGraph *G,int p[MAX_VERTEX_NUM][MAX_VERTEX_NUM],int i, int j, strin
 void ShortestPath_FLOYD(MGraph *G);
 void ShortestPath_DIJ(MGraph * G, int v0);
 
+extern int visit[MAX_VERTEX_NUM];
 #endif

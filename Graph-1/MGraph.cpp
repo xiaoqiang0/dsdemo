@@ -123,7 +123,10 @@ void ShortestPath_FLOYD(MGraph *G)
             output << "节点" <<  i << " 到节点" << j << " 的路径长度是: " << d[i][j] << "\r\n";
             output << "详细路径:" ;
             Get_Path(G, P, i, j, output);
-            G->print (output.str());
+            if (G->print)
+                G->print (output.str());
+            else
+                cout << output.str() << endl;
         }
     }
     printf("\n");
@@ -194,7 +197,10 @@ void ShortestPath_DIJ(MGraph * G, int v0)
         for (j = 0; j < len[i]; j++) {
             output << "->" << P[i][j];
         }
-        G->print(output.str());
+        if (G->print)
+            G->print (output.str());
+        else
+            cout << output.str() <<endl;
     }
 
     /*----------------------------------------------*/
@@ -208,18 +214,3 @@ void ShortestPath_DIJ(MGraph * G, int v0)
     return ;
 }
 
-/*
-   int main()
-   {
-   int i;
-   CreateMG(&G,stdin);
-
-   printf ("--------Compute Shortest Path using Floyd algorithm:-----------\n");
-   ShortestPath_FLOYD(&G);
-
-   printf ("--------Compute Shortest Path using Dijkstra algorithm:---------\n");
-   for (i = 0; i < G.vexnum; i++)
-   ShortestPath_DIJ(&G, i);
-
-   return 0;
-   }*/
