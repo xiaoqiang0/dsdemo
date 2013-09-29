@@ -46,16 +46,20 @@ int MGraph_Add_Arc (MGraph *G, int i, int j, int d)
     G->arcs[i][j] = d;
 }
 
-String Get_Path(MGraph *G,int p[MAX_VERTEX_NUM][MAX_VERTEX_NUM],int i, int j)
+int Get_Path(MGraph *G,int p[MAX_VERTEX_NUM][MAX_VERTEX_NUM],int i, int j, stringstream &path)
 {
     if (i == j){
-        return G->vexs[i].data;
+        path << G->vexs[i].data;
+        return 0;
 
     }
-    if (p[i][j] == -1)
-        return ("No Path from" + IntToStr(G->vexs[i].data) + " to " + IntToStr(G->vexs[j].data));
-    else{
-        return Get_Path(G, p, i, p[i][j]) + "->" + G->vexs[j].data;
+    if (p[i][j] == -1){
+        path <<"No Path from" << G->vexs[i].data << " to " << G->vexs[j].data;
+        return -1;
+    }else{
+        Get_Path(G, p, i, p[i][j], path);
+        path << "->" << G->vexs[j].data;
+        return 0;
     }
 }
 
@@ -112,11 +116,14 @@ void ShortestPath_FLOYD(MGraph *G)
 
     for (i = 0; i < n; i++){
         for (j = 0; j < n; j++){
+            stringstream output;
 
             if (d[i][j] >= 10000||i == j) continue;
 
-            G->print ("节点" + IntToStr(i) + " 到节点" + IntToStr(j) + " 的路径长度是: " + IntToStr(d[i][j]) + "\n");
-            G->print ("详细路径:" + Get_Path(G, P, i, j));
+            output << "节点" <<  i << " 到节点" << j << " 的路径长度是: " << d[i][j] << "\r\n";
+            output << "详细路径:" ;
+            Get_Path(G, P, i, j, output);
+            G->print (output.str().c_str());
         }
     }
     printf("\n");
@@ -179,15 +186,15 @@ void ShortestPath_DIJ(MGraph * G, int v0)
     }
 
     for (i = 0; i < n; i++){
-        String fullpath;
-
+        stringstream output;
         if (D[i] >= MAX || i == v0) continue;
-        G->print("节点" + IntToStr(v0) + "到节点" + IntToStr(i) + " 的路径长度是:" + IntToStr(D[i]));
-        fullpath = G->vexs[v0].data;
+        
+        output << "节点" << v0 << "到节点" << i << " 的路径长度是:" << D[i] << "\r\n";
+        output << "详细路径: " << G->vexs[v0].data;
         for (j = 0; j < len[i]; j++) {
-            fullpath = fullpath + "->" + P[i][j];
+            output << "->" << P[i][j];
         }
-        G->print("详细路径: " + fullpath);
+        G->print(output.str().c_str());
     }
 
     /*----------------------------------------------*/
