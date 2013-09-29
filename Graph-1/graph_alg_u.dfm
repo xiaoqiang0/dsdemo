@@ -41,10 +41,10 @@ object FormGraphAlgorithm: TFormGraphAlgorithm
     Width = 169
     Height = 53
     Caption = #26500#22270#25805#20316#38754#26495
-    TabOrder = 1
+    TabOrder = 5
     object CreateNodeBtn: TButton
       Left = 3
-      Top = 20
+      Top = 25
       Width = 74
       Height = 25
       Caption = #21019#24314#33410#28857
@@ -67,7 +67,7 @@ object FormGraphAlgorithm: TFormGraphAlgorithm
     Width = 121
     Height = 53
     Caption = #36873#25321#22270#31867#22411
-    TabOrder = 2
+    TabOrder = 1
   end
   object DirectBtn: TRadioButton
     Left = 6
@@ -76,7 +76,7 @@ object FormGraphAlgorithm: TFormGraphAlgorithm
     Height = 21
     Caption = #26377#21521#22270
     Checked = True
-    TabOrder = 3
+    TabOrder = 2
     TabStop = True
     OnClick = DirectBtnClick
   end
@@ -88,7 +88,7 @@ object FormGraphAlgorithm: TFormGraphAlgorithm
     Caption = #26080#21521#22270
     Ctl3D = True
     ParentCtl3D = False
-    TabOrder = 4
+    TabOrder = 3
     OnClick = NoDirectBtnClick
   end
   object PageControl: TPageControl
@@ -103,14 +103,14 @@ object FormGraphAlgorithm: TFormGraphAlgorithm
     Font.Name = 'MS Sans Serif'
     Font.Style = []
     ParentFont = False
-    TabOrder = 5
+    TabOrder = 4
     TabWidth = 233
     OnChange = PageControlChange
     object TabSheetDirect: TTabSheet
       Caption = #26377#21521#22270
       object memo: TMemo
-        Left = 158
-        Top = 1
+        Left = 163
+        Top = 0
         Width = 303
         Height = 402
         Color = clSilver
@@ -132,7 +132,7 @@ object FormGraphAlgorithm: TFormGraphAlgorithm
         TabOrder = 1
         object Button1: TButton
           Left = 22
-          Top = 63
+          Top = 58
           Width = 104
           Height = 26
           Caption = #22270#25628#32034'(BFS)'
@@ -211,6 +211,8 @@ object FormGraphAlgorithm: TFormGraphAlgorithm
     object TabSheetNoDirect: TTabSheet
       Caption = #26080#21521#22270
       ImageIndex = 1
+      ExplicitLeft = 8
+      ExplicitTop = 35
     end
   end
 end

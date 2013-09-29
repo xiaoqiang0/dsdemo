@@ -98,7 +98,7 @@ void __fastcall TFormGraphAlgorithm::CreateNodeBtnClick(TObject * Sender)    //É
         input_node = false;
         pnl->Cursor = crArrow;
         img->Visible = true;
-        CreateNodeBtn->Enabled = false;
+        //CreateNodeBtn->Enabled = false;
     }
 }
 
