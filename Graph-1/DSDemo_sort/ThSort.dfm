@@ -3,7 +3,7 @@ object ThreadSortForm: TThreadSortForm
   Top = 129
   BorderStyle = bsDialog
   Caption = #32447#31243#25490#24207#28436#31034
-  ClientHeight = 471
+  ClientHeight = 502
   ClientWidth = 1207
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -82,9 +82,10 @@ object ThreadSortForm: TThreadSortForm
   object Label4: TLabel
     Left = 8
     Top = 421
-    Width = 66
-    Height = 13
-    Caption = #25490#24207#25968#25454
+    Width = 90
+    Height = 16
+    AutoSize = False
+    Caption = #25490#24207#25968#25454#22823#23567':'
   end
   object StartBtn: TButton
     Left = 159
@@ -130,21 +131,6 @@ object ThreadSortForm: TThreadSortForm
         CalcByValue = False
       end
     end
-    object Series2: TFastLineSeries
-      Marks.Visible = False
-      SeriesColor = clBlue
-      LinePen.Color = clBlue
-      LinePen.SmallSpace = 1
-      XValues.Name = 'X'
-      XValues.Order = loAscending
-      YValues.Name = 'Y'
-      YValues.Order = loNone
-      object TeeFunction1: TCustomTeeFunction
-        CalcByValue = False
-        Period = 1.000000000000000000
-        NumPoints = 100
-      end
-    end
     object Series3: TFastLineSeries
       Marks.Visible = False
       SeriesColor = clRed
@@ -157,6 +143,15 @@ object ThreadSortForm: TThreadSortForm
         CalcByValue = False
       end
     end
+    object Series2: TFastLineSeries
+      Marks.Visible = False
+      SeriesColor = clBlue
+      LinePen.Color = clBlue
+      XValues.Name = 'X'
+      XValues.Order = loAscending
+      YValues.Name = 'Y'
+      YValues.Order = loNone
+    end
   end
   object Button1: TButton
     Left = 262
@@ -168,12 +163,13 @@ object ThreadSortForm: TThreadSortForm
     OnClick = Button1Click
   end
   object ComboBox1: TComboBox
-    Left = 80
+    Left = 104
     Top = 418
     Width = 49
     Height = 21
     TabOrder = 3
     Text = '256'
+    OnChange = ComboBox1Change
     Items.Strings = (
       '64'
       '128'

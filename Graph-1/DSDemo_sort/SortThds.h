@@ -78,6 +78,7 @@ public:
 
 extern PACKAGE void __fastcall PaintLine(TPaintBox *Box, int I, int Len);
 extern PACKAGE int ASize(TSortArray &A);
+extern int N;
 
 #endif
 

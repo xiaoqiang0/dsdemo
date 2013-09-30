@@ -42,20 +42,20 @@ __published:	// IDE-managed Components
 	TLabel *Label3;
     TChart *Chart1;
     TButton *Button1;
-    TFastLineSeries *Series2;
-    TCustomTeeFunction *TeeFunction1;
     TFastLineSeries *Series1;
     TAverageTeeFunction *TeeFunction2;
     TFastLineSeries *Series3;
     TAverageTeeFunction *TeeFunction3;
     TComboBox *ComboBox1;
     TLabel *Label4;
+    TFastLineSeries *Series2;
 	void __fastcall StartBtnClick(TObject *Sender);
 	void __fastcall BubbleSortBoxPaint(TObject *Sender);
 	void __fastcall SelectionSortBoxPaint(TObject *Sender);
 	void __fastcall QuickSortBoxPaint(TObject *Sender);
 	void __fastcall FormCreate(TObject *Sender);
     void __fastcall Button1Click(TObject *Sender);
+    void __fastcall ComboBox1Change(TObject *Sender);
 private: // User declarations
 	int ThreadsRunning;
 	void __fastcall RandomizeArrays();
@@ -67,6 +67,7 @@ public:  // User declarations
 
 //---------------------------------------------------------------------------
 extern PACKAGE   TThreadSortForm *ThreadSortForm;
+extern int N;
 //---------------------------------------------------------------------------
 
 #endif
