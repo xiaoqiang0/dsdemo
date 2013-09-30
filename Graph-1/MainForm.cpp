@@ -6,6 +6,8 @@
 #include "MainForm.h"
 #include "graph_alg_u.h"
 #include "graph_intro_u.h"
+#include "SortThds.h"
+#include "ThSort.h"
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 #pragma resource "*.dfm"
@@ -47,6 +49,12 @@ void __fastcall Tdsdemo_MainForm::FormResize(TObject *Sender)
      //Image
      main_StatusBar->Panels->Items[0]->Width = dsdemo_MainForm->Width - 200;
      main_StatusBar->Panels->Items[1]->Width = 200;
+}
+//---------------------------------------------------------------------------
+
+void __fastcall Tdsdemo_MainForm::N18Click(TObject *Sender)
+{
+ThreadSortForm->ShowModal();
 }
 //---------------------------------------------------------------------------
 

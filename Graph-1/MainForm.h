@@ -42,11 +42,17 @@ __published:	// IDE-managed Components
     TToolButton *ToolButton4;
     TImage *Image1;
     TImageList *ToolbarImageList;
+    TMenuItem *N15;
+    TMenuItem *N16;
+    TMenuItem *N17;
+    TMenuItem *N18;
+    TMenuItem *N19;
     void __fastcall N7Click(TObject *Sender);
     void __fastcall N2Click(TObject *Sender);
     void __fastcall date_TimerTimer(TObject *Sender);
     void __fastcall N6Click(TObject *Sender);
     void __fastcall FormResize(TObject *Sender);
+    void __fastcall N18Click(TObject *Sender);
 private:	// User declarations
 public:		// User declarations
     __fastcall Tdsdemo_MainForm(TComponent* Owner);

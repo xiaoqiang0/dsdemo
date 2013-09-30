@@ -36664,7 +36664,7 @@ object dsdemo_MainForm: Tdsdemo_MainForm
       F8B34F2BA75AAFDBAEB63DDC200939F9F776C7A62BA2B5B2D7618B10DCDADC6D
       5C2874D9923D7039EDF955AAB0BB462E0E3677DCFFD9000000}
     Stretch = True
-    ExplicitTop = 28
+    ExplicitTop = 16
   end
   object main_StatusBar: TStatusBar
     Left = 0
@@ -36678,7 +36678,6 @@ object dsdemo_MainForm: Tdsdemo_MainForm
       item
         Width = 100
       end>
-    ExplicitTop = 462
   end
   object ToolBar1: TToolBar
     Left = 0
@@ -36689,7 +36688,6 @@ object dsdemo_MainForm: Tdsdemo_MainForm
     Caption = 'ToolBar1'
     Images = ToolbarImageList
     TabOrder = 1
-    ExplicitTop = -6
     object ToolButton1: TToolButton
       Left = 0
       Top = 0
@@ -36718,8 +36716,8 @@ object dsdemo_MainForm: Tdsdemo_MainForm
     end
   end
   object MainMenu1: TMainMenu
-    Left = 8
-    Top = 32
+    Left = 16
+    Top = 96
     object N1: TMenuItem
       Caption = #25991#20214
       object N2: TMenuItem
@@ -36759,6 +36757,22 @@ object dsdemo_MainForm: Tdsdemo_MainForm
         OnClick = N7Click
       end
     end
+    object N15: TMenuItem
+      Caption = #25490#24207
+      object N17: TMenuItem
+        Caption = #25490#24207#20171#32461
+      end
+      object N18: TMenuItem
+        Caption = #25490#24207#24615#33021#27604#36739
+        OnClick = N18Click
+      end
+    end
+    object N16: TMenuItem
+      Caption = #26597#25214
+      object N19: TMenuItem
+        Caption = #26597#25214#31639#27861#20171#32461
+      end
+    end
     object N8: TMenuItem
       Caption = ' '#27979#35797#39064#28436#32451
       object N9: TMenuItem
@@ -36778,7 +36792,7 @@ object dsdemo_MainForm: Tdsdemo_MainForm
     Left = 64
     Top = 32
     Bitmap = {
-      494C010103000800140010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C010103000800180010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000400000001000000001002000000000000010
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
