@@ -175,8 +175,8 @@
         <CppCompile Include="MGraph.cpp">
             <BuildOrder>4</BuildOrder>
         </CppCompile>
-        <FormResources Include="graph_intro_u.dfm"/>
         <FormResources Include="graph_alg_u.dfm"/>
+        <FormResources Include="graph_intro_u.dfm"/>
         <FormResources Include="MainForm.dfm"/>
         <FormResources Include="DSDemo_sort\ThSort.dfm"/>
         <BuildConfiguration Include="Release">

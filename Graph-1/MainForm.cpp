@@ -34,7 +34,8 @@ void __fastcall Tdsdemo_MainForm::date_TimerTimer(TObject *Sender)
      TDateTime datetime = Now();
 
      main_StatusBar->Panels->Items[1]->Text = FormatDateTime("yyyy Äê mm ÔÂdd ÈÕ hh:mm:ss", datetime);
-     main_StatusBar->Panels->Items[0]->Text = FloatToStr(datetime.Val * 100000);
+     main_StatusBar->Panels->Items[0]->Text = "xyz";
+//     main_StatusBar->Panels->Items[0]->Text = FloatToStr(datetime.Val * 100000);
 }
 //---------------------------------------------------------------------------
 void __fastcall Tdsdemo_MainForm::N6Click(TObject *Sender)
