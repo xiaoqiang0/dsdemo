@@ -47,6 +47,8 @@ __published:	// IDE-managed Components
     TMenuItem *N17;
     TMenuItem *N18;
     TMenuItem *N19;
+    TMenuItem *N20;
+    TMenuItem *N21;
     void __fastcall N7Click(TObject *Sender);
     void __fastcall N2Click(TObject *Sender);
     void __fastcall date_TimerTimer(TObject *Sender);
@@ -54,6 +56,7 @@ __published:	// IDE-managed Components
     void __fastcall FormResize(TObject *Sender);
     void __fastcall N18Click(TObject *Sender);
     void __fastcall ToolButton1Click(TObject *Sender);
+    void __fastcall N21Click(TObject *Sender);
 private:	// User declarations
 public:		// User declarations
     __fastcall Tdsdemo_MainForm(TComponent* Owner);

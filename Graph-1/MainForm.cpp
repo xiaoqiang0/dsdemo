@@ -8,6 +8,7 @@
 #include "graph_intro_u.h"
 #include "SortThds.h"
 #include "ThSort.h"
+#include "search_string.h"
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 #pragma resource "*.dfm"
@@ -63,6 +64,12 @@ void __fastcall Tdsdemo_MainForm::N18Click(TObject *Sender)
 void __fastcall Tdsdemo_MainForm::ToolButton1Click(TObject *Sender)
 {
     ThreadSortForm->ShowModal();
+}
+//---------------------------------------------------------------------------
+
+void __fastcall Tdsdemo_MainForm::N21Click(TObject *Sender)
+{
+     search_stringForm->ShowModal();
 }
 //---------------------------------------------------------------------------
 
