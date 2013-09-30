@@ -2,9 +2,10 @@
 
 #include <vcl.h>
 #pragma hdrstop
+
+USEFORM("MainForm.cpp", dsdemo_MainForm);
 USEFORM("DSDemo_graph\graph_alg_u.cpp", GraphAlgorithmForm);
 USEFORM("DSDemo_graph\graph_intro_u.cpp", graph_intro_frm);
-USEFORM("MainForm.cpp", dsdemo_MainForm);
 USEFORM("DSDemo_sort\ThSort.cpp", ThreadSortForm);
 USEFORM("DSDemo_search\search_string.cpp", search_stringForm);
 //---------------------------------------------------------------------------

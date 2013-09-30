@@ -59,7 +59,7 @@
         <Base>true</Base>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base)'!=''">
-        <IncludePath>DSDemo_search\;DSDemo_sort\;$(IncludePath)</IncludePath>
+        <IncludePath>DSDemo_graph\;DSDemo_search\;DSDemo_sort\;$(IncludePath)</IncludePath>
         <VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
         <VerInfo_Locale>1028</VerInfo_Locale>
         <DCC_Namespace>Vcl;Vcl.Imaging;Vcl.Touch;Vcl.Samples;Vcl.Shell;System;Xml;Data;Datasnap;Web;Soap;$(DCC_Namespace)</DCC_Namespace>
@@ -67,7 +67,7 @@
         <ILINK_AppType>Windows</ILINK_AppType>
         <FinalOutputDir>.</FinalOutputDir>
         <DCC_IncludePath>.\;$(BDS)\lib;$(BDS)\lib\obj;$(DCC_IncludePath)</DCC_IncludePath>
-        <ILINK_LibraryPath>DSDemo_search\;DSDemo_sort\;$(BDS)\lib\obj;$(BDS)\lib;$(BDS)\lib\psdk;$(ILINK_LibraryPath)</ILINK_LibraryPath>
+        <ILINK_LibraryPath>DSDemo_graph\;DSDemo_search\;DSDemo_sort\;$(BDS)\lib\obj;$(BDS)\lib;$(BDS)\lib\psdk;$(ILINK_LibraryPath)</ILINK_LibraryPath>
         <TASM_IncludePath>$(BDS)\include;$(BDS)\include\vcl;$(TASM_IncludePath)</TASM_IncludePath>
         <DCC_AdditionalSwitches> -M</DCC_AdditionalSwitches>
         <BCC_OptimizationLevel>Level2</BCC_OptimizationLevel>
@@ -129,9 +129,6 @@
         <BCC_Defines>NDEBUG;$(BCC_Defines);$(BCC_Defines)</BCC_Defines>
     </PropertyGroup>
     <ItemGroup>
-        <CppCompile Include="DSDemo_graph\ALGraph.cpp">
-            <BuildOrder>4</BuildOrder>
-        </CppCompile>
         <CppCompile Include="dsdemo.cpp">
             <BuildOrder>2</BuildOrder>
         </CppCompile>
@@ -139,21 +136,8 @@
             <BuildOrder>5</BuildOrder>
             <BuildOrder>1</BuildOrder>
         </ResFiles>
-        <CppCompile Include="DSDemo_search\search_string.cpp">
-            <Form>search_stringForm</Form>
-            <FormType>dfm</FormType>
-            <DependentOn>DSDemo_search\search_string.h</DependentOn>
-            <BuildOrder>11</BuildOrder>
-        </CppCompile>
-        <CppCompile Include="DSDemo_sort\SortThds.cpp">
-            <DependentOn>DSDemo_sort\SortThds.h</DependentOn>
-            <BuildOrder>8</BuildOrder>
-        </CppCompile>
-        <CppCompile Include="DSDemo_sort\ThSort.cpp">
-            <Form>ThreadSortForm</Form>
-            <FormType>dfm</FormType>
-            <DependentOn>DSDemo_sort\ThSort.h</DependentOn>
-            <BuildOrder>10</BuildOrder>
+        <CppCompile Include="DSDemo_graph\ALGraph.cpp">
+            <BuildOrder>4</BuildOrder>
         </CppCompile>
         <None Include="DSDemo_graph\graph.h">
             <BuildOrder>5</BuildOrder>
@@ -170,14 +154,30 @@
             <DependentOn>graph_intro_u.h</DependentOn>
             <BuildOrder>7</BuildOrder>
         </CppCompile>
+        <CppCompile Include="DSDemo_graph\MGraph.cpp">
+            <BuildOrder>4</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="DSDemo_search\search_string.cpp">
+            <Form>search_stringForm</Form>
+            <FormType>dfm</FormType>
+            <DependentOn>DSDemo_search\search_string.h</DependentOn>
+            <BuildOrder>11</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="DSDemo_sort\SortThds.cpp">
+            <DependentOn>DSDemo_sort\SortThds.h</DependentOn>
+            <BuildOrder>8</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="DSDemo_sort\ThSort.cpp">
+            <Form>ThreadSortForm</Form>
+            <FormType>dfm</FormType>
+            <DependentOn>DSDemo_sort\ThSort.h</DependentOn>
+            <BuildOrder>10</BuildOrder>
+        </CppCompile>
         <CppCompile Include="MainForm.cpp">
             <Form>dsdemo_MainForm</Form>
             <FormType>dfm</FormType>
             <DependentOn>MainForm.h</DependentOn>
             <BuildOrder>6</BuildOrder>
-        </CppCompile>
-        <CppCompile Include="DSDemo_graph\MGraph.cpp">
-            <BuildOrder>4</BuildOrder>
         </CppCompile>
         <FormResources Include="DSDemo_graph\graph_alg_u.dfm"/>
         <FormResources Include="DSDemo_graph\graph_intro_u.dfm"/>

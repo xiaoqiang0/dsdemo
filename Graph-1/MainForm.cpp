@@ -52,6 +52,8 @@ void __fastcall Tdsdemo_MainForm::FormResize(TObject *Sender)
      //Image
      main_StatusBar->Panels->Items[0]->Width = dsdemo_MainForm->Width - 200;
      main_StatusBar->Panels->Items[1]->Width = 200;
+     welcomeLabel->Left = dsdemo_MainForm->Width/2 - welcomeLabel->Width / 2;
+     welcomeLabel->Top = dsdemo_MainForm->Height/4 ;
 }
 //---------------------------------------------------------------------------
 

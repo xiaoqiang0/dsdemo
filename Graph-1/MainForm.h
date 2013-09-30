@@ -49,6 +49,9 @@ __published:	// IDE-managed Components
     TMenuItem *N19;
     TMenuItem *N20;
     TMenuItem *N21;
+    TLabel *welcomeLabel;
+    TTimer *Timer1;
+    TAnimate *Animate1;
     void __fastcall N7Click(TObject *Sender);
     void __fastcall N2Click(TObject *Sender);
     void __fastcall date_TimerTimer(TObject *Sender);

@@ -3,8 +3,8 @@ object dsdemo_MainForm: Tdsdemo_MainForm
   Top = 0
   Align = alCustom
   Caption = ' '#25968#25454#32467#26500#31639#27861#28436#31034#31995#32479
-  ClientHeight = 383
-  ClientWidth = 714
+  ClientHeight = 398
+  ClientWidth = 763
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -20,8 +20,8 @@ object dsdemo_MainForm: Tdsdemo_MainForm
   object Image1: TImage
     Left = 0
     Top = 22
-    Width = 714
-    Height = 342
+    Width = 763
+    Height = 357
     Align = alClient
     Picture.Data = {
       0A544A504547496D6167650AE41100FFD8FFE1122845786966000049492A0008
@@ -36670,10 +36670,23 @@ object dsdemo_MainForm: Tdsdemo_MainForm
     ExplicitWidth = 998
     ExplicitHeight = 439
   end
+  object welcomeLabel: TLabel
+    Left = 168
+    Top = 28
+    Width = 896
+    Height = 78
+    Caption = #27426#36814#36827#20837#25968#25454#32467#26500#31639#27861#23398#20064#31995#32479
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -64
+    Font.Name = 'Verdana'
+    Font.Style = []
+    ParentFont = False
+  end
   object main_StatusBar: TStatusBar
     Left = 0
-    Top = 364
-    Width = 714
+    Top = 379
+    Width = 763
     Height = 19
     Panels = <
       item
@@ -36688,7 +36701,7 @@ object dsdemo_MainForm: Tdsdemo_MainForm
   object ToolBar1: TToolBar
     Left = 0
     Top = 0
-    Width = 714
+    Width = 763
     Height = 22
     AutoSize = True
     Caption = 'ToolBar1'
@@ -36722,6 +36735,12 @@ object dsdemo_MainForm: Tdsdemo_MainForm
       Caption = 'ToolButton4'
       ImageIndex = 2
     end
+  end
+  object Animate1: TAnimate
+    Left = 248
+    Top = 69
+    Width = 33
+    Height = 36
   end
   object MainMenu1: TMainMenu
     Left = 8
@@ -36945,5 +36964,9 @@ object dsdemo_MainForm: Tdsdemo_MainForm
       000900000001000000A9000100010000F2A9800100010000F2A9800300010000
       F2A9C00700010000FFFFF00F0001000000000000000000000000000000000000
       000000000000}
+  end
+  object Timer1: TTimer
+    Left = 584
+    Top = 184
   end
 end
