@@ -44,7 +44,7 @@ object FormGraphAlgorithm: TFormGraphAlgorithm
     TabOrder = 5
     object CreateNodeBtn: TButton
       Left = 3
-      Top = 25
+      Top = 20
       Width = 74
       Height = 25
       Caption = #21019#24314#33410#28857
@@ -211,8 +211,6 @@ object FormGraphAlgorithm: TFormGraphAlgorithm
     object TabSheetNoDirect: TTabSheet
       Caption = #26080#21521#22270
       ImageIndex = 1
-      ExplicitLeft = 8
-      ExplicitTop = 35
     end
   end
 end

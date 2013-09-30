@@ -2,7 +2,7 @@
     <PropertyGroup>
         <ProjectGuid>{39DDA3DA-2C88-4534-9E2B-783CB82A5ED3}</ProjectGuid>
         <ProjectType>CppVCLApplication</ProjectType>
-        <MainSource>cd8_3p.cpp</MainSource>
+        <MainSource>dsdemo.cpp</MainSource>
         <Base>True</Base>
         <Config Condition="'$(Config)'==''">Debug</Config>
         <FrameworkType>VCL</FrameworkType>
@@ -133,10 +133,10 @@
         <CppCompile Include="ALGraph.cpp">
             <BuildOrder>4</BuildOrder>
         </CppCompile>
-        <CppCompile Include="cd8_3p.cpp">
+        <CppCompile Include="dsdemo.cpp">
             <BuildOrder>2</BuildOrder>
         </CppCompile>
-        <ResFiles Include="cd8_3p.res">
+        <ResFiles Include="dsdemo.res">
             <BuildOrder>5</BuildOrder>
             <BuildOrder>1</BuildOrder>
         </ResFiles>
@@ -229,7 +229,7 @@
                     <ProjectProperties Name="VerifyPackages">True</ProjectProperties>
                 </ProjectProperties>
                 <Source>
-                    <Source Name="MainSource">cd8_3p.cpp</Source>
+                    <Source Name="MainSource">dsdemo.cpp</Source>
                 </Source>
             </CPlusPlusBuilder.Personality>
             <Platforms>
