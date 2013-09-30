@@ -12,6 +12,7 @@
 #include <Vcl.ExtCtrls.hpp>
 #include <Vcl.ToolWin.hpp>
 #include <Vcl.Imaging.jpeg.hpp>
+#include <Vcl.ImgList.hpp>
 //---------------------------------------------------------------------------
 class Tdsdemo_MainForm : public TForm
 {
@@ -40,6 +41,7 @@ __published:	// IDE-managed Components
     TToolButton *ToolButton3;
     TToolButton *ToolButton4;
     TImage *Image1;
+    TImageList *ToolbarImageList;
     void __fastcall N7Click(TObject *Sender);
     void __fastcall N2Click(TObject *Sender);
     void __fastcall date_TimerTimer(TObject *Sender);

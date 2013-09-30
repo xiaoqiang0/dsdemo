@@ -40,6 +40,7 @@ void __fastcall Tdsdemo_MainForm::N6Click(TObject *Sender)
 //---------------------------------------------------------------------------
 void __fastcall Tdsdemo_MainForm::FormResize(TObject *Sender)
 {
+     return;
      //Image
      Image1->Left = 0;
      Image1->Top = 0;
