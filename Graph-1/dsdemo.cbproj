@@ -149,10 +149,17 @@
             <DependentOn>cd8_3u.h</DependentOn>
             <BuildOrder>0</BuildOrder>
         </CppCompile>
+        <CppCompile Include="MainForm.cpp">
+            <Form>dsdemo_MainForm</Form>
+            <FormType>dfm</FormType>
+            <DependentOn>MainForm.h</DependentOn>
+            <BuildOrder>6</BuildOrder>
+        </CppCompile>
         <CppCompile Include="MGraph.cpp">
             <BuildOrder>4</BuildOrder>
         </CppCompile>
         <FormResources Include="graph_alg_u.dfm"/>
+        <FormResources Include="MainForm.dfm"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>

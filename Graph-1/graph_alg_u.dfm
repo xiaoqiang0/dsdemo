@@ -96,7 +96,7 @@ object FormGraphAlgorithm: TFormGraphAlgorithm
     Top = 67
     Width = 470
     Height = 436
-    ActivePage = TabSheetDirect
+    ActivePage = TabSheetNoDirect
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -13
