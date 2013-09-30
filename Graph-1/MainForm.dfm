@@ -1,9 +1,10 @@
 object dsdemo_MainForm: Tdsdemo_MainForm
   Left = 0
   Top = 0
+  Align = alCustom
   Caption = ' '#25968#25454#32467#26500#31639#27861#28436#31034#31995#32479
   ClientHeight = 480
-  ClientWidth = 974
+  ClientWidth = 998
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -18,7 +19,7 @@ object dsdemo_MainForm: Tdsdemo_MainForm
   object Image1: TImage
     Left = 0
     Top = 22
-    Width = 974
+    Width = 998
     Height = 439
     Align = alClient
     Picture.Data = {
@@ -36669,7 +36670,7 @@ object dsdemo_MainForm: Tdsdemo_MainForm
   object main_StatusBar: TStatusBar
     Left = 0
     Top = 461
-    Width = 974
+    Width = 998
     Height = 19
     Panels = <
       item
@@ -36678,21 +36679,24 @@ object dsdemo_MainForm: Tdsdemo_MainForm
       item
         Width = 100
       end>
+    ExplicitWidth = 974
   end
   object ToolBar1: TToolBar
     Left = 0
     Top = 0
-    Width = 974
+    Width = 998
     Height = 22
     AutoSize = True
     Caption = 'ToolBar1'
     Images = ToolbarImageList
     TabOrder = 1
+    ExplicitTop = -6
     object ToolButton1: TToolButton
       Left = 0
       Top = 0
       Caption = 'ToolButton1'
       ImageIndex = 0
+      OnClick = ToolButton1Click
     end
     object ToolButton2: TToolButton
       Left = 23
@@ -36716,8 +36720,8 @@ object dsdemo_MainForm: Tdsdemo_MainForm
     end
   end
   object MainMenu1: TMainMenu
-    Left = 16
-    Top = 96
+    Left = 32
+    Top = 56
     object N1: TMenuItem
       Caption = #25991#20214
       object N2: TMenuItem
@@ -36789,8 +36793,8 @@ object dsdemo_MainForm: Tdsdemo_MainForm
     Top = 288
   end
   object ToolbarImageList: TImageList
-    Left = 64
-    Top = 32
+    Left = 216
+    Top = 104
     Bitmap = {
       494C010103000800180010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000400000001000000001002000000000000010

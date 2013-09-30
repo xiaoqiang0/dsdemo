@@ -21,7 +21,7 @@ __fastcall Tdsdemo_MainForm::Tdsdemo_MainForm(TComponent* Owner)
 void __fastcall Tdsdemo_MainForm::N7Click(TObject *Sender)
 {
      //调用图算法
-     FormGraphAlgorithm->ShowModal();
+     GraphAlgorithmForm->ShowModal();
 }
 //---------------------------------------------------------------------------
 void __fastcall Tdsdemo_MainForm::N2Click(TObject *Sender)
@@ -34,6 +34,7 @@ void __fastcall Tdsdemo_MainForm::date_TimerTimer(TObject *Sender)
      TDateTime datetime = Now();
 
      main_StatusBar->Panels->Items[1]->Text = FormatDateTime("yyyy 年 mm 月dd 日 hh:mm:ss", datetime);
+     main_StatusBar->Panels->Items[0]->Text = FloatToStr(datetime.Val * 100000);
 }
 //---------------------------------------------------------------------------
 void __fastcall Tdsdemo_MainForm::N6Click(TObject *Sender)
@@ -54,7 +55,13 @@ void __fastcall Tdsdemo_MainForm::FormResize(TObject *Sender)
 
 void __fastcall Tdsdemo_MainForm::N18Click(TObject *Sender)
 {
-ThreadSortForm->ShowModal();
+     ThreadSortForm->ShowModal();
+}
+//---------------------------------------------------------------------------
+
+void __fastcall Tdsdemo_MainForm::ToolButton1Click(TObject *Sender)
+{
+    ThreadSortForm->ShowModal();
 }
 //---------------------------------------------------------------------------
 

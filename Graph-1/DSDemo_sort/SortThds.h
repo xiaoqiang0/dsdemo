@@ -21,6 +21,7 @@ private: // User declarations
 	TPaintBox *FBox;
 	TSortArray FSortArray;
 	int FSize;
+    TColor LColor;
 	int FA; int FB; int FI; int FJ;
 	void __fastcall DoVisualSwap();
 protected:  // User declarations
@@ -28,7 +29,7 @@ protected:  // User declarations
 	void __fastcall VisualSwap(int A, int B, int I, int J);
 	virtual void __fastcall Sort(TSortArray &A);
 public:  // User declarations
-	__fastcall TSortThread(TPaintBox *Box, TSortArray &SortArray);
+	__fastcall TSortThread(TPaintBox *Box, TSortArray &SortArray, TColor color);
 };
 //---------------------------------------------------------------------------
 
@@ -42,7 +43,7 @@ __published:	// IDE-managed Components
 protected:  // User declarations
 	void __fastcall Sort( TSortArray &A);
 public:
-	__fastcall TBubbleSort(TPaintBox *Box,  TSortArray &SortArray);
+	__fastcall TBubbleSort(TPaintBox *Box,  TSortArray &SortArray, TColor color);
 };
 //---------------------------------------------------------------------------
 
@@ -56,7 +57,7 @@ __published:	// IDE-managed Components
 protected:  // User declarations
 	void __fastcall Sort( TSortArray &A);
 public:
-	__fastcall TSelectionSort(TPaintBox *Box,  TSortArray &SortArray);
+	__fastcall TSelectionSort(TPaintBox *Box,  TSortArray &SortArray, TColor color);
 };
 //---------------------------------------------------------------------------
 
@@ -71,7 +72,7 @@ protected:  // User declarations
 	void __fastcall Sort( TSortArray &A);
 	void __fastcall QuickSort(TSortArray &A, int iLo, int iHi);
 public:
-	__fastcall TQuickSort(TPaintBox *Box,  TSortArray &SortArray);
+	__fastcall TQuickSort(TPaintBox *Box,  TSortArray &SortArray, TColor color);
 };
 //---------------------------------------------------------------------------
 

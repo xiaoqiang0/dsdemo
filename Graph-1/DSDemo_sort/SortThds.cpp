@@ -28,9 +28,7 @@ void __fastcall PaintLine(TPaintBox *Box, int i, int len)
     float x = w * 1.0 / n;
     Box->Canvas->MoveTo(1, int(i * y)+1);
     Box->Canvas->LineTo(int(len * x)+1, int(i * y)+1);
-
 }
-
 
 //---------------------------------------------------------------------------
 
@@ -56,11 +54,12 @@ void __fastcall TSortThread::Sort(TSortArray &)
 
 //---------------------------------------------------------------------------
 
-    __fastcall TSortThread::TSortThread(TPaintBox *Box, TSortArray &SortArray)
+    __fastcall TSortThread::TSortThread(TPaintBox *Box, TSortArray &SortArray, TColor color)
 : TThread(false)
 {
     FBox = Box;
     FSize = N;
+    LColor = color;
     for(int i=0; i<FSize; ++i) {
         FSortArray[i] = SortArray[i];
     }
@@ -110,9 +109,9 @@ void __fastcall TSortThread::Execute()
 /* TBubbleSort */
 //---------------------------------------------------------------------------
 
-__fastcall TBubbleSort::TBubbleSort(TPaintBox *Box, TSortArray &SortArray)
+__fastcall TBubbleSort::TBubbleSort(TPaintBox *Box, TSortArray &SortArray, TColor color)
 
-:TSortThread(Box,SortArray)
+:TSortThread(Box,SortArray,color)
 
 {
 
@@ -139,9 +138,9 @@ void __fastcall TBubbleSort::Sort(TSortArray &A)
 /* TSelectionSort */
 //---------------------------------------------------------------------------
 
-__fastcall TSelectionSort::TSelectionSort(TPaintBox *Box, TSortArray &SortArray)
+__fastcall TSelectionSort::TSelectionSort(TPaintBox *Box, TSortArray &SortArray, TColor color)
 
-:TSortThread(Box,SortArray)
+:TSortThread(Box,SortArray,color)
 
 {
 
@@ -168,9 +167,9 @@ void __fastcall TSelectionSort::Sort(TSortArray &A)
 /* TQuickSort */
 //---------------------------------------------------------------------------
 
-__fastcall TQuickSort::TQuickSort(TPaintBox *Box, TSortArray &SortArray)
+__fastcall TQuickSort::TQuickSort(TPaintBox *Box, TSortArray &SortArray, TColor color)
 
-:TSortThread(Box,SortArray)
+:TSortThread(Box,SortArray,color)
 
 {
 

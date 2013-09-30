@@ -1,4 +1,4 @@
-object FormGraphAlgorithm: TFormGraphAlgorithm
+object GraphAlgorithmForm: TGraphAlgorithmForm
   Left = 188
   Top = 143
   Caption = #22270#31639#27861#28436#31034
@@ -108,6 +108,10 @@ object FormGraphAlgorithm: TFormGraphAlgorithm
     OnChange = PageControlChange
     object TabSheetDirect: TTabSheet
       Caption = #26377#21521#22270
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object memo: TMemo
         Left = 163
         Top = 0

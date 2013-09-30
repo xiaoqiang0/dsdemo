@@ -11,7 +11,7 @@
 #include <Grids.hpp>
 #include <Vcl.ComCtrls.hpp>
 //---------------------------------------------------------------------------
-class TFormGraphAlgorithm : public TForm
+class TGraphAlgorithmForm : public TForm
 {
     __published:	// IDE-managed Components
         TPanel *pnl; //Ãæ°å¿Õ¼ä
@@ -58,9 +58,9 @@ class TFormGraphAlgorithm : public TForm
 
     private:	        // User declarations
     public:		// User declarations
-        __fastcall TFormGraphAlgorithm(TComponent* Owner);
+        __fastcall TGraphAlgorithmForm(TComponent* Owner);
 };
 //---------------------------------------------------------------------------
-extern PACKAGE TFormGraphAlgorithm *FormGraphAlgorithm;
+extern PACKAGE TGraphAlgorithmForm *GraphAlgorithmForm;
 //---------------------------------------------------------------------------
 #endif

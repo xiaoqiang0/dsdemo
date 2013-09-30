@@ -19,39 +19,39 @@ object ThreadSortForm: TThreadSortForm
   object Bevel1: TBevel
     Left = 8
     Top = 24
-    Width = 264
+    Width = 244
     Height = 369
   end
   object Bevel3: TBevel
-    Left = 546
+    Left = 511
     Top = 24
-    Width = 264
+    Width = 250
     Height = 370
   end
   object Bevel2: TBevel
-    Left = 278
+    Left = 258
     Top = 24
-    Width = 262
+    Width = 247
     Height = 369
   end
   object BubbleSortBox: TPaintBox
     Left = 8
     Top = 24
-    Width = 264
+    Width = 244
     Height = 369
     OnPaint = BubbleSortBoxPaint
   end
   object SelectionSortBox: TPaintBox
-    Left = 278
+    Left = 258
     Top = 24
-    Width = 262
+    Width = 247
     Height = 369
     OnPaint = SelectionSortBoxPaint
   end
   object QuickSortBox: TPaintBox
-    Left = 546
+    Left = 511
     Top = 24
-    Width = 264
+    Width = 250
     Height = 370
     OnPaint = QuickSortBoxPaint
   end
@@ -64,7 +64,7 @@ object ThreadSortForm: TThreadSortForm
     Caption = #20882#27873#25490#24207
   end
   object Label2: TLabel
-    Left = 358
+    Left = 338
     Top = 5
     Width = 57
     Height = 13
@@ -72,7 +72,7 @@ object ThreadSortForm: TThreadSortForm
     Caption = #36873#25321#25490#24207
   end
   object Label3: TLabel
-    Left = 664
+    Left = 629
     Top = 8
     Width = 86
     Height = 13
@@ -88,21 +88,26 @@ object ThreadSortForm: TThreadSortForm
     Caption = #25490#24207#25968#25454#22823#23567':'
   end
   object StartBtn: TButton
-    Left = 159
-    Top = 416
-    Width = 75
+    Left = 8
+    Top = 443
+    Width = 145
     Height = 25
     Caption = #24320#22987#25490#24207
     TabOrder = 0
     OnClick = StartBtnClick
   end
   object Chart1: TChart
-    Left = 816
-    Top = 24
-    Width = 385
-    Height = 369
+    Left = 767
+    Top = 64
+    Width = 432
+    Height = 329
+    Legend.Alignment = laTop
     Legend.GlobalTransparency = 2
-    Legend.Visible = False
+    Legend.Symbol.Pen.Color = 201326592
+    Legend.Symbol.Pen.Width = 3
+    Legend.Symbol.Pen.SmallSpace = 1
+    Legend.TextStyle = ltsPlain
+    Legend.Title.Alignment = taCenter
     Title.Text.Strings = (
       ' '#25490#24207#32467#26524#22270#26631#32479#35745)
     BottomAxis.ExactDateTime = False
@@ -119,9 +124,10 @@ object ThreadSortForm: TThreadSortForm
     TabOrder = 1
     DefaultCanvas = 'TGDIPlusCanvas'
     ColorPaletteIndex = 6
-    object Series1: TFastLineSeries
+    object Bubble_Series: TFastLineSeries
       Marks.Visible = False
       SeriesColor = clTeal
+      Title = 'Bubble Sort'
       LinePen.Color = clTeal
       XValues.Name = 'X'
       XValues.Order = loAscending
@@ -131,9 +137,10 @@ object ThreadSortForm: TThreadSortForm
         CalcByValue = False
       end
     end
-    object Series3: TFastLineSeries
+    object Select_Series: TFastLineSeries
       Marks.Visible = False
       SeriesColor = clRed
+      Title = 'Select Sort'
       LinePen.Color = clRed
       XValues.Name = 'X'
       XValues.Order = loAscending
@@ -143,9 +150,10 @@ object ThreadSortForm: TThreadSortForm
         CalcByValue = False
       end
     end
-    object Series2: TFastLineSeries
+    object Quick_Series: TFastLineSeries
       Marks.Visible = False
       SeriesColor = clBlue
+      Title = 'Quick Sort'
       LinePen.Color = clBlue
       XValues.Name = 'X'
       XValues.Order = loAscending
@@ -153,21 +161,12 @@ object ThreadSortForm: TThreadSortForm
       YValues.Order = loNone
     end
   end
-  object Button1: TButton
-    Left = 262
-    Top = 416
-    Width = 75
-    Height = 25
-    Caption = 'Button1'
-    TabOrder = 2
-    OnClick = Button1Click
-  end
   object ComboBox1: TComboBox
     Left = 104
-    Top = 418
+    Top = 416
     Width = 49
     Height = 21
-    TabOrder = 3
+    TabOrder = 2
     Text = '256'
     OnChange = ComboBox1Change
     Items.Strings = (
@@ -179,5 +178,18 @@ object ThreadSortForm: TThreadSortForm
       '384'
       '448'
       '512')
+  end
+  object saveChartBtn: TButton
+    Left = 1096
+    Top = 33
+    Width = 75
+    Height = 25
+    Caption = #20445#23384#22270#34920
+    TabOrder = 3
+    OnClick = saveChartBtnClick
+  end
+  object SaveDialog1: TSaveDialog
+    Left = 1040
+    Top = 24
   end
 end

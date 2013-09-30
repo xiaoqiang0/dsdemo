@@ -53,6 +53,7 @@ __published:	// IDE-managed Components
     void __fastcall N6Click(TObject *Sender);
     void __fastcall FormResize(TObject *Sender);
     void __fastcall N18Click(TObject *Sender);
+    void __fastcall ToolButton1Click(TObject *Sender);
 private:	// User declarations
 public:		// User declarations
     __fastcall Tdsdemo_MainForm(TComponent* Owner);

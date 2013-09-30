@@ -59,14 +59,15 @@
         <Base>true</Base>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base)'!=''">
+        <IncludePath>DSDemo_sort\;$(IncludePath)</IncludePath>
         <VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
         <VerInfo_Locale>1028</VerInfo_Locale>
         <DCC_Namespace>Vcl;Vcl.Imaging;Vcl.Touch;Vcl.Samples;Vcl.Shell;System;Xml;Data;Datasnap;Web;Soap;$(DCC_Namespace)</DCC_Namespace>
-        <AllPackageLibs>rtl.lib;vcl.lib;bindengine.lib;vclimg.lib</AllPackageLibs>
+        <AllPackageLibs>rtl.lib;vcl.lib;bindengine.lib;vclimg.lib;Tee.lib;dbrtl.lib;TeeDB.lib;TeeUI.lib;vclx.lib;vcldb.lib</AllPackageLibs>
         <ILINK_AppType>Windows</ILINK_AppType>
         <FinalOutputDir>.</FinalOutputDir>
         <DCC_IncludePath>.\;$(BDS)\lib;$(BDS)\lib\obj;$(DCC_IncludePath)</DCC_IncludePath>
-        <ILINK_LibraryPath>$(BDS)\lib\obj;$(BDS)\lib;$(BDS)\lib\psdk;$(ILINK_LibraryPath)</ILINK_LibraryPath>
+        <ILINK_LibraryPath>DSDemo_sort\;$(BDS)\lib\obj;$(BDS)\lib;$(BDS)\lib\psdk;$(ILINK_LibraryPath)</ILINK_LibraryPath>
         <TASM_IncludePath>$(BDS)\include;$(BDS)\include\vcl;$(TASM_IncludePath)</TASM_IncludePath>
         <DCC_AdditionalSwitches> -M</DCC_AdditionalSwitches>
         <BCC_OptimizationLevel>Level2</BCC_OptimizationLevel>
@@ -111,7 +112,7 @@
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_1_Win32)'!=''">
         <BCC_Defines>_DEBUG;$(BCC_Defines);$(BCC_Defines)</BCC_Defines>
-        <LinkPackageStatics>rtl.lib;vcl.lib;bindengine.lib;vclimg.lib</LinkPackageStatics>
+        <LinkPackageStatics>rtl.lib;vcl.lib;bindengine.lib;vclimg.lib;Tee.lib;dbrtl.lib;TeeDB.lib;TeeUI.lib;vclx.lib;vcldb.lib</LinkPackageStatics>
         <BCC_UserSuppliedOptions> -tWM -Vx -Ve -k</BCC_UserSuppliedOptions>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_1_Win64)'!=''">
@@ -140,12 +141,22 @@
             <BuildOrder>5</BuildOrder>
             <BuildOrder>1</BuildOrder>
         </ResFiles>
+        <CppCompile Include="DSDemo_sort\SortThds.cpp">
+            <DependentOn>DSDemo_sort\SortThds.h</DependentOn>
+            <BuildOrder>8</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="DSDemo_sort\ThSort.cpp">
+            <Form>ThreadSortForm</Form>
+            <FormType>dfm</FormType>
+            <DependentOn>DSDemo_sort\ThSort.h</DependentOn>
+            <BuildOrder>10</BuildOrder>
+        </CppCompile>
         <None Include="graph.h">
             <BuildOrder>5</BuildOrder>
         </None>
         <CppCompile Include="graph_alg_u.cpp">
             <BuildOrder>8</BuildOrder>
-            <Form>FormGraphAlgorithm</Form>
+            <Form>GraphAlgorithmForm</Form>
             <DependentOn>cd8_3u.h</DependentOn>
             <BuildOrder>0</BuildOrder>
         </CppCompile>
@@ -164,9 +175,10 @@
         <CppCompile Include="MGraph.cpp">
             <BuildOrder>4</BuildOrder>
         </CppCompile>
+        <FormResources Include="graph_intro_u.dfm"/>
         <FormResources Include="graph_alg_u.dfm"/>
         <FormResources Include="MainForm.dfm"/>
-        <FormResources Include="graph_intro_u.dfm"/>
+        <FormResources Include="DSDemo_sort\ThSort.dfm"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>

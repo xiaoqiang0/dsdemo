@@ -11,7 +11,7 @@
 
 //#define MAX_VERTEX_NUM 8
 
-TFormGraphAlgorithm *FormGraphAlgorithm;
+TGraphAlgorithmForm *GraphAlgorithmForm;
 
 TShape *sp[MAX_VERTEX_NUM];                           //½ÚµãShapÊý×é
 TLabel *lb[MAX_VERTEX_NUM];                           //½ÚµãShapÉÏµÄ±êÇ©Êý×é£¬»­°å->Shap->Label
@@ -62,12 +62,12 @@ void showInMemo(string s)
 
 
 //---------------------------------------------------------------------------
-__fastcall TFormGraphAlgorithm::TFormGraphAlgorithm(TComponent * Owner):TForm(Owner)
+__fastcall TGraphAlgorithmForm::TGraphAlgorithmForm(TComponent * Owner):TForm(Owner)
 {
 }
 
 //---------------------------------------------------------------------------
-void __fastcall TFormGraphAlgorithm::FormCreate(TObject * Sender)    //¶¥µã¼ä³õÊ¼ÉèÖÃÎªÎÞÇî´ó(²»Í¨)
+void __fastcall TGraphAlgorithmForm::FormCreate(TObject * Sender)    //¶¥µã¼ä³õÊ¼ÉèÖÃÎªÎÞÇî´ó(²»Í¨)
 {
     MG.vexnum = 0;
     MG.arcnum = 0;
@@ -82,7 +82,7 @@ void __fastcall TFormGraphAlgorithm::FormCreate(TObject * Sender)    //¶¥µã¼ä³õÊ
 }
 
 //---------------------------------------------------------------------------
-void __fastcall TFormGraphAlgorithm::CreateNodeBtnClick(TObject * Sender)    //Éú³É¶¥µã°´Å¥µ¥»÷ÊÂ¼þ
+void __fastcall TGraphAlgorithmForm::CreateNodeBtnClick(TObject * Sender)    //Éú³É¶¥µã°´Å¥µ¥»÷ÊÂ¼þ
 {
 
     pnl->Enabled = true;                            //Æô¶¯»­°å¹¦ÄÜ
@@ -104,7 +104,7 @@ void __fastcall TFormGraphAlgorithm::CreateNodeBtnClick(TObject * Sender)    //É
 
 
 
-void __fastcall TFormGraphAlgorithm::imgMouseDown(TObject * Sender, //Êó±ê°´ÏÂÊÂ¼þ,¼ÇÂ¼ÆðÊ¼µãµÄÎ»ÖÃ
+void __fastcall TGraphAlgorithmForm::imgMouseDown(TObject * Sender, //Êó±ê°´ÏÂÊÂ¼þ,¼ÇÂ¼ÆðÊ¼µãµÄÎ»ÖÃ
         TMouseButton Button,
         TShiftState Shift, int X, int Y)
 {
@@ -224,7 +224,7 @@ int paintArrow(TImage * img, float x1, float y1, float x2, float y2)
 }
 
 
-void __fastcall TFormGraphAlgorithm::imgMouseUp(TObject * Sender,
+void __fastcall TGraphAlgorithmForm::imgMouseUp(TObject * Sender,
         TMouseButton Button,
         TShiftState Shift, int X, int Y)
 {
@@ -253,13 +253,13 @@ void __fastcall TFormGraphAlgorithm::imgMouseUp(TObject * Sender,
     start = -1;
     end = -1;            //reset
 }
-void __fastcall TFormGraphAlgorithm::my_print (String info)
+void __fastcall TGraphAlgorithmForm::my_print (String info)
 {
      memo->Lines->Add(info);
 }
 
 //---------------------------------------------------------------------------
-void __fastcall TFormGraphAlgorithm::ShortestPathBtnClick(TObject * Sender)    //×î¶ÌÂ·¾¶Çó½âÊÂ¼þ
+void __fastcall TGraphAlgorithmForm::ShortestPathBtnClick(TObject * Sender)    //×î¶ÌÂ·¾¶Çó½âÊÂ¼þ
 {
     bool vst[MAX_VERTEX_NUM] = { false };     //·ÃÎÊ¸¨ÖúÊý×é
     int dte[MAX_VERTEX_NUM] = { 0 };          //µ¥Ô´×î¶ÌÂ·¾¶Ëã·¨´æ´¢×î¶ÌÂ·¾¶dte[i] = x ´ú±í´Ó½Úµã0µ½½ÚµãiµÄ×î¶ÌÂ·¾¶ÊÇx
@@ -306,7 +306,7 @@ void __fastcall TFormGraphAlgorithm::ShortestPathBtnClick(TObject * Sender)    /
 
 
 
-void __fastcall TFormGraphAlgorithm::BtClearMemoClick(TObject * Sender)
+void __fastcall TGraphAlgorithmForm::BtClearMemoClick(TObject * Sender)
 {
     memo->Clear();
 }
@@ -314,7 +314,7 @@ void __fastcall TFormGraphAlgorithm::BtClearMemoClick(TObject * Sender)
 //---------------------------------------------------------------------------
 
 
-void __fastcall TFormGraphAlgorithm::DirectBtnClick(TObject * Sender)
+void __fastcall TGraphAlgorithmForm::DirectBtnClick(TObject * Sender)
 {
     direct = 1;
     PageControl->TabIndex = 0;
@@ -322,7 +322,7 @@ void __fastcall TFormGraphAlgorithm::DirectBtnClick(TObject * Sender)
 
 //---------------------------------------------------------------------------
 
-void __fastcall TFormGraphAlgorithm::NoDirectBtnClick(TObject * Sender)
+void __fastcall TGraphAlgorithmForm::NoDirectBtnClick(TObject * Sender)
 {
     direct = 0;
     PageControl->TabIndex = 1;
@@ -332,7 +332,7 @@ void __fastcall TFormGraphAlgorithm::NoDirectBtnClick(TObject * Sender)
 
 
 
-void __fastcall TFormGraphAlgorithm::ResetBtnClick(TObject * Sender)
+void __fastcall TGraphAlgorithmForm::ResetBtnClick(TObject * Sender)
 {
     int i;
 //    TColor original_color =  img->Canvas->Brush->Color;
@@ -359,7 +359,7 @@ void __fastcall TFormGraphAlgorithm::ResetBtnClick(TObject * Sender)
 
 //---------------------------------------------------------------------------
 
-void __fastcall TFormGraphAlgorithm::PageControlChange(TObject *Sender)
+void __fastcall TGraphAlgorithmForm::PageControlChange(TObject *Sender)
 {
      if (PageControl->TabIndex == 0)
         DirectBtn->Checked = true;
@@ -368,7 +368,7 @@ void __fastcall TFormGraphAlgorithm::PageControlChange(TObject *Sender)
 }
 
 //---------------------------------------------------------------------------
-void __fastcall TFormGraphAlgorithm::FloydBtnClick(TObject *Sender)
+void __fastcall TGraphAlgorithmForm::FloydBtnClick(TObject *Sender)
 {
 
      memo->Lines->Add("===================================");
@@ -377,7 +377,7 @@ void __fastcall TFormGraphAlgorithm::FloydBtnClick(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TFormGraphAlgorithm::DijBtnClick(TObject *Sender)
+void __fastcall TGraphAlgorithmForm::DijBtnClick(TObject *Sender)
 {
    memo->Lines->Add("===================================");
    memo->Lines->Add("Dijkstra ×î¶ÌÂ·¾¶Çó½â½á¹ûÈçÏÂ");
@@ -386,7 +386,7 @@ void __fastcall TFormGraphAlgorithm::DijBtnClick(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TFormGraphAlgorithm::Button1Click(TObject *Sender)
+void __fastcall TGraphAlgorithmForm::Button1Click(TObject *Sender)
 {
      char c = 'A';
      memo->Lines->Add(c);
