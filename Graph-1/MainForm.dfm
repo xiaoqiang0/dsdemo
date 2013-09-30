@@ -3,8 +3,8 @@ object dsdemo_MainForm: Tdsdemo_MainForm
   Top = 0
   Align = alCustom
   Caption = ' '#25968#25454#32467#26500#31639#27861#28436#31034#31995#32479
-  ClientHeight = 480
-  ClientWidth = 998
+  ClientHeight = 383
+  ClientWidth = 714
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -13,14 +13,15 @@ object dsdemo_MainForm: Tdsdemo_MainForm
   Font.Style = []
   Menu = MainMenu1
   OldCreateOrder = False
+  WindowState = wsMaximized
   OnResize = FormResize
   PixelsPerInch = 96
   TextHeight = 13
   object Image1: TImage
     Left = 0
     Top = 22
-    Width = 998
-    Height = 439
+    Width = 714
+    Height = 342
     Align = alClient
     Picture.Data = {
       0A544A504547496D6167650AE41100FFD8FFE1122845786966000049492A0008
@@ -36666,11 +36667,13 @@ object dsdemo_MainForm: Tdsdemo_MainForm
       5C2874D9923D7039EDF955AAB0BB462E0E3677DCFFD9000000}
     Stretch = True
     ExplicitTop = 16
+    ExplicitWidth = 998
+    ExplicitHeight = 439
   end
   object main_StatusBar: TStatusBar
     Left = 0
-    Top = 461
-    Width = 998
+    Top = 364
+    Width = 714
     Height = 19
     Panels = <
       item
@@ -36679,16 +36682,19 @@ object dsdemo_MainForm: Tdsdemo_MainForm
       item
         Width = 100
       end>
+    ExplicitTop = 461
+    ExplicitWidth = 998
   end
   object ToolBar1: TToolBar
     Left = 0
     Top = 0
-    Width = 998
+    Width = 714
     Height = 22
     AutoSize = True
     Caption = 'ToolBar1'
     Images = ToolbarImageList
     TabOrder = 1
+    ExplicitWidth = 998
     object ToolButton1: TToolButton
       Left = 0
       Top = 0
@@ -36718,8 +36724,8 @@ object dsdemo_MainForm: Tdsdemo_MainForm
     end
   end
   object MainMenu1: TMainMenu
-    Left = 32
-    Top = 56
+    Left = 8
+    Top = 32
     object N1: TMenuItem
       Caption = #25991#20214
       object N2: TMenuItem
@@ -36794,14 +36800,14 @@ object dsdemo_MainForm: Tdsdemo_MainForm
   end
   object date_Timer: TTimer
     OnTimer = date_TimerTimer
-    Left = 568
-    Top = 288
+    Left = 472
+    Top = 184
   end
   object ToolbarImageList: TImageList
-    Left = 216
-    Top = 104
+    Left = 64
+    Top = 32
     Bitmap = {
-      494C010103000800240010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C010103000800280010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000400000001000000001002000000000000010
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
