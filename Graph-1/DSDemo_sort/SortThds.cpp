@@ -78,7 +78,7 @@ void __fastcall TSortThread::DoVisualSwap()
     FBox->Canvas->Pen->Color = clBtnFace;
     PaintLine(FBox, FI, FA);
     PaintLine(FBox, FJ, FB);
-    FBox->Canvas->Pen->Color = clRed;
+    FBox->Canvas->Pen->Color = LColor;
     PaintLine(FBox, FI, FB);
     PaintLine(FBox, FJ, FA);
 }
