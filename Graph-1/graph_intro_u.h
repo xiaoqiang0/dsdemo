@@ -14,7 +14,9 @@ class Tgraph_intro_frm : public TForm
 __published:	// IDE-managed Components
     TRichEdit *RichEdit1;
     TButton *introBtn;
+    TButton *Button1;
     void __fastcall introBtnClick(TObject *Sender);
+    void __fastcall Button1Click(TObject *Sender);
 private:	// User declarations
 public:		// User declarations
     __fastcall Tgraph_intro_frm(TComponent* Owner);

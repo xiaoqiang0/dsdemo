@@ -4,6 +4,7 @@
 #pragma hdrstop
 USEFORM("graph_alg_u.cpp", FormGraphAlgorithm);
 USEFORM("MainForm.cpp", dsdemo_MainForm);
+USEFORM("graph_intro_u.cpp", graph_intro_frm);
 //---------------------------------------------------------------------------
 WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 {
@@ -11,8 +12,9 @@ WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
         {
                  Application->Initialize();
                  Application->CreateForm(__classid(Tdsdemo_MainForm), &dsdemo_MainForm);
-                 Application->CreateForm(__classid(TFormGraphAlgorithm), &FormGraphAlgorithm);
-                 Application->Run();
+         Application->CreateForm(__classid(TFormGraphAlgorithm), &FormGraphAlgorithm);
+         Application->CreateForm(__classid(Tgraph_intro_frm), &graph_intro_frm);
+         Application->Run();
         }
         catch (Exception &exception)
         {

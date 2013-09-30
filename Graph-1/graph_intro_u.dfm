@@ -14,7 +14,7 @@ object graph_intro_frm: Tgraph_intro_frm
   PixelsPerInch = 96
   TextHeight = 13
   object RichEdit1: TRichEdit
-    Left = 256
+    Left = 260
     Top = 8
     Width = 665
     Height = 521
@@ -35,5 +35,14 @@ object graph_intro_frm: Tgraph_intro_frm
     Caption = #22270#20171#32461
     TabOrder = 1
     OnClick = introBtnClick
+  end
+  object Button1: TButton
+    Left = 56
+    Top = 112
+    Width = 121
+    Height = 25
+    Caption = #27979#35797
+    TabOrder = 2
+    OnClick = Button1Click
   end
 end
