@@ -1,7 +1,7 @@
 CC=g++
 CFLAGS+=-g
 dirs := .
-files := MGraph.cpp ALGraph.cpp graph.h test_MGraph.cpp test_ALGraph.cpp
+files := MGraph.cpp ALGraph.cpp graph.h
 obj=test_MGraph test_ALGraph
 all: $(obj)
 
@@ -12,6 +12,4 @@ test_ALGraph: test_ALGraph.cpp MGraph.cpp ALGraph.cpp graph.h
 	$(CC) $(CFLAGS) -o $@ $^
 
 clean:
-	rm -f $(obj)
-graph:graph.h
-graph2:graph.h
+	rm -rf $(obj) *.~bpr *.obj *.cbproj.local *.exe *.map *.res *.tds *.~bpr *Debug* *.obj *Debug_Build* *__history*
