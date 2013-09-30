@@ -29,7 +29,9 @@ void __fastcall Tdsdemo_MainForm::N2Click(TObject *Sender)
 //---------------------------------------------------------------------------
 void __fastcall Tdsdemo_MainForm::date_TimerTimer(TObject *Sender)
 {
-     main_StatusBar->Panels->Items[0]->Text = "2013 年 9月 30 日";
+     TDateTime datetime = Now();
+
+     main_StatusBar->Panels->Items[1]->Text = FormatDateTime("yyyy 年 mm 月dd 日 hh:mm:ss", datetime);
 }
 //---------------------------------------------------------------------------
 void __fastcall Tdsdemo_MainForm::N6Click(TObject *Sender)
@@ -40,11 +42,11 @@ void __fastcall Tdsdemo_MainForm::N6Click(TObject *Sender)
 //---------------------------------------------------------------------------
 void __fastcall Tdsdemo_MainForm::FormResize(TObject *Sender)
 {
-     return;
+
+     //DateToStr
      //Image
-     Image1->Left = 0;
-     Image1->Top = 0;
-     Image1->Width = dsdemo_MainForm->Width;
-     Image1->Height = dsdemo_MainForm->Height;
+     main_StatusBar->Panels->Items[0]->Width = dsdemo_MainForm->Width - 200;
+     main_StatusBar->Panels->Items[1]->Width = 200;
 }
 //---------------------------------------------------------------------------
+

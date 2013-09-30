@@ -2,7 +2,7 @@ object dsdemo_MainForm: Tdsdemo_MainForm
   Left = 0
   Top = 0
   Caption = ' '#25968#25454#32467#26500#31639#27861#28436#31034#31995#32479
-  ClientHeight = 481
+  ClientHeight = 480
   ClientWidth = 974
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -19,7 +19,7 @@ object dsdemo_MainForm: Tdsdemo_MainForm
     Left = 0
     Top = 22
     Width = 974
-    Height = 440
+    Height = 439
     Align = alClient
     Picture.Data = {
       0A544A504547496D6167650AE41100FFD8FFE1122845786966000049492A0008
@@ -36668,7 +36668,7 @@ object dsdemo_MainForm: Tdsdemo_MainForm
   end
   object main_StatusBar: TStatusBar
     Left = 0
-    Top = 462
+    Top = 461
     Width = 974
     Height = 19
     Panels = <
@@ -36676,8 +36676,9 @@ object dsdemo_MainForm: Tdsdemo_MainForm
         Width = 200
       end
       item
-        Width = 50
+        Width = 100
       end>
+    ExplicitTop = 462
   end
   object ToolBar1: TToolBar
     Left = 0
@@ -36717,8 +36718,8 @@ object dsdemo_MainForm: Tdsdemo_MainForm
     end
   end
   object MainMenu1: TMainMenu
-    Left = 88
-    Top = 96
+    Left = 8
+    Top = 32
     object N1: TMenuItem
       Caption = #25991#20214
       object N2: TMenuItem
@@ -36774,8 +36775,8 @@ object dsdemo_MainForm: Tdsdemo_MainForm
     Top = 288
   end
   object ToolbarImageList: TImageList
-    Left = 136
-    Top = 96
+    Left = 64
+    Top = 32
     Bitmap = {
       494C010103000800140010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000400000001000000001002000000000000010

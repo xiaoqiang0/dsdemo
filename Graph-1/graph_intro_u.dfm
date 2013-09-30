@@ -18,6 +18,7 @@ object graph_intro_frm: Tgraph_intro_frm
     Top = 8
     Width = 665
     Height = 521
+    Alignment = taRightJustify
     Font.Charset = GB2312_CHARSET
     Font.Color = clWindowText
     Font.Height = -11
