@@ -36695,8 +36695,6 @@ object dsdemo_MainForm: Tdsdemo_MainForm
       item
         Width = 100
       end>
-    ExplicitTop = 461
-    ExplicitWidth = 998
   end
   object ToolBar1: TToolBar
     Left = 0
@@ -36707,7 +36705,6 @@ object dsdemo_MainForm: Tdsdemo_MainForm
     Caption = 'ToolBar1'
     Images = ToolbarImageList
     TabOrder = 1
-    ExplicitWidth = 998
     object ToolButton1: TToolButton
       Left = 0
       Top = 0
@@ -36826,7 +36823,7 @@ object dsdemo_MainForm: Tdsdemo_MainForm
     Left = 64
     Top = 32
     Bitmap = {
-      494C010103000800280010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C010103000800300010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000400000001000000001002000000000000010
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000

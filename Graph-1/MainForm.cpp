@@ -35,8 +35,6 @@ void __fastcall Tdsdemo_MainForm::date_TimerTimer(TObject *Sender)
      TDateTime datetime = Now();
 
      main_StatusBar->Panels->Items[1]->Text = FormatDateTime("yyyy Äê mm ÔÂdd ÈÕ hh:mm:ss", datetime);
-     main_StatusBar->Panels->Items[0]->Text = "xyz";
-//     main_StatusBar->Panels->Items[0]->Text = FloatToStr(datetime.Val * 100000);
 }
 //---------------------------------------------------------------------------
 void __fastcall Tdsdemo_MainForm::N6Click(TObject *Sender)
@@ -48,8 +46,6 @@ void __fastcall Tdsdemo_MainForm::N6Click(TObject *Sender)
 void __fastcall Tdsdemo_MainForm::FormResize(TObject *Sender)
 {
 
-     //DateToStr
-     //Image
      main_StatusBar->Panels->Items[0]->Width = dsdemo_MainForm->Width - 200;
      main_StatusBar->Panels->Items[1]->Width = 200;
      welcomeLabel->Left = dsdemo_MainForm->Width/2 - welcomeLabel->Width / 2;
@@ -74,4 +70,5 @@ void __fastcall Tdsdemo_MainForm::N21Click(TObject *Sender)
      search_stringForm->ShowModal();
 }
 //---------------------------------------------------------------------------
+
 
