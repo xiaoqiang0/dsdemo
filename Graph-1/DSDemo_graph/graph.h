@@ -1,4 +1,4 @@
-﻿#ifndef  _GRAPH_H
+#ifndef  _GRAPH_H
 #define _GRAPH_H
 
 #include <stdio.h>
