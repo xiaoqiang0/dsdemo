@@ -20,7 +20,7 @@ void __fastcall Tgraph_intro_frm::introBtnClick(TObject *Sender)
 
      AppPath = ExtractFileDir (Application->ExeName);
 
-     RichEdit1->Lines->LoadFromFile(AppPath + "\\graph_intr.rtf");
+     RichEdit1->Lines->LoadFromFile(AppPath + "\\data\\graph_intr.rtf");
 
 }
 //---------------------------------------------------------------------------
@@ -30,7 +30,7 @@ void __fastcall Tgraph_intro_frm::Button1Click(TObject *Sender)
 
      AppPath = ExtractFileDir (Application->ExeName);
 
-     RichEdit1->Lines->LoadFromFile(AppPath + "\\test.rtf");
+     RichEdit1->Lines->LoadFromFile(AppPath + "\\data\\test.rtf");
 
 }
 //---------------------------------------------------------------------------
