@@ -19,9 +19,9 @@ object dsdemo_MainForm: Tdsdemo_MainForm
   TextHeight = 13
   object Image1: TImage
     Left = 0
-    Top = 22
+    Top = 29
     Width = 763
-    Height = 357
+    Height = 350
     Align = alClient
     Picture.Data = {
       0A544A504547496D6167650AE41100FFD8FFE1122845786966000049492A0008
@@ -36700,8 +36700,10 @@ object dsdemo_MainForm: Tdsdemo_MainForm
     Left = 0
     Top = 0
     Width = 763
-    Height = 22
+    Height = 29
     AutoSize = True
+    ButtonHeight = 29
+    ButtonWidth = 29
     Caption = 'ToolBar1'
     Images = ToolbarImageList
     TabOrder = 1
@@ -36711,22 +36713,22 @@ object dsdemo_MainForm: Tdsdemo_MainForm
       Caption = 'ToolButton2'
       ImageIndex = 1
     end
-    object ToolButton4: TToolButton
-      Left = 23
-      Top = 0
-      Caption = 'ToolButton4'
-      ImageIndex = 2
-    end
     object ToolButton3: TToolButton
-      Left = 46
+      Left = 29
       Top = 0
       Width = 8
       Caption = 'ToolButton3'
       ImageIndex = 2
       Style = tbsSeparator
     end
+    object ToolButton4: TToolButton
+      Left = 37
+      Top = 0
+      Caption = 'ToolButton4'
+      ImageIndex = 2
+    end
     object SortCompareTBtn: TToolButton
-      Left = 54
+      Left = 66
       Top = 0
       Hint = #25490#24207#24615#33021#28436#31034
       ImageIndex = 0
