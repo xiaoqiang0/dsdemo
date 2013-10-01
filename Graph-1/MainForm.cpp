@@ -9,6 +9,7 @@
 #include "SortThds.h"
 #include "ThSort.h"
 #include "search_string.h"
+#include "graph_traverse.h"
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 #pragma resource "*.dfm"
@@ -70,5 +71,13 @@ void __fastcall Tdsdemo_MainForm::N21Click(TObject *Sender)
      search_stringForm->ShowModal();
 }
 //---------------------------------------------------------------------------
+
+
+void __fastcall Tdsdemo_MainForm::N22Click(TObject *Sender)
+{
+     GraphTraverseForm->ShowModal();
+}
+//---------------------------------------------------------------------------
+
 
 

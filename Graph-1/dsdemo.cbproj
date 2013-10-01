@@ -154,6 +154,12 @@
             <DependentOn>graph_intro_u.h</DependentOn>
             <BuildOrder>7</BuildOrder>
         </CppCompile>
+        <CppCompile Include="DSDemo_graph\graph_traverse.cpp">
+            <Form>GraphTraverseForm</Form>
+            <FormType>dfm</FormType>
+            <DependentOn>DSDemo_graph\graph_traverse.h</DependentOn>
+            <BuildOrder>11</BuildOrder>
+        </CppCompile>
         <CppCompile Include="DSDemo_graph\MGraph.cpp">
             <BuildOrder>4</BuildOrder>
         </CppCompile>
@@ -179,11 +185,12 @@
             <DependentOn>MainForm.h</DependentOn>
             <BuildOrder>6</BuildOrder>
         </CppCompile>
-        <FormResources Include="DSDemo_graph\graph_alg_u.dfm"/>
-        <FormResources Include="DSDemo_graph\graph_intro_u.dfm"/>
+        <FormResources Include="DSDemo_search\search_string.dfm"/>
         <FormResources Include="MainForm.dfm"/>
         <FormResources Include="DSDemo_sort\ThSort.dfm"/>
-        <FormResources Include="DSDemo_search\search_string.dfm"/>
+        <FormResources Include="DSDemo_graph\graph_intro_u.dfm"/>
+        <FormResources Include="DSDemo_graph\graph_alg_u.dfm"/>
+        <FormResources Include="DSDemo_graph\graph_traverse.dfm"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>
