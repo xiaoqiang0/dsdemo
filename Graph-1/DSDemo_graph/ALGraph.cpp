@@ -9,6 +9,12 @@
 
 int visit[MAX_VERTEX_NUM];
 
+
+int InitALG(ALGraph *G)
+{
+    ;
+}
+
 int CreateALG(ALGraph *G, FILE *fp)
 {
 
@@ -18,6 +24,7 @@ int CreateALG(ALGraph *G, FILE *fp)
 
 	for (i = 0; i < G->vexnum; i++){
 		G->vertics[i].data.data = 'A' + i;
+                G->vertics[i].firstarc = NULL;
 	}
 
 	while(fscanf(fp, "%d\t%d\n", &from, &to) != EOF){
@@ -31,6 +38,24 @@ int CreateALG(ALGraph *G, FILE *fp)
 	return 0;
 }
 
+int ALGraph_Add_Node (ALGraph *G, int x, int y)
+{
+    G->vertics[G->vexnum].data.data = 'A' + G->vexnum;
+    G->vertics[G->vexnum].x = x;
+    G->vertics[G->vexnum].y = y;
+    G->vertics[G->vexnum].firstarc = NULL;
+    G->vexnum++;
+}
+
+int ALGraph_Add_Arc (ALGraph *G, int i, int j, int d)
+{
+        ArcNode	*node;
+        node = (ArcNode *)malloc (sizeof (ArcNode));
+        node->adjvex	= j;
+        node->next	= G->vertics[i].firstarc;
+        G->vertics[i].firstarc = node;
+        G->arcnum++;
+}
 void PrintALG(ALGraph *G)
 {
 	int i;
@@ -54,7 +79,7 @@ void DFS(ALGraph *G, int v)
 	ArcNode	*node;
 	int w;
 	visit[v] = 1;
-	printf("Visit V%d\n",v + 1);
+	printf("Visit %c\n",G->vertics[v].data.data);
 	node = G->vertics[v].firstarc;
 	while(node){
 		w =  node->adjvex;
@@ -89,7 +114,7 @@ void BFSTraverse(ALGraph *G)
 	for (v = 0; v < G->vexnum; v++){
 		if (!visit[v]){
 			Q[end++] = v;
-			printf("Visit V%d\n",v + 1);
+                        printf("Visit %c\n",G->vertics[v].data.data);
 			visit[v] = 1;
 			while(front != end){
 				ArcNode	*node;
@@ -99,7 +124,7 @@ void BFSTraverse(ALGraph *G)
 					w =  node->adjvex;
 					if (!visit[w]){
 						Q[end++] = w;
-						printf("Visit V%d\n",w + 1);
+						printf("Visit %c\n",G->vertics[w].data.data);
 						visit[w] = 1;
 					}
 					node = node->next;
@@ -143,7 +168,7 @@ int exist_path_BFS(ALGraph *G,int i, int j)
 		visit[v] = 0;
 	}
 	Q[end++] = i;
-	//printf("Visit V%d\n",v + 1);
+	//printf("Visit V%d\n",v + 1); 
 	visit[v] = 1;
 	while(front != end){
 		ArcNode	*node;

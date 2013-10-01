@@ -36671,10 +36671,10 @@ object dsdemo_MainForm: Tdsdemo_MainForm
     ExplicitHeight = 439
   end
   object welcomeLabel: TLabel
-    Left = 168
-    Top = 28
-    Width = 896
-    Height = 78
+    Left = -49
+    Top = 56
+    Width = 904
+    Height = 82
     Caption = #27426#36814#36827#20837#25968#25454#32467#26500#31639#27861#23398#20064#31995#32479
     Font.Charset = ANSI_CHARSET
     Font.Color = clWindowText
@@ -36732,12 +36732,6 @@ object dsdemo_MainForm: Tdsdemo_MainForm
       Caption = 'ToolButton4'
       ImageIndex = 2
     end
-  end
-  object Animate1: TAnimate
-    Left = 248
-    Top = 69
-    Width = 33
-    Height = 36
   end
   object MainMenu1: TMainMenu
     Left = 8
@@ -36827,7 +36821,7 @@ object dsdemo_MainForm: Tdsdemo_MainForm
     Left = 64
     Top = 32
     Bitmap = {
-      494C010103000800380010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C010103000800400010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000400000001000000001002000000000000010
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000

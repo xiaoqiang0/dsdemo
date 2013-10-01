@@ -81,7 +81,7 @@ object GraphAlgorithmForm: TGraphAlgorithmForm
     OnClick = DirectBtnClick
   end
   object NoDirectBtn: TRadioButton
-    Left = 63
+    Left = 69
     Top = 32
     Width = 58
     Height = 17

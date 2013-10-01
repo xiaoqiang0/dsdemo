@@ -23,20 +23,14 @@ class TGraphTraverseForm : public TForm
     TRadioButton *NoDirectBtn;
     TButton *ResetBtn;
     TGroupBox *GroupBox2;
-    TButton *Button1;
-    TButton *Button2;
+    TButton *TraverseBFSBtn;
     TButton *Button3;
     TButton *Button4;
-    TButton *Button5;
-    TButton *FloydBtn;
-    TButton *Button7;
-    TButton *ShortestPathBtn;
-    TButton *DijBtn;
+    TButton *TraverseDFSBtn;
     TMemo *memo;
         void __fastcall my_print (String info);
         void __fastcall CreateNodeBtnClick(TObject *Sender);   //生成顶点按钮点击函数
 
-        void __fastcall ShortestPathBtnClick(TObject *Sender);   //最短路径按钮点击函数
         void __fastcall FormCreate(TObject *Sender);
         void __fastcall imgMouseDown(TObject *Sender, TMouseButton Button,
                 TShiftState Shift, int X, int Y);    //鼠标按下函数
@@ -46,9 +40,7 @@ class TGraphTraverseForm : public TForm
         void __fastcall NoDirectBtnClick(TObject *Sender);
         void __fastcall DirectBtnClick(TObject *Sender);
         void __fastcall ResetBtnClick(TObject *Sender);
-    void __fastcall FloydBtnClick(TObject *Sender);
-    void __fastcall DijBtnClick(TObject *Sender);
-    void __fastcall Button1Click(TObject *Sender);
+    void __fastcall TraverseBFSBtnClick(TObject *Sender);
 
 
 

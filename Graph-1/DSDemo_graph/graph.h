@@ -35,6 +35,7 @@ typedef struct ArcNode
 typedef struct Vnode
 {
     struct VertexType  data;
+    int x,y;
     ArcNode *firstarc;
 }Vnode, AdjList[MAX_VERTEX_NUM];
 
@@ -46,6 +47,8 @@ typedef struct
 }ALGraph;
 
 int CreateALG(ALGraph *G, FILE *fp);
+int ALGraph_Add_Node (ALGraph *G, int x, int y);
+int ALGraph_Add_Arc (ALGraph *G, int i, int j, int d);
 void PrintALG(ALGraph *G);
 void DFS(ALGraph *G, int v);
 void DFSTraverse(ALGraph *G);

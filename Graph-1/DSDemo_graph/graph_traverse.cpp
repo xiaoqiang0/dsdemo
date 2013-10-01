@@ -13,30 +13,27 @@
 
 TGraphTraverseForm *GraphTraverseForm;
 
-TShape *sp[MAX_VERTEX_NUM];                           //½ÚµãShapÊı×é
-TLabel *lb[MAX_VERTEX_NUM];                           //½ÚµãShapÉÏµÄ±êÇ©Êı×é£¬»­°å->Shap->Label
-int graph[MAX_VERTEX_NUM][MAX_VERTEX_NUM] = { 9999 }; //´æ´¢Í¼µÄ¾ØÕó½á¹¹ graph[i][i] = n:´ú±íµÚi¸ö½Úµãµ½µÚj¸ö½ÚµãµÄ¾àÀëÊÇn
+static TShape *sp[MAX_VERTEX_NUM];                           //½ÚµãShapÊı×é
+static TLabel *lb[MAX_VERTEX_NUM];                           //½ÚµãShapÉÏµÄ±êÇ©Êı×é£¬»­°å->Shap->Label
 
-int direct = 1;                                       //Ä¬ÈÏÊÇÓĞÏòÍ¼
+static int direct = 0;                                       //Ä¬ÈÏÊÇÓĞÏòÍ¼
+static int N;                                                //n:¼ÇÂ¼½Úµã×ÜÊı
+static int start, end;                                       //start:ÉèÖÃÁ¬ÏßÊ±ÆğÊ¼µãµÄË÷Òı, end:ÉèÖÃÁ¬ÏßÊ±½áÊøµãµÄË÷Òı
+static int i, j;
+static bool input_node = false;
+static int node_R = 20;
 
-int x[MAX_VERTEX_NUM], y[MAX_VERTEX_NUM];             //´æ´¢Í¼ÔÚÆÁÄ»µÄ×ø±êÎ»ÖÃ
-int n;                                                //n:¼ÇÂ¼½Úµã×ÜÊı
-int start, end;                                       //start:ÉèÖÃÁ¬ÏßÊ±ÆğÊ¼µãµÄË÷Òı, end:ÉèÖÃÁ¬ÏßÊ±½áÊøµãµÄË÷Òı
+static MGraph MG;      //¾ØÕó´æ´¢
+static ALGraph ALG;    //ÁÙ½ÓÁ´±í´æ´¢
 
-int i, j;
-bool input_node = false;
-int node_R = 20;
-
-MGraph MG;      //¾ØÕó´æ´¢
-ALGraph ALG;    //ÁÙ½ÓÁ´±í´æ´¢
-
-TMemo *memo_local;
+static TMemo *memo_local;
 
 //---------------------------------------------------------------------------
-int searchPoint(int X, int Y)                   //ËÑË÷¸ø¶¨×ø±êµãÂäÔÚÍ¼ÖĞÄÄ¸öµã
+static int searchPoint(int x, int y)                   //ËÑË÷¸ø¶¨×ø±êµãÂäÔÚÍ¼ÖĞÄÄ¸öµã
 {
-    for (i = 0; i < n; i++) {
-        int d = sqrt((X - x[i]) * (X - x[i]) + (Y - y[i]) * (Y - y[i]));
+    for (i = 0; i < N; i++) {
+        int d = sqrt((x - ALG.vertics[i].x) * (x - ALG.vertics[i].x) + \
+                     (y - ALG.vertics[i].y) * (y - ALG.vertics[i].y));
         if (d <= node_R * 1.3) {
             return i;
         }
@@ -44,10 +41,11 @@ int searchPoint(int X, int Y)                   //ËÑË÷¸ø¶¨×ø±êµãÂäÔÚÍ¼ÖĞÄÄ¸öµã
     return -1;
 }
 
-int overLap(int X, int Y)                       //ËÑË÷¸ø¶¨×ø±êµã»á¸úÄÄ¸öµêÖØºÏ
+static int overLap(int x, int y)                       //ËÑË÷¸ø¶¨×ø±êµã»á¸úÄÄ¸öµêÖØºÏ
 {
-    for (i = 0; i < n; i++) {
-        int d = sqrt((X - x[i]) * (X - x[i]) + (Y - y[i]) * (Y - y[i]));
+    for (i = 0; i < N; i++) {
+        int d = sqrt((x - ALG.vertics[i].x) * (x - ALG.vertics[i].x) + \
+                     (y - ALG.vertics[i].y) * (y - ALG.vertics[i].y));
         if (d <= node_R * 3.5) {
             return i;
         }
@@ -56,7 +54,7 @@ int overLap(int X, int Y)                       //ËÑË÷¸ø¶¨×ø±êµã»á¸úÄÄ¸öµêÖØºÏ
 }
 
 //---------------------------------------------------------------------------
-int paintArrow(TImage * img, float x1, float y1, float x2, float y2)
+static int paintArrow(TImage * img, float x1, float y1, float x2, float y2)
 {
     float dx = abs(x2 - x1);
     float dy = abs(y2 - y1);
@@ -145,13 +143,19 @@ __fastcall TGraphTraverseForm::TGraphTraverseForm(TComponent * Owner):TForm(Owne
 //---------------------------------------------------------------------------
 void __fastcall TGraphTraverseForm::FormCreate(TObject * Sender)    //¶¥µã¼ä³õÊ¼ÉèÖÃÎªÎŞÇî´ó(²»Í¨)
 {
+    memo_local = memo;
+
+    //ÁÚ½Ó¾ØÕó
     MG.vexnum = 0;
     MG.arcnum = 0;
-    memo_local = memo;
     MG.print = showInMemo;
+    //ÁÚ½Ó±í
+    ALG.vexnum = 0;
+    ALG.arcnum = 0;
+    ALG.print = showInMemo;
+
     for (i = 0; i < MAX_VERTEX_NUM; i++)
         for (j = 0; j < MAX_VERTEX_NUM; j++) {
-            graph[i][j] = 9999;
             MG.arcs[i][j] = 99999;
         }
 }
@@ -183,37 +187,35 @@ void __fastcall TGraphTraverseForm::imgMouseDown(TObject * Sender, //Êó±ê°´ÏÂÊÂ¼
         TMouseButton Button,
         TShiftState Shift, int X, int Y)
 {
-    if (CreateNodeBtn->Enabled == true && input_node == true) {
-        if (n < MAX_VERTEX_NUM) {    //ÏŞÖÆ×î¶àÊäÈëMAX_VERTEX_NUM¸ö½Úµã
+    if (input_node == true) {
+        if (N < MAX_VERTEX_NUM) {    //ÏŞÖÆ×î¶àÊäÈëMAX_VERTEX_NUM¸ö½Úµã
             int tmp = overLap(X, Y);
-            char data = 'A' + n;
+            char data = 'A' + N;
             if (tmp != -1) {
                 ShowMessage("Óë½Úµã:" + IntToStr(tmp) + "ÏàÁÚÌ«½ü");
                 return;
             }
-            sp[n] = new TShape(this);    //½¨Á¢ĞÂ½áµã¿Ø¼ş
-            sp[n]->Parent = pnl;    //ÉèÖÃĞÂ½áµã¿Ø¼şÊôĞÔ
-            sp[n]->Enabled = false;
-            sp[n]->Left = X - node_R;    //Ô²ĞÎµÄÖ±¾¶ÊÇ15µÄÔ²
-            sp[n]->Top = Y - node_R;
-            sp[n]->Height = 2 * node_R;
-            sp[n]->Width = 2 * node_R;
+            sp[N] = new TShape(this);    //½¨Á¢ĞÂ½áµã¿Ø¼ş
+            sp[N]->Parent = pnl;    //ÉèÖÃĞÂ½áµã¿Ø¼şÊôĞÔ
+            sp[N]->Enabled = false;
+            sp[N]->Left = X - node_R;    //Ô²ĞÎµÄÖ±¾¶ÊÇ15µÄÔ²
+            sp[N]->Top = Y - node_R;
+            sp[N]->Height = 2 * node_R;
+            sp[N]->Width = 2 * node_R;
             TColor color[MAX_VERTEX_NUM] = {
                 clWhite, clYellow, clLime, clWebLightgrey, clRed, clAqua,
                 clTeal, clWebRoyalBlue
             };
-            sp[n]->Brush->Color = color[n];    //ÉèÖÃÌî³äÑÕÉ«
-            sp[n]->Shape = stEllipse;    //¿Ø¼şµÄÀàĞÍÊÇÍÖÔ²£¬C++builder ÖĞÃ»ÓĞÔ²Ö»ÓĞÍÖÔ²£¬¸ß¶È¿í¶ÈÏàµÈ¼´ÎªÔ²
-            lb[n] = new TLabel(pnl);    //½¨Á¢ĞÂ½áµã±êÇ©
-            lb[n]->Parent = pnl;    //ÉèÖÃĞÂ½áµã¿Ø¼şÊôĞÔ
-            lb[n]->Caption = data;    //½ÚµãµÄÏÔÊ¾ÄÚÈİ¼´½ÚµãµÄÏÂ±ê
-            lb[n]->Transparent = true;    //±êÇ©Í¸Ã÷
-            lb[n]->Left = X - 5;    //ÉèÖÃ±êÇ©µÄÎ»ÖÃ
-            lb[n]->Top = Y - 5;
-            x[n] = X;
-            y[n] = Y;        //´æ´¢ĞÂ¶¥µã×ø±ê£¬Ô²µÄÖĞĞÄ
-            n++;
-            MGraph_Inc_Node(&MG);
+            sp[N]->Brush->Color = color[N];    //ÉèÖÃÌî³äÑÕÉ«
+            sp[N]->Shape = stEllipse;    //¿Ø¼şµÄÀàĞÍÊÇÍÖÔ²£¬C++builder ÖĞÃ»ÓĞÔ²Ö»ÓĞÍÖÔ²£¬¸ß¶È¿í¶ÈÏàµÈ¼´ÎªÔ²
+            lb[N] = new TLabel(pnl);    //½¨Á¢ĞÂ½áµã±êÇ©
+            lb[N]->Parent = pnl;    //ÉèÖÃĞÂ½áµã¿Ø¼şÊôĞÔ
+            lb[N]->Caption = data;    //½ÚµãµÄÏÔÊ¾ÄÚÈİ¼´½ÚµãµÄÏÂ±ê
+            lb[N]->Transparent = true;    //±êÇ©Í¸Ã÷
+            lb[N]->Left = X - 5;    //ÉèÖÃ±êÇ©µÄÎ»ÖÃ
+            lb[N]->Top = Y - 5;
+            N++;
+            ALGraph_Add_Node(&ALG, X, Y);
         }
         //¶¥µã¼ÆÊıÆ÷¼Ó1
         return;
@@ -233,18 +235,20 @@ void __fastcall TGraphTraverseForm::imgMouseUp(TObject * Sender,
     end = searchPoint(X, Y);
     if (start != -1 && end != -1 && start != end) {
         dist = StrToInt(InputBox("½Úµã¾àÀë", "ÇëÊäÈë½Úµã¾àÀë: ", "5"));    //Ä¬ÈÏÖµ5
-        img->Canvas->MoveTo(x[start], y[start]);
-        img->Canvas->LineTo(x[end], y[end]);
-	    img->Canvas->TextOut((x[start] + x[end]) / 2, (y[start] + y[end]) / 2, dist);
+        img->Canvas->MoveTo(ALG.vertics[start].x, ALG.vertics[start].y);
+        img->Canvas->LineTo(ALG.vertics[end].x, ALG.vertics[end].y);
+	    img->Canvas->TextOut((ALG.vertics[start].x + ALG.vertics[end].x) / 2, (ALG.vertics[start].y + ALG.vertics[end].y) / 2, dist);
 
         //Èç¹ûÊÇÓĞÏòÍ¼»­¼ıÍ·
         if (direct == 1) {
-            paintArrow(img, x[start], y[start], x[end], y[end]);
-            graph[start][end] = dist;    //ÓĞÏòÍ¼
+            paintArrow(img, ALG.vertics[start].x, ALG.vertics[start].y, ALG.vertics[end].x, ALG.vertics[end].y);
+            ALGraph_Add_Arc(&ALG, start, end, dist);
             MGraph_Add_Arc(&MG, start, end, dist);
         } else {
             //ÎŞÏòÍ¼ÊÇ¶Ô³Æ¾ØÕó
-            graph[start][end] = graph[end][start] = dist;
+            ALGraph_Add_Arc(&ALG, start, end, dist);
+            ALGraph_Add_Arc(&ALG, end, start, dist);
+
             MGraph_Add_Arc(&MG, start, end, dist);
             MGraph_Add_Arc(&MG, end, start, dist);
         }
@@ -257,53 +261,6 @@ void __fastcall TGraphTraverseForm::my_print (String info)
 {
      memo->Lines->Add(info);
 }
-
-//---------------------------------------------------------------------------
-void __fastcall TGraphTraverseForm::ShortestPathBtnClick(TObject * Sender)    //×î¶ÌÂ·¾¶Çó½âÊÂ¼ş
-{
-    bool vst[MAX_VERTEX_NUM] = { false };     //·ÃÎÊ¸¨ÖúÊı×é
-    int dte[MAX_VERTEX_NUM] = { 0 };          //µ¥Ô´×î¶ÌÂ·¾¶Ëã·¨´æ´¢×î¶ÌÂ·¾¶dte[i] = x ´ú±í´Ó½Úµã0µ½½ÚµãiµÄ×î¶ÌÂ·¾¶ÊÇx
-    int target = -1;
-
-    if (n == 0) {
-        ShowMessage("Í¼»¹Î´´´½¨,Çë´´½¨ÍêÍ¼ºóÔÙ½øĞĞ²Ù×÷");
-        return;
-    }
-
-    do {
-        target = StrToInt(InputBox("×î¼ÑÂ·¾¶Éè¶¨¿ò", 
-                          "ÇëÊäÈëÄ¿µÄ¶¥µã 0 ~" + IntToStr(n - 1), ""));
-    } while (target >= n || target < 0);           //¿ØÖÆÊäÈë·¶Î§
-
-    ShortestPathBtn->Enabled = false;
-    int edg = 1, min = 9999, vtx;                  //ªìedg¡¢min¡¢vtx·Ö±ğ±íÊ¾Ê¼±ß,×îĞ¡±ß,¶¥µã
-    vst[0] = true;                                 //´Ó¶¥µã0£¨Ô­µã£©¿ªÊ¼¼ÆËãÂ·¾¶
-
-    for (i = 1; i < n; i++)                        //¼ÇÂ¼ÏàÁÚÔ­µãµÄÂ·¾­Öµ
-        dte[i] = graph[0][i];
-
-    while (edg < n - 1)                            //×î¶ÌÂ·¾¶½â¾ö·½·¨
-    {
-        edg++;                                     //±ßÏß¼ÆÊıÆ÷¼Ó1
-        min = 9999;                                //Éè¶¨±È½Ï»ùÖµ
-        for (i = 1; i < n; i++) {
-            if (vst[i] == false && min > dte[i])   //Ã»ÓĞ·ÃÎÊ¹ıµÄÏàÁÚ½Ó¶¨µã
-            {
-                vtx = i;                           //½«·ÃÎÊµÄ¶ÔÏó
-                min = dte[i];                      //×î¶ÌÂ·¾¶ÖµÒÑ¾­¸Ä±ä
-            }
-        }
-        vst[vtx] = true;                           //·ÃÎÊÉèÖÃ
-        for (i = 1; i < n; i++) {
-            if (vst[i] == false && dte[vtx] + graph[vtx][i] < dte[i])    //ĞÂÂ·¾¶×Ü³¤Èç¹ûĞ¡ÓÚÄ¿Ç°×î¶ÌÂ·¾¶
-                dte[i] = dte[vtx] + graph[vtx][i];    //¸üĞÂµ±Ç°×î¶ÌÂ·¾¶¼ÇÂ¼
-        }
-    }
-
-    memo->Lines->Add("´ÓÔ­µãµ½µÚ " + IntToStr(target) + " µã×î¼ÑÂ·¾¶Îª" +
-            IntToStr(dte[target]));
-}
-
 
 
 void __fastcall TGraphTraverseForm::BtClearMemoClick(TObject * Sender)
@@ -345,34 +302,19 @@ void __fastcall TGraphTraverseForm::ResetBtnClick(TObject * Sender)
     img->Canvas->LineTo(0,0);
 
     //ÊÍ·Å±êÇ©ºÍÔ²ĞÎ
-    for (i = 0; i < n; i++) {
+    for (i = 0; i < N; i++) {
         delete sp[i];
         delete lb[i];
     }
 
-    n = 0;
+    N = 0;
     CreateNodeBtn->Enabled = true;
     CreateNodeBtn->Caption = "ÊäÈë½Úµã";
 }
 
 //---------------------------------------------------------------------------
-void __fastcall TGraphTraverseForm::FloydBtnClick(TObject *Sender)
-{
 
-     memo->Lines->Add("=====Floyd ×î¶ÌÂ·¾¶Çó½â½á¹ûÈçÏÂ=====");
-     ShortestPath_FLOYD(&MG);
-}
-//---------------------------------------------------------------------------
-
-void __fastcall TGraphTraverseForm::DijBtnClick(TObject *Sender)
-{
-   memo->Lines->Add("=====Dijkstra ×î¶ÌÂ·¾¶Çó½â½á¹ûÈçÏÂ=====");
-   for (i = 0; i < MG.vexnum; i++)
-       ShortestPath_DIJ(&MG, i);
-}
-//---------------------------------------------------------------------------
-
-void __fastcall TGraphTraverseForm::Button1Click(TObject *Sender)
+void __fastcall TGraphTraverseForm::TraverseBFSBtnClick(TObject *Sender)
 {
      char c = 'A';
      memo->Lines->Add(c);
