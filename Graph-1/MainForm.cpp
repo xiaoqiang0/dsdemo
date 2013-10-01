@@ -60,7 +60,7 @@ void __fastcall Tdsdemo_MainForm::N18Click(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 
-void __fastcall Tdsdemo_MainForm::ToolButton1Click(TObject *Sender)
+void __fastcall Tdsdemo_MainForm::SortCompareTBtnClick(TObject *Sender)
 {
     ThreadSortForm->ShowModal();
 }

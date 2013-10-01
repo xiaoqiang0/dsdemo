@@ -36,7 +36,7 @@ __published:	// IDE-managed Components
     TMenuItem *N13;
     TMenuItem *N14;
     TToolBar *ToolBar1;
-    TToolButton *ToolButton1;
+    TToolButton *SortCompareTBtn;
     TToolButton *ToolButton2;
     TToolButton *ToolButton3;
     TToolButton *ToolButton4;
@@ -58,7 +58,7 @@ __published:	// IDE-managed Components
     void __fastcall N6Click(TObject *Sender);
     void __fastcall FormResize(TObject *Sender);
     void __fastcall N18Click(TObject *Sender);
-    void __fastcall ToolButton1Click(TObject *Sender);
+    void __fastcall SortCompareTBtnClick(TObject *Sender);
     void __fastcall N21Click(TObject *Sender);
     void __fastcall N22Click(TObject *Sender);
 private:	// User declarations

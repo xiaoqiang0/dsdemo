@@ -36673,8 +36673,8 @@ object dsdemo_MainForm: Tdsdemo_MainForm
   object welcomeLabel: TLabel
     Left = -49
     Top = 56
-    Width = 904
-    Height = 82
+    Width = 896
+    Height = 78
     Caption = #27426#36814#36827#20837#25968#25454#32467#26500#31639#27861#23398#20064#31995#32479
     Font.Charset = ANSI_CHARSET
     Font.Color = clWindowText
@@ -36705,18 +36705,17 @@ object dsdemo_MainForm: Tdsdemo_MainForm
     Caption = 'ToolBar1'
     Images = ToolbarImageList
     TabOrder = 1
-    object ToolButton1: TToolButton
-      Left = 0
-      Top = 0
-      Caption = 'ToolButton1'
-      ImageIndex = 0
-      OnClick = ToolButton1Click
-    end
     object ToolButton2: TToolButton
-      Left = 23
+      Left = 0
       Top = 0
       Caption = 'ToolButton2'
       ImageIndex = 1
+    end
+    object ToolButton4: TToolButton
+      Left = 23
+      Top = 0
+      Caption = 'ToolButton4'
+      ImageIndex = 2
     end
     object ToolButton3: TToolButton
       Left = 46
@@ -36726,11 +36725,14 @@ object dsdemo_MainForm: Tdsdemo_MainForm
       ImageIndex = 2
       Style = tbsSeparator
     end
-    object ToolButton4: TToolButton
+    object SortCompareTBtn: TToolButton
       Left = 54
       Top = 0
-      Caption = 'ToolButton4'
-      ImageIndex = 2
+      Hint = #25490#24207#24615#33021#28436#31034
+      ImageIndex = 0
+      ParentShowHint = False
+      ShowHint = True
+      OnClick = SortCompareTBtnClick
     end
   end
   object MainMenu1: TMainMenu
@@ -36821,7 +36823,7 @@ object dsdemo_MainForm: Tdsdemo_MainForm
     Left = 64
     Top = 32
     Bitmap = {
-      494C010103000800400010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C010103000800440010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000400000001000000001002000000000000010
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
