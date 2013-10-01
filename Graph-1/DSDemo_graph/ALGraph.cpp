@@ -81,7 +81,7 @@ void DFS(ALGraph *G, int v)
     visit[v] = 1;
     if (G->print){
         stringstream output;
-        output << "Visit " << G->vertics[v].data.data << "\r\n";
+        output << "Visit " << G->vertics[v].data.data;
         G->print(output.str());
     } else
         printf("Visit %c\n",G->vertics[v].data.data);
@@ -137,7 +137,7 @@ void BFSTraverse(ALGraph *G)
                         Q[end++] = w;
                         if (G->print){
                             stringstream output;
-                            output <<"Visit " << G->vertics[w].data.data << "\r\n";
+                            output <<"Visit " << G->vertics[w].data.data;
                             G->print(output.str());
                         } else
                             printf("Visit %c\n",G->vertics[w].data.data);

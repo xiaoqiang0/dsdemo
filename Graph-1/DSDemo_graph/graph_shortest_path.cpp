@@ -373,10 +373,3 @@ void __fastcall TGraphAlgorithmForm::DijBtnClick(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TGraphAlgorithmForm::Button1Click(TObject *Sender)
-{
-     char c = 'A';
-     memo->Lines->Add(c);
-}
-//---------------------------------------------------------------------------
-

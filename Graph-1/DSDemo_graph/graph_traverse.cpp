@@ -316,12 +316,14 @@ void __fastcall TGraphTraverseForm::ResetBtnClick(TObject * Sender)
 
 void __fastcall TGraphTraverseForm::TraverseDFSBtnClick(TObject *Sender)
 {
+     memo->Lines->Add("=====DFS 图遍历结果如下=====");
      DFSTraverse(&ALG);
 }
 //---------------------------------------------------------------------------
 
 void __fastcall TGraphTraverseForm::TraverseBFSBtnClick(TObject *Sender)
 {
+ memo->Lines->Add("=====BFS 图遍历结果如下=====");
  BFSTraverse(&ALG);
 }
 //---------------------------------------------------------------------------

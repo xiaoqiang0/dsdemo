@@ -151,7 +151,7 @@
         <CppCompile Include="DSDemo_graph\graph_shortest_path.cpp">
             <BuildOrder>8</BuildOrder>
             <Form>GraphAlgorithmForm</Form>
-            <DependentOn>cd8_3u.h</DependentOn>
+            <DependentOn>graph_shortest_path.h</DependentOn>
             <BuildOrder>0</BuildOrder>
         </CppCompile>
         <CppCompile Include="DSDemo_graph\graph_traverse.cpp">

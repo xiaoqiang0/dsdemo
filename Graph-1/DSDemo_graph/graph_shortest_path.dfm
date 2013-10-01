@@ -98,80 +98,47 @@ object GraphAlgorithmForm: TGraphAlgorithmForm
     Height = 402
     Caption = #36873#25321#26377#21521#22270#31639#27861
     TabOrder = 5
-    object Button1: TButton
-      Left = 22
-      Top = 58
-      Width = 104
-      Height = 26
-      Caption = #22270#25628#32034'(BFS)'
-      TabOrder = 0
-      OnClick = Button1Click
-    end
     object Button2: TButton
       Left = 22
-      Top = 195
+      Top = 187
       Width = 104
       Height = 26
       Caption = #21333#28304#26368#30701#36335#24452
-      TabOrder = 1
-    end
-    object Button3: TButton
-      Left = 22
-      Top = 373
-      Width = 104
-      Height = 26
-      Caption = #25299#25169#25490#24207
-      TabOrder = 2
-    end
-    object Button4: TButton
-      Left = 22
-      Top = 329
-      Width = 104
-      Height = 26
-      Caption = #20851#38190#36335#24452
-      TabOrder = 3
+      TabOrder = 0
     end
     object Button5: TButton
       Left = 22
-      Top = 149
+      Top = 125
       Width = 104
       Height = 26
       Caption = #28857#23545#28857#26368#30701#36335#24452
-      TabOrder = 4
+      TabOrder = 1
     end
     object FloydBtn: TButton
       Left = 22
-      Top = 239
+      Top = 255
       Width = 104
       Height = 26
       Caption = #26368#30701#36335#24452'Floyd'
-      TabOrder = 5
+      TabOrder = 2
       OnClick = FloydBtnClick
-    end
-    object Button7: TButton
-      Left = 22
-      Top = 102
-      Width = 104
-      Height = 26
-      Caption = #22270#25628#32034'(DFS)'
-      TabOrder = 6
     end
     object ShortestPathBtn: TButton
       Left = 22
-      Top = 27
+      Top = 59
       Width = 104
       Height = 25
       Caption = #26368#20339#36335#24452
-      TabOrder = 7
+      TabOrder = 3
       OnClick = ShortestPathBtnClick
     end
     object DijBtn: TButton
       Left = 22
-      Top = 287
+      Top = 319
       Width = 104
       Height = 26
       Caption = #26368#30701#36335#24452'Dijkstra'
-      TabOrder = 8
+      TabOrder = 4
       OnClick = DijBtnClick
     end
   end

@@ -1,6 +1,6 @@
 //---------------------------------------------------------------------------
-#ifndef cd8_3uH
-#define cd8_3uH
+#ifndef graph_shortest_pathH
+#define graph_shortest_pathH
 //---------------------------------------------------------------------------
 #include <Classes.hpp>
 #include <Controls.hpp>
@@ -23,13 +23,9 @@ class TGraphAlgorithmForm : public TForm
     TRadioButton *NoDirectBtn;
     TButton *ResetBtn;
     TGroupBox *GroupBox2;
-    TButton *Button1;
     TButton *Button2;
-    TButton *Button3;
-    TButton *Button4;
     TButton *Button5;
     TButton *FloydBtn;
-    TButton *Button7;
     TButton *ShortestPathBtn;
     TButton *DijBtn;
     TMemo *memo;
@@ -48,9 +44,6 @@ class TGraphAlgorithmForm : public TForm
         void __fastcall ResetBtnClick(TObject *Sender);
     void __fastcall FloydBtnClick(TObject *Sender);
     void __fastcall DijBtnClick(TObject *Sender);
-    void __fastcall Button1Click(TObject *Sender);
-
-
 
     private:	        // User declarations
     public:		// User declarations
