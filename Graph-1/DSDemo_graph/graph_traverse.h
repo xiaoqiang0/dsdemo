@@ -40,6 +40,7 @@ class TGraphTraverseForm : public TForm
         void __fastcall NoDirectBtnClick(TObject *Sender);
         void __fastcall DirectBtnClick(TObject *Sender);
         void __fastcall ResetBtnClick(TObject *Sender);
+    void __fastcall TraverseDFSBtnClick(TObject *Sender);
     void __fastcall TraverseBFSBtnClick(TObject *Sender);
 
 

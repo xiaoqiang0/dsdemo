@@ -33,7 +33,7 @@ static int searchPoint(int x, int y)                   //ËÑË÷¸ø¶¨×ø±êµãÂäÔÚÍ¼ÖÐÄ
 {
     for (i = 0; i < N; i++) {
         int d = sqrt((x - ALG.vertics[i].x) * (x - ALG.vertics[i].x) + \
-                     (y - ALG.vertics[i].y) * (y - ALG.vertics[i].y));
+                (y - ALG.vertics[i].y) * (y - ALG.vertics[i].y));
         if (d <= node_R * 1.3) {
             return i;
         }
@@ -45,7 +45,7 @@ static int overLap(int x, int y)                       //ËÑË÷¸ø¶¨×ø±êµã»á¸úÄÄ¸öµ
 {
     for (i = 0; i < N; i++) {
         int d = sqrt((x - ALG.vertics[i].x) * (x - ALG.vertics[i].x) + \
-                     (y - ALG.vertics[i].y) * (y - ALG.vertics[i].y));
+                (y - ALG.vertics[i].y) * (y - ALG.vertics[i].y));
         if (d <= node_R * 3.5) {
             return i;
         }
@@ -129,9 +129,9 @@ static int paintArrow(TImage * img, float x1, float y1, float x2, float y2)
 
 
 
-void showInMemo(string s)
+static void showInMemo(string s)
 {
-      memo_local->Lines->Append(s.c_str());
+    memo_local->Lines->Append(s.c_str());
 }
 
 
@@ -237,7 +237,7 @@ void __fastcall TGraphTraverseForm::imgMouseUp(TObject * Sender,
         dist = StrToInt(InputBox("½Úµã¾àÀë", "ÇëÊäÈë½Úµã¾àÀë: ", "5"));    //Ä¬ÈÏÖµ5
         img->Canvas->MoveTo(ALG.vertics[start].x, ALG.vertics[start].y);
         img->Canvas->LineTo(ALG.vertics[end].x, ALG.vertics[end].y);
-	    img->Canvas->TextOut((ALG.vertics[start].x + ALG.vertics[end].x) / 2, (ALG.vertics[start].y + ALG.vertics[end].y) / 2, dist);
+        img->Canvas->TextOut((ALG.vertics[start].x + ALG.vertics[end].x) / 2, (ALG.vertics[start].y + ALG.vertics[end].y) / 2, dist);
 
         //Èç¹ûÊÇÓÐÏòÍ¼»­¼ýÍ·
         if (direct == 1) {
@@ -259,7 +259,7 @@ void __fastcall TGraphTraverseForm::imgMouseUp(TObject * Sender,
 }
 void __fastcall TGraphTraverseForm::my_print (String info)
 {
-     memo->Lines->Add(info);
+    memo->Lines->Add(info);
 }
 
 
@@ -290,11 +290,11 @@ void __fastcall TGraphTraverseForm::NoDirectBtnClick(TObject * Sender)
 void __fastcall TGraphTraverseForm::ResetBtnClick(TObject * Sender)
 {
     int i;
-//    TColor original_color =  img->Canvas->Brush->Color;
-//    img->Canvas->Brush->Color = clWhite;
-//    img->Canvas->Rectangle(0, 0, img->Width, img->Height);
-//    img->Canvas->Brush->Color =  original_color;
-//    img->Repaint();
+    //    TColor original_color =  img->Canvas->Brush->Color;
+    //    img->Canvas->Brush->Color = clWhite;
+    //    img->Canvas->Rectangle(0, 0, img->Width, img->Height);
+    //    img->Canvas->Brush->Color =  original_color;
+    //    img->Repaint();
     for (i = 0; i < img->Width; i++)
         for (j = 0; j < img->Height; j++)
             img->Canvas->Pixels[i][j] = clWhite;    //½«·¶Î§ÄÚµÄ»­°å±ä°×
@@ -314,10 +314,15 @@ void __fastcall TGraphTraverseForm::ResetBtnClick(TObject * Sender)
 
 //---------------------------------------------------------------------------
 
+void __fastcall TGraphTraverseForm::TraverseDFSBtnClick(TObject *Sender)
+{
+     DFSTraverse(&ALG);
+}
+//---------------------------------------------------------------------------
+
 void __fastcall TGraphTraverseForm::TraverseBFSBtnClick(TObject *Sender)
 {
-     char c = 'A';
-     memo->Lines->Add(c);
+ BFSTraverse(&ALG);
 }
 //---------------------------------------------------------------------------
 

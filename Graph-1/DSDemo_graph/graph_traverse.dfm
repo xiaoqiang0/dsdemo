@@ -130,6 +130,7 @@ object GraphTraverseForm: TGraphTraverseForm
       Height = 26
       Caption = #22270#25628#32034'(DFS)'
       TabOrder = 3
+      OnClick = TraverseDFSBtnClick
     end
   end
   object memo: TMemo
