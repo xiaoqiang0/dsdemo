@@ -55,6 +55,82 @@ int overLap(int X, int Y)                       //搜索给定坐标点会跟哪个店重合
     return -1;
 }
 
+//---------------------------------------------------------------------------
+int paintArrow(TImage * img, float x1, float y1, float x2, float y2)
+{
+    float dx = abs(x2 - x1);
+    float dy = abs(y2 - y1);
+    float d, Ox, Oy, O1x, O1y, O2x, O2y;
+    float k1, k2;
+    d = sqrt((x1 - x2) * (x1 - x2) + (y1 - y2) * (y1 - y2));
+
+    //自左到右，或自右到左
+    if (dy == 0) {
+        int flag = (x2 - x1) > 0 ? 1 : -1;
+        Ox = x2 - 2 * node_R * flag;
+        Oy = y2;
+        O1x = Ox;
+        O1y = y2 + node_R / 3;
+        O2x = Ox;
+        O2y = y2 - node_R / 3;
+    }
+    //自下而上或自上而下
+    if (dx == 0) {
+        int flag = (y2 - y1) > 0 ? 1 : -1;
+        Ox = x2;
+        Oy = y2 - 2 * node_R * flag;
+        O1x = Ox + node_R / 3;
+        O1y = Oy;
+        O2x = Ox - node_R / 3;
+        O2y = Oy;
+    }
+    //左下角-->右上角方向
+    if (x2 - x1 > 0 && y2 - y1 < 0) {
+        Ox = x2 - 2 * node_R * dx / d;
+        Oy = y2 + 2 * node_R * dy / d;
+        O1x = Ox + node_R / 3 * dy / d;
+        O1y = Oy + node_R / 3 * dx / d;
+        O2x = Ox - node_R / 3 * dy / d;
+        O2y = Oy - node_R / 3 * dx / d;
+    }
+    //右上角-->左下角方向
+    if (x2 - x1 < 0 && y2 - y1 > 0) {
+        Ox = x2 + 2 * node_R * dx / d;
+        Oy = y2 - 2 * node_R * dy / d;
+        O1x = Ox - node_R / 3 * dy / d;
+        O1y = Oy - node_R / 3 * dx / d;
+        O2x = Ox + node_R / 3 * dy / d;
+        O2y = Oy + node_R / 3 * dx / d;
+    }
+    //左上角-->右下角方向
+    if (x2 - x1 > 0 && y2 - y1 > 0) {
+        Ox = x2 - 2 * node_R * dx / d;
+        Oy = y2 - 2 * node_R * dy / d;
+        O1x = Ox + node_R / 3 * dy / d;
+        O1y = Oy - node_R / 3 * dx / d;
+        O2x = Ox - node_R / 3 * dy / d;
+        O2y = Oy + node_R / 3 * dx / d;
+    }
+    //右下角-->左上角方向
+    if (x2 - x1 < 0 && y2 - y1 < 0) {
+        Ox = x2 + 2 * node_R * dx / d;
+        Oy = y2 + 2 * node_R * dy / d;
+        O1x = Ox - node_R / 3 * dy / d;
+        O1y = Oy + node_R / 3 * dx / d;
+        O2x = Ox + node_R / 3 * dy / d;
+        O2y = Oy - node_R / 3 * dx / d;
+    }
+
+    float dst_x = (Ox + x2) / 2;
+    float dst_y = (Oy + y2) / 2;
+
+    img->Canvas->MoveTo(ceil(O1x), ceil(O1y));
+    img->Canvas->LineTo(floor(dst_x), floor(dst_y));
+    img->Canvas->LineTo(floor(O2x), floor(O2y));
+}
+
+
+
 void showInMemo(string s)
 {
       memo_local->Lines->Append(s.c_str());
@@ -146,81 +222,6 @@ void __fastcall TGraphAlgorithmForm::imgMouseDown(TObject * Sender, //鼠标按下事
     start = searchPoint(X, Y);
 
     //ShowMessage("请输入 0 ~ "+);
-}
-
-
-//---------------------------------------------------------------------------
-int paintArrow(TImage * img, float x1, float y1, float x2, float y2)
-{
-    float dx = abs(x2 - x1);
-    float dy = abs(y2 - y1);
-    float d, Ox, Oy, O1x, O1y, O2x, O2y;
-    float k1, k2;
-    d = sqrt((x1 - x2) * (x1 - x2) + (y1 - y2) * (y1 - y2));
-
-    //自左到右，或自右到左
-    if (dy == 0) {
-        int flag = (x2 - x1) > 0 ? 1 : -1;
-        Ox = x2 - 2 * node_R * flag;
-        Oy = y2;
-        O1x = Ox;
-        O1y = y2 + node_R / 3;
-        O2x = Ox;
-        O2y = y2 - node_R / 3;
-    }
-    //自下而上或自上而下
-    if (dx == 0) {
-        int flag = (y2 - y1) > 0 ? 1 : -1;
-        Ox = x2;
-        Oy = y2 - 2 * node_R * flag;
-        O1x = Ox + node_R / 3;
-        O1y = Oy;
-        O2x = Ox - node_R / 3;
-        O2y = Oy;
-    }
-    //左下角-->右上角方向
-    if (x2 - x1 > 0 && y2 - y1 < 0) {
-        Ox = x2 - 2 * node_R * dx / d;
-        Oy = y2 + 2 * node_R * dy / d;
-        O1x = Ox + node_R / 3 * dy / d;
-        O1y = Oy + node_R / 3 * dx / d;
-        O2x = Ox - node_R / 3 * dy / d;
-        O2y = Oy - node_R / 3 * dx / d;
-    }
-    //右上角-->左下角方向
-    if (x2 - x1 < 0 && y2 - y1 > 0) {
-        Ox = x2 + 2 * node_R * dx / d;
-        Oy = y2 - 2 * node_R * dy / d;
-        O1x = Ox - node_R / 3 * dy / d;
-        O1y = Oy - node_R / 3 * dx / d;
-        O2x = Ox + node_R / 3 * dy / d;
-        O2y = Oy + node_R / 3 * dx / d;
-    }
-    //左上角-->右下角方向
-    if (x2 - x1 > 0 && y2 - y1 > 0) {
-        Ox = x2 - 2 * node_R * dx / d;
-        Oy = y2 - 2 * node_R * dy / d;
-        O1x = Ox + node_R / 3 * dy / d;
-        O1y = Oy - node_R / 3 * dx / d;
-        O2x = Ox - node_R / 3 * dy / d;
-        O2y = Oy + node_R / 3 * dx / d;
-    }
-    //右下角-->左上角方向
-    if (x2 - x1 < 0 && y2 - y1 < 0) {
-        Ox = x2 + 2 * node_R * dx / d;
-        Oy = y2 + 2 * node_R * dy / d;
-        O1x = Ox - node_R / 3 * dy / d;
-        O1y = Oy + node_R / 3 * dx / d;
-        O2x = Ox + node_R / 3 * dy / d;
-        O2y = Oy - node_R / 3 * dx / d;
-    }
-
-    float dst_x = (Ox + x2) / 2;
-    float dst_y = (Oy + y2) / 2;
-
-    img->Canvas->MoveTo(ceil(O1x), ceil(O1y));
-    img->Canvas->LineTo(floor(dst_x), floor(dst_y));
-    img->Canvas->LineTo(floor(O2x), floor(O2y));
 }
 
 
