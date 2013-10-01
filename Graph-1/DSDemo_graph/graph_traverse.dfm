@@ -62,26 +62,26 @@ object GraphTraverseForm: TGraphTraverseForm
     end
   end
   object GraphType: TRadioGroup
-    Left = 3
+    Left = 15
     Top = 8
-    Width = 133
+    Width = 137
     Height = 53
     Caption = #36873#25321#22270#31867#22411
     TabOrder = 1
   end
   object DirectBtn: TRadioButton
-    Left = 72
+    Left = 84
     Top = 30
-    Width = 57
+    Width = 61
     Height = 21
     Caption = #26377#21521#22270
     TabOrder = 2
     OnClick = DirectBtnClick
   end
   object NoDirectBtn: TRadioButton
-    Left = 8
+    Left = 20
     Top = 32
-    Width = 58
+    Width = 62
     Height = 17
     Caption = #26080#21521#22270
     Checked = True
@@ -95,7 +95,7 @@ object GraphTraverseForm: TGraphTraverseForm
     Left = 10
     Top = 80
     Width = 142
-    Height = 402
+    Height = 289
     Caption = #36873#25321#26377#21521#22270#31639#27861
     TabOrder = 5
     object TraverseBFSBtn: TButton

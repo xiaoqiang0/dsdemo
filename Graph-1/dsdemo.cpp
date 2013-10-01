@@ -3,12 +3,13 @@
 #include <vcl.h>
 #pragma hdrstop
 
-USEFORM("DSDemo_search\search_string.cpp", search_stringForm);
 USEFORM("MainForm.cpp", dsdemo_MainForm);
-USEFORM("DSDemo_sort\ThSort.cpp", ThreadSortForm);
 USEFORM("DSDemo_graph\graph_intro.cpp", graph_intro_frm);
 USEFORM("DSDemo_graph\graph_shortest_path.cpp", GraphAlgorithmForm);
 USEFORM("DSDemo_graph\graph_traverse.cpp", GraphTraverseForm);
+USEFORM("DSDemo_sort\ThSort.cpp", ThreadSortForm);
+USEFORM("DSDemo_search\search_string.cpp", search_stringForm);
+
 //---------------------------------------------------------------------------
 WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 {
