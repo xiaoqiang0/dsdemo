@@ -4,8 +4,8 @@
 #pragma hdrstop
 
 #include "MainForm.h"
-#include "graph_alg_u.h"
-#include "graph_intro_u.h"
+#include "graph_shortest_path.h"
+#include "graph_intro.h"
 #include "SortThds.h"
 #include "ThSort.h"
 #include "search_string.h"

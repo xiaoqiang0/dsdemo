@@ -1,7 +1,7 @@
 //---------------------------------------------------------------------------
 
-#ifndef graph_intro_uH
-#define graph_intro_uH
+#ifndef graph_introH
+#define graph_introH
 //---------------------------------------------------------------------------
 #include <System.Classes.hpp>
 #include <Vcl.Controls.hpp>

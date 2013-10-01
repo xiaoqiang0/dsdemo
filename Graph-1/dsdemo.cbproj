@@ -142,16 +142,16 @@
         <None Include="DSDemo_graph\graph.h">
             <BuildOrder>5</BuildOrder>
         </None>
-        <CppCompile Include="DSDemo_graph\graph_alg_u.cpp">
+        <CppCompile Include="DSDemo_graph\graph_shortest_path.cpp">
             <BuildOrder>8</BuildOrder>
             <Form>GraphAlgorithmForm</Form>
             <DependentOn>cd8_3u.h</DependentOn>
             <BuildOrder>0</BuildOrder>
         </CppCompile>
-        <CppCompile Include="DSDemo_graph\graph_intro_u.cpp">
+        <CppCompile Include="DSDemo_graph\graph_intro.cpp">
             <Form>graph_intro_frm</Form>
             <FormType>dfm</FormType>
-            <DependentOn>graph_intro_u.h</DependentOn>
+            <DependentOn>graph_intro.h</DependentOn>
             <BuildOrder>7</BuildOrder>
         </CppCompile>
         <CppCompile Include="DSDemo_graph\graph_traverse.cpp">
@@ -188,8 +188,8 @@
         <FormResources Include="DSDemo_search\search_string.dfm"/>
         <FormResources Include="MainForm.dfm"/>
         <FormResources Include="DSDemo_sort\ThSort.dfm"/>
-        <FormResources Include="DSDemo_graph\graph_intro_u.dfm"/>
-        <FormResources Include="DSDemo_graph\graph_alg_u.dfm"/>
+        <FormResources Include="DSDemo_graph\graph_intro.dfm"/>
+        <FormResources Include="DSDemo_graph\graph_shortest_path.dfm"/>
         <FormResources Include="DSDemo_graph\graph_traverse.dfm"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>

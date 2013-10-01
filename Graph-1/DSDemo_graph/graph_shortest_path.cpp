@@ -4,7 +4,7 @@
 #pragma hdrstop
 
 #include "graph.h"
-#include "graph_alg_u.h"
+#include "graph_shortest_path.h"
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 #pragma resource "*.dfm"
