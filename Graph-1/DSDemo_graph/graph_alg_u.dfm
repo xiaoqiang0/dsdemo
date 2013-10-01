@@ -1,7 +1,7 @@
 object GraphAlgorithmForm: TGraphAlgorithmForm
   Left = 188
   Top = 143
-  Caption = #22270#31639#27861#28436#31034
+  Caption = #22270#26368#30701#36335#24452#31639#27861#28436#31034
   ClientHeight = 511
   ClientWidth = 1100
   Color = clBtnFace
@@ -41,7 +41,7 @@ object GraphAlgorithmForm: TGraphAlgorithmForm
     Width = 169
     Height = 53
     Caption = #26500#22270#25805#20316#38754#26495
-    TabOrder = 5
+    TabOrder = 4
     object CreateNodeBtn: TButton
       Left = 3
       Top = 20
@@ -91,130 +91,103 @@ object GraphAlgorithmForm: TGraphAlgorithmForm
     TabOrder = 3
     OnClick = NoDirectBtnClick
   end
-  object PageControl: TPageControl
-    Left = 3
-    Top = 67
-    Width = 470
-    Height = 436
-    ActivePage = TabSheetNoDirect
+  object GroupBox2: TGroupBox
+    Left = 10
+    Top = 80
+    Width = 142
+    Height = 402
+    Caption = #36873#25321#26377#21521#22270#31639#27861
+    TabOrder = 5
+    object Button1: TButton
+      Left = 22
+      Top = 58
+      Width = 104
+      Height = 26
+      Caption = #22270#25628#32034'(BFS)'
+      TabOrder = 0
+      OnClick = Button1Click
+    end
+    object Button2: TButton
+      Left = 22
+      Top = 195
+      Width = 104
+      Height = 26
+      Caption = #21333#28304#26368#30701#36335#24452
+      TabOrder = 1
+    end
+    object Button3: TButton
+      Left = 22
+      Top = 373
+      Width = 104
+      Height = 26
+      Caption = #25299#25169#25490#24207
+      TabOrder = 2
+    end
+    object Button4: TButton
+      Left = 22
+      Top = 329
+      Width = 104
+      Height = 26
+      Caption = #20851#38190#36335#24452
+      TabOrder = 3
+    end
+    object Button5: TButton
+      Left = 22
+      Top = 149
+      Width = 104
+      Height = 26
+      Caption = #28857#23545#28857#26368#30701#36335#24452
+      TabOrder = 4
+    end
+    object FloydBtn: TButton
+      Left = 22
+      Top = 239
+      Width = 104
+      Height = 26
+      Caption = #26368#30701#36335#24452'Floyd'
+      TabOrder = 5
+      OnClick = FloydBtnClick
+    end
+    object Button7: TButton
+      Left = 22
+      Top = 102
+      Width = 104
+      Height = 26
+      Caption = #22270#25628#32034'(DFS)'
+      TabOrder = 6
+    end
+    object ShortestPathBtn: TButton
+      Left = 22
+      Top = 27
+      Width = 104
+      Height = 25
+      Caption = #26368#20339#36335#24452
+      TabOrder = 7
+      OnClick = ShortestPathBtnClick
+    end
+    object DijBtn: TButton
+      Left = 22
+      Top = 287
+      Width = 104
+      Height = 26
+      Caption = #26368#30701#36335#24452'Dijkstra'
+      TabOrder = 8
+      OnClick = DijBtnClick
+    end
+  end
+  object memo: TMemo
+    Left = 170
+    Top = 80
+    Width = 303
+    Height = 402
+    Color = clSilver
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -13
     Font.Name = 'MS Sans Serif'
     Font.Style = []
     ParentFont = False
-    TabOrder = 4
-    TabWidth = 233
-    OnChange = PageControlChange
-    object TabSheetDirect: TTabSheet
-      Caption = #26377#21521#22270
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
-      object memo: TMemo
-        Left = 163
-        Top = 0
-        Width = 303
-        Height = 402
-        Color = clSilver
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clWindowText
-        Font.Height = -13
-        Font.Name = 'MS Sans Serif'
-        Font.Style = []
-        ParentFont = False
-        ScrollBars = ssVertical
-        TabOrder = 0
-      end
-      object GroupBox2: TGroupBox
-        Left = 3
-        Top = 0
-        Width = 142
-        Height = 402
-        Caption = #36873#25321#26377#21521#22270#31639#27861
-        TabOrder = 1
-        object Button1: TButton
-          Left = 22
-          Top = 58
-          Width = 104
-          Height = 26
-          Caption = #22270#25628#32034'(BFS)'
-          TabOrder = 0
-          OnClick = Button1Click
-        end
-        object Button2: TButton
-          Left = 22
-          Top = 195
-          Width = 104
-          Height = 26
-          Caption = #21333#28304#26368#30701#36335#24452
-          TabOrder = 1
-        end
-        object Button3: TButton
-          Left = 22
-          Top = 373
-          Width = 104
-          Height = 26
-          Caption = #25299#25169#25490#24207
-          TabOrder = 2
-        end
-        object Button4: TButton
-          Left = 22
-          Top = 329
-          Width = 104
-          Height = 26
-          Caption = #20851#38190#36335#24452
-          TabOrder = 3
-        end
-        object Button5: TButton
-          Left = 22
-          Top = 149
-          Width = 104
-          Height = 26
-          Caption = #28857#23545#28857#26368#30701#36335#24452
-          TabOrder = 4
-        end
-        object FloydBtn: TButton
-          Left = 22
-          Top = 239
-          Width = 104
-          Height = 26
-          Caption = #26368#30701#36335#24452'Floyd'
-          TabOrder = 5
-          OnClick = FloydBtnClick
-        end
-        object Button7: TButton
-          Left = 22
-          Top = 102
-          Width = 104
-          Height = 26
-          Caption = #22270#25628#32034'(DFS)'
-          TabOrder = 6
-        end
-        object ShortestPathBtn: TButton
-          Left = 22
-          Top = 27
-          Width = 104
-          Height = 25
-          Caption = #26368#20339#36335#24452
-          TabOrder = 7
-          OnClick = ShortestPathBtnClick
-        end
-        object DijBtn: TButton
-          Left = 22
-          Top = 287
-          Width = 104
-          Height = 26
-          Caption = #26368#30701#36335#24452'Dijkstra'
-          TabOrder = 8
-          OnClick = DijBtnClick
-        end
-      end
-    end
-    object TabSheetNoDirect: TTabSheet
-      Caption = #26080#21521#22270
-      ImageIndex = 1
-    end
+    ScrollBars = ssVertical
+    TabOrder = 6
   end
 end

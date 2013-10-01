@@ -18,24 +18,21 @@ class TGraphAlgorithmForm : public TForm
         TImage *img; //图像
         TGroupBox *GroupBox1;
     TButton *CreateNodeBtn;
-    TButton *ShortestPathBtn;
         TRadioGroup *GraphType;
     TRadioButton *DirectBtn;
     TRadioButton *NoDirectBtn;
-        TMemo *memo;
-        TPageControl *PageControl;
-        TTabSheet *TabSheetDirect;
-        TTabSheet *TabSheetNoDirect;
     TButton *ResetBtn;
-        TGroupBox *GroupBox2;
-        TButton *Button1;
-        TButton *Button2;
-        TButton *Button3;
-        TButton *Button4;
-        TButton *Button5;
+    TGroupBox *GroupBox2;
+    TButton *Button1;
+    TButton *Button2;
+    TButton *Button3;
+    TButton *Button4;
+    TButton *Button5;
     TButton *FloydBtn;
-        TButton *Button7;
+    TButton *Button7;
+    TButton *ShortestPathBtn;
     TButton *DijBtn;
+    TMemo *memo;
         void __fastcall my_print (String info);
         void __fastcall CreateNodeBtnClick(TObject *Sender);   //生成顶点按钮点击函数
 
@@ -49,7 +46,6 @@ class TGraphAlgorithmForm : public TForm
         void __fastcall NoDirectBtnClick(TObject *Sender);
         void __fastcall DirectBtnClick(TObject *Sender);
         void __fastcall ResetBtnClick(TObject *Sender);
-    void __fastcall PageControlChange(TObject *Sender);
     void __fastcall FloydBtnClick(TObject *Sender);
     void __fastcall DijBtnClick(TObject *Sender);
     void __fastcall Button1Click(TObject *Sender);

@@ -120,7 +120,7 @@ void ShortestPath_FLOYD(MGraph *G)
 
             if (d[i][j] >= 10000||i == j) continue;
 
-            output << "节点" <<  i << " 到节点" << j << " 的路径长度是: " << d[i][j] << "\r\n";
+            output << "节点" <<  G->vexs[i].data << " 到节点" << G->vexs[j].data << " 的路径长度是: " << d[i][j] << "\r\n";
             output << "详细路径:" ;
             Get_Path(G, P, i, j, output);
             if (G->print)
@@ -192,7 +192,7 @@ void ShortestPath_DIJ(MGraph * G, int v0)
         stringstream output;
         if (D[i] >= MAX || i == v0) continue;
         
-        output << "节点" << v0 << "到节点" << i << " 的路径长度是:" << D[i] << "\r\n";
+        output << "节点" << G->vexs[v0].data << "到节点" << G->vexs[i].data << " 的路径长度是:" << D[i] << "\r\n";
         output << "详细路径: " << G->vexs[v0].data;
         for (j = 0; j < len[i]; j++) {
             output << "->" << P[i][j];

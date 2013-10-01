@@ -318,7 +318,6 @@ void __fastcall TGraphAlgorithmForm::BtClearMemoClick(TObject * Sender)
 void __fastcall TGraphAlgorithmForm::DirectBtnClick(TObject * Sender)
 {
     direct = 1;
-    PageControl->TabIndex = 0;
 }
 
 //---------------------------------------------------------------------------
@@ -326,7 +325,6 @@ void __fastcall TGraphAlgorithmForm::DirectBtnClick(TObject * Sender)
 void __fastcall TGraphAlgorithmForm::NoDirectBtnClick(TObject * Sender)
 {
     direct = 0;
-    PageControl->TabIndex = 1;
 }
 
 //---------------------------------------------------------------------------
@@ -359,29 +357,17 @@ void __fastcall TGraphAlgorithmForm::ResetBtnClick(TObject * Sender)
 }
 
 //---------------------------------------------------------------------------
-
-void __fastcall TGraphAlgorithmForm::PageControlChange(TObject *Sender)
-{
-     if (PageControl->TabIndex == 0)
-        DirectBtn->Checked = true;
-     else
-         NoDirectBtn->Checked = true;
-}
-
-//---------------------------------------------------------------------------
 void __fastcall TGraphAlgorithmForm::FloydBtnClick(TObject *Sender)
 {
 
-     memo->Lines->Add("===================================");
-     memo->Lines->Add("Floyd 最短路径求解结果如下");
+     memo->Lines->Add("=====Floyd 最短路径求解结果如下=====");
      ShortestPath_FLOYD(&MG);
 }
 //---------------------------------------------------------------------------
 
 void __fastcall TGraphAlgorithmForm::DijBtnClick(TObject *Sender)
 {
-   memo->Lines->Add("===================================");
-   memo->Lines->Add("Dijkstra 最短路径求解结果如下");
+   memo->Lines->Add("=====Dijkstra 最短路径求解结果如下=====");
    for (i = 0; i < MG.vexnum; i++)
        ShortestPath_DIJ(&MG, i);
 }
