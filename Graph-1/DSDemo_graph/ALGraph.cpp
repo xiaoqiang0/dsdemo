@@ -129,7 +129,7 @@ int exist_path_DFS(ALGraph *G,int i, int j)
 			return 1;
 		node = node->next;
 	}
-	visit[i] = 0;//å›žæº¯
+	visit[i] = 0; //»ØËÝ
 	return 0;
 }
 
@@ -168,52 +168,52 @@ int exist_path_BFS(ALGraph *G,int i, int j)
 
 char path[MAX_VERTEX_NUM];
 
-int exist_Path_len(ALGraph *G,int u,int v,int k)//æ±‚æœ‰å‘å›¾Gä¸­é¡¶ç‚¹uåˆ°vä¹‹é—´çš„æ‰€æœ‰ç®€å•è·¯å¾„,kè¡¨ç¤ºå½“å‰è·¯å¾„é•¿åº¦
+int exist_Path_len(ALGraph *G,int u,int v,int k)//ÇóÓÐÏòÍ¼GÖÐ¶¥µãuµ½vÖ®¼äµÄËùÓÐ¼òµ¥Â·¾¶,k±íÊ¾µ±Ç°Â·¾¶³¤¶È
 {
 	int i;
 	int l;
 	ArcNode	*p;
 
-	path[k]= G->vertics[u].data.data; //åŠ å…¥å½“å‰è·¯å¾„ä¸­
+	path[k]= G->vertics[u].data.data; //¼ÓÈëµ±Ç°Â·¾¶ÖÐ
 	visit[u]=1;
-	if(u == v&&k == 0) {//æ‰¾åˆ°äº†ä¸€æ¡ç®€å•è·¯å¾„
+	if(u == v&&k == 0) {//ÕÒµ½ÁËÒ»Ìõ¼òµ¥Â·¾¶
 		printf("Found one path!\n");
 		for(i = 0; path[i]; i++) 
-			printf("%c", path[i]); //æ‰“å°è¾“å‡º
+			printf("%c", path[i]); //´òÓ¡Êä³ö
 		printf("\n");
 		return 1;
 	} else
 		for(p = G->vertics[u].firstarc; p; p = p->next) {
 			l = p->adjvex;
 			if(!visit[l]) 
-				exist_Path_len(G,l,v,k - 1); //ç»§ç»­å¯»æ‰¾
+				exist_Path_len(G,l,v,k - 1); //¼ÌÐøÑ°ÕÒ
 		}
 	visit[u]=0;
-	path[k]=0; //å›žæº¯
+	path[k]=0; //¼ÌÐøÑ°ÕÒ
 	return 0;
 }
 
-int Find_All_Path(ALGraph *G,int u,int v,int k)//æ±‚æœ‰å‘å›¾Gä¸­é¡¶ç‚¹uåˆ°vä¹‹é—´çš„æ‰€æœ‰ç®€å•è·¯å¾„,kè¡¨ç¤ºå½“å‰è·¯å¾„é•¿åº¦
+int Find_All_Path(ALGraph *G,int u,int v,int k)//ÇóÓÐÏòÍ¼GÖÐ¶¥µãuµ½vÖ®¼äµÄËùÓÐ¼òµ¥Â·¾¶,k±íÊ¾µ±Ç°Â·¾¶³¤¶È
 {
 	int i;
 	int l;
 	ArcNode	*p;
 
-	path[k]= G->vertics[u].data.data; //åŠ å…¥å½“å‰è·¯å¾„ä¸­
+	path[k]= G->vertics[u].data.data;   //¼ÓÈëµ±Ç°Â·¾¶ÖÐ
 	visit[u]=1;
-	if(u==v) {//æ‰¾åˆ°äº†ä¸€æ¡ç®€å•è·¯å¾„
+	if(u==v) {                          //ÕÒµ½ÁËÒ»Ìõ¼òµ¥Â·¾¶
 		printf("Found one path!\n");
 		for(i=0;path[i];i++) 
-			printf("%c",path[i]); //æ‰“å°è¾“å‡º
+			printf("%c",path[i]); //´òÓ¡Êä³ö
 		printf("\n");
 	} else
 		for(p = G->vertics[u].firstarc; p; p = p->next) {
 			l = p->adjvex;
 			if(!visit[l]) 
-				Find_All_Path(G,l,v,k+1); //ç»§ç»­å¯»æ‰¾
+				Find_All_Path(G,l,v,k+1); //¼ÌÐøÑ°ÕÒ
 		}
 	visit[u]=0;
-	path[k]=0; //å›žæº¯
+	path[k]=0; //»ØËÝ
 }//Find_All_Path 
 
 

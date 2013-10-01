@@ -52,8 +52,8 @@ void DFSTraverse(ALGraph *G);
 void BFSTraverse(ALGraph *G);
 int exist_path_DFS(ALGraph *G,int i, int j);
 int exist_path_BFS(ALGraph *G,int i, int j);
-int exist_Path_len(ALGraph *G,int u,int v,int k);//æ±‚æœ‰å‘å›¾Gä¸­é¡¶ç‚¹uåˆ°vä¹‹é—´çš„æ‰€æœ‰ç®€å•è·¯å¾„,kè¡¨ç¤ºå½“å‰è·¯å¾„é•¿åº¦
-int Find_All_Path(ALGraph *G,int u,int v,int k);//æ±‚æœ‰å‘å›¾Gä¸­é¡¶ç‚¹uåˆ°vä¹‹é—´çš„æ‰€æœ‰ç®€å•è·¯å¾„,kè¡¨ç¤ºå½“å‰è·¯å¾„é•¿åº¦
+int exist_Path_len(ALGraph *G,int u,int v,int k); //ÇóÓĞÏòÍ¼GÖĞ¶¥µãuµ½vÖ®¼äµÄËùÓĞ¼òµ¥Â·¾¶,k±íÊ¾µ±Ç°Â·¾¶³¤¶È
+int Find_All_Path(ALGraph *G,int u,int v,int k); //ÇóÓĞÏòÍ¼GÖĞ¶¥µãuµ½vÖ®¼äµÄËùÓĞ¼òµ¥Â·¾¶,k±íÊ¾µ±Ç°Â·¾¶³¤¶È
 void freeALGraph(ALGraph *G);
 
 int CreateMG(MGraph *G, FILE *fp);
