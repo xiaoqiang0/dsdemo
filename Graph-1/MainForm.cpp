@@ -19,12 +19,7 @@ __fastcall Tdsdemo_MainForm::Tdsdemo_MainForm(TComponent* Owner)
     : TForm(Owner)
 {
 }
-//---------------------------------------------------------------------------
-void __fastcall Tdsdemo_MainForm::N7Click(TObject *Sender)
-{
-     //调用图算法
-     GraphAlgorithmForm->ShowModal();
-}
+
 //---------------------------------------------------------------------------
 void __fastcall Tdsdemo_MainForm::N2Click(TObject *Sender)
 {
@@ -41,12 +36,26 @@ void __fastcall Tdsdemo_MainForm::date_TimerTimer(TObject *Sender)
      main_StatusBar->Panels->Items[0]->Text = IntToStr(sec * 1000 + msec);
      //FloatToStr(CompToDouble(TimeStampToMSecs(DateTimeToTimeStamp(datetime))));
 }
+
 //---------------------------------------------------------------------------
 void __fastcall Tdsdemo_MainForm::N6Click(TObject *Sender)
 {
-     //
-     graph_intro_frm->ShowModal();
+
+     GraphIntroduceForm->ShowModal();
 }
+//---------------------------------------------------------------------------
+void __fastcall Tdsdemo_MainForm::N22Click(TObject *Sender)
+{
+     GraphTraverseForm->ShowModal();
+}
+//---------------------------------------------------------------------------
+
+void __fastcall Tdsdemo_MainForm::N7Click(TObject *Sender)
+{
+     //调用图算法
+     GraphAlgorithmForm->ShowModal();
+}
+
 //---------------------------------------------------------------------------
 void __fastcall Tdsdemo_MainForm::FormResize(TObject *Sender)
 {
@@ -76,12 +85,6 @@ void __fastcall Tdsdemo_MainForm::N21Click(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 
-
-void __fastcall Tdsdemo_MainForm::N22Click(TObject *Sender)
-{
-     GraphTraverseForm->ShowModal();
-}
-//---------------------------------------------------------------------------
 
 
 

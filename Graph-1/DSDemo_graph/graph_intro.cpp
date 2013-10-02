@@ -7,30 +7,24 @@
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 #pragma resource "*.dfm"
-Tgraph_intro_frm *graph_intro_frm;
+TGraphIntroduceForm *GraphIntroduceForm;
 //---------------------------------------------------------------------------
-__fastcall Tgraph_intro_frm::Tgraph_intro_frm(TComponent* Owner)
+__fastcall TGraphIntroduceForm::TGraphIntroduceForm(TComponent* Owner)
     : TForm(Owner)
 {
 }
 //---------------------------------------------------------------------------
-void __fastcall Tgraph_intro_frm::introBtnClick(TObject *Sender)
+
+
+
+void __fastcall TGraphIntroduceForm::FormCreate(TObject *Sender)
 {
      AnsiString AppPath;
 
      AppPath = ExtractFileDir (Application->ExeName);
 
      RichEdit1->Lines->LoadFromFile(AppPath + "\\data\\graph_intr.rtf");
-
+     RichEdit2->Lines->LoadFromFile(AppPath + "\\data\\test.rtf");
 }
 //---------------------------------------------------------------------------
-void __fastcall Tgraph_intro_frm::Button1Click(TObject *Sender)
-{
-       AnsiString AppPath;
 
-     AppPath = ExtractFileDir (Application->ExeName);
-
-     RichEdit1->Lines->LoadFromFile(AppPath + "\\data\\test.rtf");
-
-}
-//---------------------------------------------------------------------------

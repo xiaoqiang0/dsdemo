@@ -9,19 +9,22 @@
 #include <Vcl.Forms.hpp>
 #include <Vcl.ComCtrls.hpp>
 //---------------------------------------------------------------------------
-class Tgraph_intro_frm : public TForm
+class TGraphIntroduceForm : public TForm
 {
 __published:	// IDE-managed Components
     TRichEdit *RichEdit1;
-    TButton *introBtn;
-    TButton *Button1;
-    void __fastcall introBtnClick(TObject *Sender);
-    void __fastcall Button1Click(TObject *Sender);
+    TPageControl *PageControl2;
+    TTabSheet *TabSheet1;
+    TTabSheet *TabSheet2;
+    TTabSheet *TabSheet3;
+    TRichEdit *RichEdit2;
+    TRichEdit *RichEdit3;
+    void __fastcall FormCreate(TObject *Sender);
 private:	// User declarations
 public:		// User declarations
-    __fastcall Tgraph_intro_frm(TComponent* Owner);
+    __fastcall TGraphIntroduceForm(TComponent* Owner);
 };
 //---------------------------------------------------------------------------
-extern PACKAGE Tgraph_intro_frm *graph_intro_frm;
+extern PACKAGE TGraphIntroduceForm *GraphIntroduceForm;
 //---------------------------------------------------------------------------
 #endif
