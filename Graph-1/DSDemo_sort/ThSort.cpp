@@ -23,6 +23,9 @@ TSortArray QuickSortArray;
 extern int N;
 /* TThreadSortForm */
 //---------------------------------------------------------------------------
+TDateTime start_time;
+
+
 
 __fastcall TThreadSortForm::TThreadSortForm(TComponent *AOwner)
 
@@ -64,6 +67,11 @@ void __fastcall TThreadSortForm::QuickSortBoxPaint(TObject *)
 void __fastcall TThreadSortForm::FormCreate(TObject *)
 {
     RandomizeArrays();
+    ComboBox1->Items->Clear();
+    for (int i = 32; i <= 512; i = i + 48) {
+         ComboBox1->Items->Add(IntToStr(i));
+    }
+    ComboBox1->ItemIndex = ComboBox1->GetCount() / 2;
 }
 
 //---------------------------------------------------------------------------
@@ -71,6 +79,7 @@ void __fastcall TThreadSortForm::StartBtnClick(TObject *)
 {
     RandomizeArrays();
     ThreadsRunning = 3;
+    start_time = Now();
     TBubbleSort *BubbleSort = new TBubbleSort(BubbleSortBox, BubbleSortArray, clGreen);
     BubbleSort->OnTerminate = ThreadDone;
     TSelectionSort *SelectionSort = new TSelectionSort(SelectionSortBox, SelectionSortArray, clRed);
@@ -95,19 +104,31 @@ void __fastcall TThreadSortForm::RandomizeArrays()
     }
 }
 
+static long int get_msec(unsigned short hour, unsigned short min, unsigned short sec, unsigned short msec)
+{
+       return msec + sec * 1000 + min * 1000 * 60 + hour * 1000 * 60 * 60;
+}
 //---------------------------------------------------------------------------
 void __fastcall TThreadSortForm::ThreadDone(TObject *)
 {
+    TDateTime end_time = Now();
+    unsigned short hour, min, sec, msec;
+    long int start_msec = 0;
+    long int end_msec =  0;
+    start_time.DecodeTime(&hour, &min, &sec, &msec);
+    start_msec = get_msec(hour, min, sec, msec);
+    end_time.DecodeTime(&hour, &min, &sec, &msec);
+    end_msec = get_msec(hour, min, sec, msec);
 
     switch (ThreadsRunning) {
         case 1:
-            Bubble_Series->AddXY(N, N * 0.6);
+            Bubble_Series->AddXY(N, (end_msec - start_msec) / 10.0);
             break;
         case 2:
-            Select_Series->AddXY(N, N * 0.4);
+            Select_Series->AddXY(N, (end_msec - start_msec) / 10.0);
             break;
         case 3:
-            Quick_Series->AddXY(N, N * 0.2);
+            Quick_Series->AddXY(N, (end_msec - start_msec) / 10.0);
             break;
         default:
             ;
@@ -136,6 +157,34 @@ void __fastcall TThreadSortForm::saveChartBtnClick(TObject *Sender)
             DeleteFile(SaveDialog1->FileName);
          Chart1->SaveToBitmapFile(SaveDialog1->FileName);
      }
+}
+//---------------------------------------------------------------------------
+
+
+void __fastcall TThreadSortForm::Button1Click(TObject *Sender)
+{
+/*     //
+     ComboBox1->DropDownCount;
+     for (int i = 0; i < ComboBox1->GetCount(); i++) {
+         ComboBox1->ItemIndex = i;
+         ComboBox1->OnChange(ComboBox1);
+         StartBtn->Click();
+         StartBtn->Enabled = False;
+         while (1) {
+
+         if (StartBtn->Enabled == True) {
+             break;
+             Sleep(1000);
+         }
+          Sleep(1000);
+         }
+
+         Sleep(2000);
+         if (i == 3)
+           break;
+
+     }
+*/
 }
 //---------------------------------------------------------------------------
 

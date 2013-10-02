@@ -102,21 +102,36 @@ object ThreadSortForm: TThreadSortForm
     Width = 432
     Height = 329
     Legend.Alignment = laTop
+    Legend.Font.Brush.Gradient.EndColor = clGray
+    Legend.Font.Emboss.Color = 8421440
+    Legend.Font.InterCharSize = 2
+    Legend.Font.Shadow.Color = 8421440
+    Legend.Font.Shadow.Transparency = 52
     Legend.GlobalTransparency = 2
     Legend.Symbol.Pen.Color = 201326592
     Legend.Symbol.Pen.Width = 3
     Legend.Symbol.Pen.SmallSpace = 1
     Legend.TextStyle = ltsPlain
     Legend.Title.Alignment = taCenter
+    Title.Font.Height = -16
+    Title.Font.Style = [fsBold]
     Title.Text.Strings = (
       ' '#25490#24207#32467#26524#22270#26631#32479#35745)
     BottomAxis.ExactDateTime = False
     BottomAxis.LabelsFormat.TextAlignment = taCenter
     BottomAxis.LabelsSeparation = 0
+    BottomAxis.Title.Caption = #25968#25454#22823#23567
     DepthAxis.LabelsFormat.TextAlignment = taCenter
     DepthTopAxis.LabelsFormat.TextAlignment = taCenter
     LeftAxis.Grid.SmallSpace = 1
+    LeftAxis.Grid.Visible = False
     LeftAxis.LabelsFormat.TextAlignment = taCenter
+    LeftAxis.LabelsOnAxis = False
+    LeftAxis.Title.Angle = 0
+    LeftAxis.Title.Caption = '10'#27627#31186
+    LeftAxis.Title.Pen.Color = 1040187392
+    LeftAxis.Title.Pen.Width = 7
+    LeftAxis.TitleSize = 19
     RightAxis.LabelsFormat.TextAlignment = taCenter
     TopAxis.LabelsFormat.TextAlignment = taCenter
     View3D = False
@@ -166,18 +181,10 @@ object ThreadSortForm: TThreadSortForm
     Top = 416
     Width = 49
     Height = 21
+    DropDownCount = 0
     TabOrder = 2
     Text = '256'
     OnChange = ComboBox1Change
-    Items.Strings = (
-      '64'
-      '128'
-      '192'
-      '256'
-      '320'
-      '384'
-      '448'
-      '512')
   end
   object saveChartBtn: TButton
     Left = 1096
@@ -187,6 +194,15 @@ object ThreadSortForm: TThreadSortForm
     Caption = #20445#23384#22270#34920
     TabOrder = 3
     OnClick = saveChartBtnClick
+  end
+  object Button1: TButton
+    Left = 175
+    Top = 443
+    Width = 138
+    Height = 25
+    Caption = #33258#21160#25191#34892
+    TabOrder = 4
+    OnClick = Button1Click
   end
   object SaveDialog1: TSaveDialog
     Left = 1040

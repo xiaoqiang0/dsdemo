@@ -34,8 +34,12 @@ void __fastcall Tdsdemo_MainForm::N2Click(TObject *Sender)
 void __fastcall Tdsdemo_MainForm::date_TimerTimer(TObject *Sender)
 {
      TDateTime datetime = Now();
+     unsigned short hour, min, sec, msec;
 
      main_StatusBar->Panels->Items[1]->Text = FormatDateTime("yyyy Äê mm ÔÂdd ÈÕ hh:mm:ss", datetime);
+     datetime.DecodeTime(&hour, &min, &sec, &msec) ;
+     main_StatusBar->Panels->Items[0]->Text = IntToStr(sec * 1000 + msec);
+     //FloatToStr(CompToDouble(TimeStampToMSecs(DateTimeToTimeStamp(datetime))));
 }
 //---------------------------------------------------------------------------
 void __fastcall Tdsdemo_MainForm::N6Click(TObject *Sender)
@@ -78,6 +82,7 @@ void __fastcall Tdsdemo_MainForm::N22Click(TObject *Sender)
      GraphTraverseForm->ShowModal();
 }
 //---------------------------------------------------------------------------
+
 
 
 

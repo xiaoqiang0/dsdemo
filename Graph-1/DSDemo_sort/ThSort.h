@@ -50,6 +50,7 @@ __published:	// IDE-managed Components
     TFastLineSeries *Quick_Series;
     TButton *saveChartBtn;
     TSaveDialog *SaveDialog1;
+    TButton *Button1;
 	void __fastcall StartBtnClick(TObject *Sender);
 	void __fastcall BubbleSortBoxPaint(TObject *Sender);
 	void __fastcall SelectionSortBoxPaint(TObject *Sender);
@@ -57,6 +58,7 @@ __published:	// IDE-managed Components
 	void __fastcall FormCreate(TObject *Sender);
     void __fastcall ComboBox1Change(TObject *Sender);
     void __fastcall saveChartBtnClick(TObject *Sender);
+    void __fastcall Button1Click(TObject *Sender);
 private: // User declarations
 	int ThreadsRunning;
 	void __fastcall RandomizeArrays();
