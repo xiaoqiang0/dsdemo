@@ -3,13 +3,12 @@
 #include <vcl.h>
 #pragma hdrstop
 
-USEFORM("MainForm.cpp", dsdemo_MainForm);
-USEFORM("DSDemo_graph\graph_intro.cpp", graph_intro_frm);
-USEFORM("DSDemo_graph\graph_shortest_path.cpp", GraphAlgorithmForm);
-USEFORM("DSDemo_graph\graph_traverse.cpp", GraphTraverseForm);
-USEFORM("DSDemo_sort\ThSort.cpp", ThreadSortForm);
 USEFORM("DSDemo_search\search_string.cpp", search_stringForm);
-
+USEFORM("DSDemo_graph\graph_traverse.cpp", GraphTraverseForm);
+USEFORM("MainForm.cpp", dsdemo_MainForm);
+USEFORM("DSDemo_sort\ThSort.cpp", ThreadSortForm);
+USEFORM("DSDemo_graph\graph_shortest_path.cpp", GraphAlgorithmForm);
+USEFORM("DSDemo_graph\graph_intro.cpp", GraphIntroduceForm);
 //---------------------------------------------------------------------------
 WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 {
@@ -17,7 +16,7 @@ WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
         {
                  Application->Initialize();
                  Application->CreateForm(__classid(Tdsdemo_MainForm), &dsdemo_MainForm);
-         Application->CreateForm(__classid(Tgraph_intro_frm), &graph_intro_frm);
+         Application->CreateForm(__classid(TGraphIntroduceForm), &GraphIntroduceForm);
          Application->CreateForm(__classid(TGraphAlgorithmForm), &GraphAlgorithmForm);
          Application->CreateForm(__classid(TThreadSortForm), &ThreadSortForm);
          Application->CreateForm(__classid(Tsearch_stringForm), &search_stringForm);

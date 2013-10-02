@@ -146,7 +146,7 @@
             <BuildOrder>5</BuildOrder>
         </None>
         <CppCompile Include="DSDemo_graph\graph_intro.cpp">
-            <Form>graph_intro_frm</Form>
+            <Form>GraphIntroduceForm</Form>
             <FormType>dfm</FormType>
             <DependentOn>graph_intro.h</DependentOn>
             <BuildOrder>7</BuildOrder>
