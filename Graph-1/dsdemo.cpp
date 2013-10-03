@@ -9,6 +9,7 @@ USEFORM("MainForm.cpp", dsdemo_MainForm);
 USEFORM("DSDemo_sort\ThSort.cpp", ThreadSortForm);
 USEFORM("DSDemo_graph\graph_shortest_path.cpp", GraphAlgorithmForm);
 USEFORM("DSDemo_graph\graph_intro.cpp", GraphIntroduceForm);
+USEFORM("DSDemo_search\binary_search.cpp", BinarySearchForm);
 //---------------------------------------------------------------------------
 WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 {
@@ -21,6 +22,7 @@ WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
          Application->CreateForm(__classid(TThreadSortForm), &ThreadSortForm);
          Application->CreateForm(__classid(Tsearch_stringForm), &search_stringForm);
          Application->CreateForm(__classid(TGraphTraverseForm), &GraphTraverseForm);
+         Application->CreateForm(__classid(TBinarySearchForm), &BinarySearchForm);
          Application->Run();
         }
         catch (Exception &exception)

@@ -166,6 +166,12 @@
         <CppCompile Include="DSDemo_graph\MGraph.cpp">
             <BuildOrder>4</BuildOrder>
         </CppCompile>
+        <CppCompile Include="DSDemo_search\binary_search.cpp">
+            <Form>BinarySearchForm</Form>
+            <FormType>dfm</FormType>
+            <DependentOn>DSDemo_search\binary_search.h</DependentOn>
+            <BuildOrder>12</BuildOrder>
+        </CppCompile>
         <CppCompile Include="DSDemo_search\search_string.cpp">
             <Form>search_stringForm</Form>
             <FormType>dfm</FormType>
@@ -194,6 +200,7 @@
         <FormResources Include="DSDemo_sort\ThSort.dfm"/>
         <FormResources Include="DSDemo_graph\graph_shortest_path.dfm"/>
         <FormResources Include="DSDemo_graph\graph_intro.dfm"/>
+        <FormResources Include="DSDemo_search\binary_search.dfm"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>

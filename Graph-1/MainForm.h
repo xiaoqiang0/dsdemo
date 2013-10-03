@@ -50,12 +50,12 @@ __published:	// IDE-managed Components
     TMenuItem *N17;
     TMenuItem *N18;
     TMenuItem *N19;
-    TMenuItem *N20;
     TMenuItem *N21;
     TLabel *welcomeLabel;
     TTimer *Timer1;
     TMenuItem *N22;
     TMenuItem *N23;
+    TMenuItem *N24;
     void __fastcall N7Click(TObject *Sender);
     void __fastcall N2Click(TObject *Sender);
     void __fastcall date_TimerTimer(TObject *Sender);
@@ -65,6 +65,7 @@ __published:	// IDE-managed Components
     void __fastcall SortCompareTBtnClick(TObject *Sender);
     void __fastcall N21Click(TObject *Sender);
     void __fastcall N22Click(TObject *Sender);
+    void __fastcall N24Click(TObject *Sender);
 private:	// User declarations
 public:		// User declarations
     __fastcall Tdsdemo_MainForm(TComponent* Owner);

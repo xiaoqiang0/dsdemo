@@ -36705,7 +36705,6 @@ object dsdemo_MainForm: Tdsdemo_MainForm
     Caption = 'ToolBar1'
     Images = ToolbarImageList
     TabOrder = 1
-    ExplicitTop = -6
     object ToolButton2: TToolButton
       Left = 0
       Top = 0
@@ -36800,8 +36799,9 @@ object dsdemo_MainForm: Tdsdemo_MainForm
       object N19: TMenuItem
         Caption = #26597#25214#31639#27861#20171#32461
       end
-      object N20: TMenuItem
-        Caption = #22522#26412#25968#25454#26597#25214
+      object N24: TMenuItem
+        Caption = #20108#20998#26597#25214
+        OnClick = N24Click
       end
       object N21: TMenuItem
         Caption = #23383#31526#20018#26597#25214
@@ -36827,7 +36827,7 @@ object dsdemo_MainForm: Tdsdemo_MainForm
     Left = 64
     Top = 32
     Bitmap = {
-      494C010103000800580010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C0101030008005C0010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000400000001000000001002000000000000010
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
