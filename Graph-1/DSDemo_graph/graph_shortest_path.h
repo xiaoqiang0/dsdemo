@@ -23,13 +23,17 @@ class TGraphAlgorithmForm : public TForm
     TRadioButton *NoDirectBtn;
     TButton *ResetBtn;
     TGroupBox *GroupBox2;
-    TButton *Button2;
-    TButton *Button5;
+    TButton *CircleCheckBtn;
+    TButton *TopologicalSortBtn;
     TButton *FloydBtn;
     TButton *ShortestPathBtn;
     TButton *DijBtn;
     TMemo *memo;
-    TButton *Button1;
+    TButton *CriticalPathBtn;
+    TComboBox *EndComboBox;
+    TLabel *Label2;
+    TLabel *Label1;
+    TComboBox *StartComboBox;
         void __fastcall my_print (String info);
         void __fastcall CreateNodeBtnClick(TObject *Sender);   //生成顶点按钮点击函数
 

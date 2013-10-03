@@ -288,7 +288,6 @@ void __fastcall TGraphTraverseForm::NoDirectBtnClick(TObject * Sender)
 //---------------------------------------------------------------------------
 
 
-
 void __fastcall TGraphTraverseForm::ResetBtnClick(TObject * Sender)
 {
     int i;
@@ -329,11 +328,6 @@ void __fastcall TGraphTraverseForm::TraverseBFSBtnClick(TObject *Sender)
  BFSTraverse(&ALG);
 }
 //---------------------------------------------------------------------------
-
-
-
-
-
 void __fastcall TGraphTraverseForm::Button4Click(TObject *Sender)
 {
      VertexType start, end;

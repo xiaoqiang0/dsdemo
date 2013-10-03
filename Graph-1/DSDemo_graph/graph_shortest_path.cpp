@@ -145,10 +145,15 @@ __fastcall TGraphAlgorithmForm::TGraphAlgorithmForm(TComponent * Owner):TForm(Ow
 //---------------------------------------------------------------------------
 void __fastcall TGraphAlgorithmForm::FormCreate(TObject * Sender)    //顶点间初始设置为无穷大(不通)
 {
+    memo_local = memo;
+    //邻接矩阵
     MG.vexnum = 0;
     MG.arcnum = 0;
-    memo_local = memo;
     MG.print = showInMemo;
+    //邻接表
+    ALG.vexnum = 0;
+    ALG.arcnum = 0;
+    ALG.print = showInMemo;
     for (i = 0; i < MAX_VERTEX_NUM; i++)
         for (j = 0; j < MAX_VERTEX_NUM; j++) {
             graph[i][j] = 9999;
@@ -215,6 +220,10 @@ void __fastcall TGraphAlgorithmForm::imgMouseDown(TObject * Sender, //鼠标按下事
             y[n] = Y;        //存储新顶点坐标，圆的中心
             n++;
             MGraph_Inc_Node(&MG);
+            ALGraph_Add_Node(&ALG, X, Y);
+            StartComboBox->Items->Add(ALG.vertics[ALG.vexnum - 1].data.data);
+            EndComboBox->Items->Add(ALG.vertics[ALG.vexnum - 1].data.data);
+
         }
         //顶点计数器加1
         return;
@@ -318,6 +327,9 @@ void __fastcall TGraphAlgorithmForm::BtClearMemoClick(TObject * Sender)
 void __fastcall TGraphAlgorithmForm::DirectBtnClick(TObject * Sender)
 {
     direct = 1;
+    TopologicalSortBtn->Enabled = true;
+    CircleCheckBtn->Enabled = true;
+    CriticalPathBtn->Enabled = true;
 }
 
 //---------------------------------------------------------------------------
@@ -325,6 +337,9 @@ void __fastcall TGraphAlgorithmForm::DirectBtnClick(TObject * Sender)
 void __fastcall TGraphAlgorithmForm::NoDirectBtnClick(TObject * Sender)
 {
     direct = 0;
+    TopologicalSortBtn->Enabled = false;
+    CircleCheckBtn->Enabled = false;
+    CriticalPathBtn->Enabled = false;
 }
 
 //---------------------------------------------------------------------------
@@ -372,5 +387,8 @@ void __fastcall TGraphAlgorithmForm::DijBtnClick(TObject *Sender)
        ShortestPath_DIJ(&MG, i);
 }
 //---------------------------------------------------------------------------
+
+
+
 
 

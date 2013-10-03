@@ -98,56 +98,86 @@ object GraphAlgorithmForm: TGraphAlgorithmForm
     Height = 402
     Caption = #36873#25321#26377#21521#22270#31639#27861
     TabOrder = 5
-    object Button2: TButton
-      Left = 22
-      Top = 107
-      Width = 104
+    object Label2: TLabel
+      Left = 70
+      Top = 27
+      Width = 32
+      Height = 17
+      AutoSize = False
+      Caption = #32456#28857
+    end
+    object Label1: TLabel
+      Left = 10
+      Top = 26
+      Width = 27
+      Height = 18
+      AutoSize = False
+      Caption = #36215#28857
+    end
+    object CircleCheckBtn: TButton
+      Left = 11
+      Top = 239
+      Width = 119
       Height = 26
-      Caption = #21333#28304#26368#30701#36335#24452
+      Caption = #29615#21028#26029
       TabOrder = 0
     end
-    object Button5: TButton
-      Left = 22
-      Top = 277
-      Width = 104
+    object TopologicalSortBtn: TButton
+      Left = 11
+      Top = 304
+      Width = 119
       Height = 26
       Caption = #25299#25169#25490#24207#24207#21015
       TabOrder = 1
     end
     object FloydBtn: TButton
-      Left = 22
-      Top = 164
-      Width = 104
+      Left = 11
+      Top = 108
+      Width = 119
       Height = 26
       Caption = #26368#30701#36335#24452'Floyd'
       TabOrder = 2
       OnClick = FloydBtnClick
     end
     object ShortestPathBtn: TButton
-      Left = 22
-      Top = 59
-      Width = 104
+      Left = 11
+      Top = 44
+      Width = 119
       Height = 25
       Caption = #26368#20339#36335#24452
       TabOrder = 3
       OnClick = ShortestPathBtnClick
     end
     object DijBtn: TButton
-      Left = 22
-      Top = 223
-      Width = 104
+      Left = 11
+      Top = 175
+      Width = 119
       Height = 26
       Caption = #26368#30701#36335#24452'Dijkstra'
       TabOrder = 4
       OnClick = DijBtnClick
     end
-    object Button1: TButton
-      Left = 22
-      Top = 328
-      Width = 104
+    object CriticalPathBtn: TButton
+      Left = 11
+      Top = 360
+      Width = 119
       Height = 25
       Caption = #20851#38190#36335#24452
       TabOrder = 5
+    end
+    object EndComboBox: TComboBox
+      Left = 97
+      Top = 23
+      Width = 33
+      Height = 21
+      TabOrder = 6
+    end
+    object StartComboBox: TComboBox
+      Left = 37
+      Top = 23
+      Width = 32
+      Height = 21
+      TabOrder = 7
     end
   end
   object memo: TMemo
