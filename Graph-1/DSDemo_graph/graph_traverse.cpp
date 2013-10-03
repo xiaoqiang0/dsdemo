@@ -338,18 +338,16 @@ void __fastcall TGraphTraverseForm::Button4Click(TObject *Sender)
 {
      VertexType start, end;
      int start_idx, end_idx;
-     stringstream path;
+
      start.data = StartComboBox->Text[1];
 
      end.data   = EndComboBox->Text[1];
 
      start_idx = ALGraph_LocateVertex(&ALG, start);
      end_idx = ALGraph_LocateVertex(&ALG, end);
-     path << "从" << start.data << "到" << end.data << "的路径是:";
-     if (ALGraph_exist_path_DFS(&ALG, start_idx, end_idx, path)) {
-        memo_local->Lines->Add(path.str().c_str() );
-     } else
-        memo_local->Lines->Add("没有路径");
+
+     if (! ALGraph_exist_path_DFS(&ALG, start_idx, end_idx))
+        ShowMessage("从" + StartComboBox->Text + "到" + EndComboBox->Text + "没有路径");
 }
 //---------------------------------------------------------------------------
 

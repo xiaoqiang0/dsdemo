@@ -8,7 +8,8 @@
 #define DEBUG
 
 int visit[MAX_VERTEX_NUM];
-
+static char path[MAX_VERTEX_NUM];
+static char path_idx = 0;
 
 int InitALG(ALGraph *G)
 {
@@ -163,29 +164,39 @@ void BFSTraverse(ALGraph *G)
 }
 
 
-int ALGraph_exist_path_DFS(ALGraph *G,int i, int j, stringstream &path)
+int ALGraph_exist_path_DFS(ALGraph *G,int i, int j)
 {
     ArcNode	*node;
     int w;
-
+    stringstream output;
     if (i == j){
+        stringstream output;
+        output << "从" << path[0] << "到" << G->vertics[j].data.data << "的详细路径是";
+        for (int t = 0; t < path_idx; t++)
+            output << G->vertics[t].data.data << "-->";
+        output << G->vertics[i].data.data;
+
         if (G->print){
-            path << G->vertics[i].data.data;
+            G->print(output.str());
         } else
-            printf("path exist");
+            cout << output.str();
         return 1;
     }
 
-    path << G->vertics[i].data.data << "->";
+    path[path_idx++] = G->vertics[i].data.data;
     visit[i] = 1;
     node = G->vertics[i].firstarc;
     while(node){
         w =  node->adjvex;
-        if (!visit[w] && ALGraph_exist_path_DFS(G, w, j, path))
+        if (!visit[w] && ALGraph_exist_path_DFS(G, w, j))
             return 1;
         node = node->next;
     }
-    visit[i] = 0; //回溯
+
+    //回溯
+    path_idx--;
+    visit[i] = 0;
+
     return 0;
 }
 
@@ -221,8 +232,6 @@ int exist_path_BFS(ALGraph *G,int i, int j)
     }
 
 }
-
-char path[MAX_VERTEX_NUM];
 
 int exist_Path_len(ALGraph *G,int u,int v,int k)//求有向图G中顶点u到v之间的所有简单路径,k表示当前路径长度
 {

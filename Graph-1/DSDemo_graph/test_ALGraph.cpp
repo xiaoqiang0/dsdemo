@@ -5,7 +5,6 @@ int main()
 
     int v;
     ALGraph ALG;
-    stringstream path;
     ALG.print = NULL;
     CreateALG(&ALG,stdin);
     PrintALG(&ALG);
@@ -27,7 +26,8 @@ int main()
     }
 
     exist_Path_len(&ALG, 0, 7, 4);
-    ALGraph_exist_path_DFS(&ALG, 0, 7, path);
+    ALGraph_exist_path_DFS(&ALG, 0, 7);
+    cout <<endl;
     exist_path_BFS(&ALG, 0, 7);
 
     freeALGraph(&ALG);

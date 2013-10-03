@@ -136,44 +136,44 @@ object GraphTraverseForm: TGraphTraverseForm
     Left = 8
     Top = 245
     Width = 142
-    Height = 140
+    Height = 124
     Caption = #36830#36890#24615#20998#26512
     TabOrder = 7
     object Label1: TLabel
       Left = 3
-      Top = 32
+      Top = 24
       Width = 57
-      Height = 13
+      Height = 19
       AutoSize = False
       Caption = #36215#22987#33410#28857
     end
     object Label2: TLabel
       Left = 80
-      Top = 32
+      Top = 24
       Width = 60
-      Height = 13
+      Height = 19
       AutoSize = False
       Caption = #32456#27490#33410#28857
     end
     object Button4: TButton
       Left = 3
-      Top = 88
+      Top = 80
       Width = 136
-      Height = 26
+      Height = 32
       Caption = #21487#36798#24615#20998#26512
       TabOrder = 0
       OnClick = Button4Click
     end
     object StartComboBox: TComboBox
       Left = 3
-      Top = 51
+      Top = 43
       Width = 57
       Height = 21
       TabOrder = 1
     end
     object EndComboBox: TComboBox
       Left = 82
-      Top = 51
+      Top = 43
       Width = 57
       Height = 21
       TabOrder = 2
