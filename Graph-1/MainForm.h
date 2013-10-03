@@ -13,6 +13,9 @@
 #include <Vcl.ToolWin.hpp>
 #include <Vcl.Imaging.jpeg.hpp>
 #include <Vcl.ImgList.hpp>
+#include <VCLTee.TeeDraw3D.hpp>
+#include <VclTee.TeeGDIPlus.hpp>
+#include <VCLTee.TeeProcs.hpp>
 //---------------------------------------------------------------------------
 class Tdsdemo_MainForm : public TForm
 {

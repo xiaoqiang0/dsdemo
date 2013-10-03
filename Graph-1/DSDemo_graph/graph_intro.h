@@ -19,6 +19,8 @@ __published:	// IDE-managed Components
     TTabSheet *TabSheet3;
     TRichEdit *RichEdit2;
     TRichEdit *RichEdit3;
+    TTabSheet *TabSheet4;
+    TRichEdit *RichEdit4;
     void __fastcall FormCreate(TObject *Sender);
 private:	// User declarations
 public:		// User declarations

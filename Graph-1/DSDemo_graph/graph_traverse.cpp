@@ -216,6 +216,8 @@ void __fastcall TGraphTraverseForm::imgMouseDown(TObject * Sender, //Êó±ê°´ÏÂÊÂ¼
             lb[N]->Top = Y - 5;
             N++;
             ALGraph_Add_Node(&ALG, X, Y);
+            StartComboBox->Items->Add(ALG.vertics[ALG.vexnum - 1].data.data);
+            EndComboBox->Items->Add(ALG.vertics[ALG.vexnum - 1].data.data);
         }
         //¶¥µã¼ÆÊýÆ÷¼Ó1
         return;
@@ -327,6 +329,7 @@ void __fastcall TGraphTraverseForm::TraverseBFSBtnClick(TObject *Sender)
  BFSTraverse(&ALG);
 }
 //---------------------------------------------------------------------------
+
 
 
 

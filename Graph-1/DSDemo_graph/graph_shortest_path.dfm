@@ -100,7 +100,7 @@ object GraphAlgorithmForm: TGraphAlgorithmForm
     TabOrder = 5
     object Button2: TButton
       Left = 22
-      Top = 187
+      Top = 107
       Width = 104
       Height = 26
       Caption = #21333#28304#26368#30701#36335#24452
@@ -108,15 +108,15 @@ object GraphAlgorithmForm: TGraphAlgorithmForm
     end
     object Button5: TButton
       Left = 22
-      Top = 125
+      Top = 277
       Width = 104
       Height = 26
-      Caption = #28857#23545#28857#26368#30701#36335#24452
+      Caption = #25299#25169#25490#24207#24207#21015
       TabOrder = 1
     end
     object FloydBtn: TButton
       Left = 22
-      Top = 255
+      Top = 164
       Width = 104
       Height = 26
       Caption = #26368#30701#36335#24452'Floyd'
@@ -134,12 +134,20 @@ object GraphAlgorithmForm: TGraphAlgorithmForm
     end
     object DijBtn: TButton
       Left = 22
-      Top = 319
+      Top = 223
       Width = 104
       Height = 26
       Caption = #26368#30701#36335#24452'Dijkstra'
       TabOrder = 4
       OnClick = DijBtnClick
+    end
+    object Button1: TButton
+      Left = 22
+      Top = 328
+      Width = 104
+      Height = 25
+      Caption = #20851#38190#36335#24452
+      TabOrder = 5
     end
   end
   object memo: TMemo

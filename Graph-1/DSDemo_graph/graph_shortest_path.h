@@ -29,6 +29,7 @@ class TGraphAlgorithmForm : public TForm
     TButton *ShortestPathBtn;
     TButton *DijBtn;
     TMemo *memo;
+    TButton *Button1;
         void __fastcall my_print (String info);
         void __fastcall CreateNodeBtnClick(TObject *Sender);   //生成顶点按钮点击函数
 

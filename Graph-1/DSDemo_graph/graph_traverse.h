@@ -24,10 +24,14 @@ class TGraphTraverseForm : public TForm
     TButton *ResetBtn;
     TGroupBox *GroupBox2;
     TButton *TraverseBFSBtn;
-    TButton *Button3;
-    TButton *Button4;
     TButton *TraverseDFSBtn;
     TMemo *memo;
+    TButton *Button4;
+    TGroupBox *GroupBox3;
+    TLabel *Label1;
+    TComboBox *StartComboBox;
+    TLabel *Label2;
+    TComboBox *EndComboBox;
         void __fastcall my_print (String info);
         void __fastcall CreateNodeBtnClick(TObject *Sender);   //生成顶点按钮点击函数
 

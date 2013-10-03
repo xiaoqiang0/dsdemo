@@ -23,8 +23,10 @@ void __fastcall TGraphIntroduceForm::FormCreate(TObject *Sender)
 
      AppPath = ExtractFileDir (Application->ExeName);
 
-     RichEdit1->Lines->LoadFromFile(AppPath + "\\data\\graph_intr.rtf");
-     RichEdit2->Lines->LoadFromFile(AppPath + "\\data\\test.rtf");
+     RichEdit1->Lines->LoadFromFile(AppPath + "\\data\\Graph_Introduction.rtf");
+     RichEdit2->Lines->LoadFromFile(AppPath + "\\data\\Graph_Traverse.rtf");
+     RichEdit4->Lines->LoadFromFile(AppPath + "\\data\\Graph_MinSpanTree.rtf");
+     RichEdit3->Lines->LoadFromFile(AppPath + "\\data\\Graph_ShortestPath.rtf");
 }
 //---------------------------------------------------------------------------
 

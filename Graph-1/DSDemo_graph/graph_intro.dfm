@@ -2,8 +2,8 @@ object GraphIntroduceForm: TGraphIntroduceForm
   Left = 0
   Top = 0
   Caption = #22270#20171#32461
-  ClientHeight = 472
-  ClientWidth = 914
+  ClientHeight = 485
+  ClientWidth = 894
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -17,24 +17,28 @@ object GraphIntroduceForm: TGraphIntroduceForm
   object PageControl2: TPageControl
     Left = 0
     Top = 0
-    Width = 914
-    Height = 472
-    ActivePage = TabSheet1
+    Width = 894
+    Height = 485
+    ActivePage = TabSheet3
     Align = alClient
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -19
+    Font.Name = 'Tahoma'
+    Font.Style = []
     MultiLine = True
+    ParentFont = False
     TabOrder = 0
     TabPosition = tpBottom
     object TabSheet1: TTabSheet
       Caption = #22270#20171#32461
-      ExplicitLeft = 84
-      ExplicitTop = -76
-      ExplicitWidth = 529
-      ExplicitHeight = 280
+      ExplicitWidth = 906
+      ExplicitHeight = 436
       object RichEdit1: TRichEdit
         Left = 0
         Top = 0
-        Width = 906
-        Height = 446
+        Width = 886
+        Height = 449
         Align = alClient
         Alignment = taRightJustify
         Font.Charset = GB2312_CHARSET
@@ -45,22 +49,21 @@ object GraphIntroduceForm: TGraphIntroduceForm
         ParentFont = False
         ScrollBars = ssVertical
         TabOrder = 0
-        ExplicitLeft = 40
-        ExplicitTop = 15
-        ExplicitWidth = 325
-        ExplicitHeight = 262
+        ExplicitLeft = 48
+        ExplicitWidth = 906
+        ExplicitHeight = 436
       end
     end
     object TabSheet2: TTabSheet
       Caption = #22270#30340#36941#21382
       ImageIndex = 1
-      ExplicitWidth = 385
-      ExplicitHeight = 216
+      ExplicitWidth = 906
+      ExplicitHeight = 436
       object RichEdit2: TRichEdit
         Left = 0
         Top = 0
-        Width = 906
-        Height = 446
+        Width = 886
+        Height = 449
         Align = alClient
         Font.Charset = GB2312_CHARSET
         Font.Color = clWindowText
@@ -70,25 +73,43 @@ object GraphIntroduceForm: TGraphIntroduceForm
         Lines.Strings = (
           'RichEdit2')
         ParentFont = False
+        ScrollBars = ssVertical
         TabOrder = 0
-        ExplicitLeft = 384
-        ExplicitTop = 200
-        ExplicitWidth = 185
-        ExplicitHeight = 89
+      end
+    end
+    object TabSheet4: TTabSheet
+      Caption = #26368#23567#29983#25104#26641
+      ImageIndex = 3
+      ExplicitWidth = 906
+      ExplicitHeight = 413
+      object RichEdit4: TRichEdit
+        Left = 0
+        Top = 0
+        Width = 886
+        Height = 449
+        Align = alClient
+        Font.Charset = GB2312_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -19
+        Font.Name = 'Tahoma'
+        Font.Style = []
+        Lines.Strings = (
+          'RichEdit4')
+        ParentFont = False
+        ScrollBars = ssVertical
+        TabOrder = 0
       end
     end
     object TabSheet3: TTabSheet
       Caption = #26368#30701#36335#24452
       ImageIndex = 2
-      ExplicitLeft = -12
-      ExplicitTop = 68
-      ExplicitWidth = 385
-      ExplicitHeight = 216
+      ExplicitWidth = 906
+      ExplicitHeight = 446
       object RichEdit3: TRichEdit
         Left = 0
         Top = 0
-        Width = 906
-        Height = 446
+        Width = 886
+        Height = 449
         Align = alClient
         Font.Charset = GB2312_CHARSET
         Font.Color = clWindowText
@@ -98,8 +119,8 @@ object GraphIntroduceForm: TGraphIntroduceForm
         Lines.Strings = (
           'RichEdit3')
         ParentFont = False
+        ScrollBars = ssVertical
         TabOrder = 0
-        ExplicitHeight = 321
       end
     end
   end

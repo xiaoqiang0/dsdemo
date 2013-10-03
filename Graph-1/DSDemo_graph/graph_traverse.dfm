@@ -92,44 +92,28 @@ object GraphTraverseForm: TGraphTraverseForm
     OnClick = NoDirectBtnClick
   end
   object GroupBox2: TGroupBox
-    Left = 10
+    Left = 8
     Top = 80
     Width = 142
-    Height = 289
-    Caption = #36873#25321#26377#21521#22270#31639#27861
+    Height = 129
+    Caption = #36941#21382#31639#27861
     TabOrder = 5
     object TraverseBFSBtn: TButton
       Left = 22
-      Top = 58
+      Top = 34
       Width = 104
       Height = 26
       Caption = #22270#25628#32034'(BFS)'
       TabOrder = 0
       OnClick = TraverseBFSBtnClick
     end
-    object Button3: TButton
-      Left = 22
-      Top = 245
-      Width = 104
-      Height = 26
-      Caption = #25299#25169#25490#24207
-      TabOrder = 1
-    end
-    object Button4: TButton
-      Left = 22
-      Top = 180
-      Width = 104
-      Height = 26
-      Caption = #20851#38190#36335#24452
-      TabOrder = 2
-    end
     object TraverseDFSBtn: TButton
       Left = 22
-      Top = 118
+      Top = 86
       Width = 104
       Height = 26
       Caption = #22270#25628#32034'(DFS)'
-      TabOrder = 3
+      TabOrder = 1
       OnClick = TraverseDFSBtnClick
     end
   end
@@ -147,5 +131,51 @@ object GraphTraverseForm: TGraphTraverseForm
     ParentFont = False
     ScrollBars = ssVertical
     TabOrder = 6
+  end
+  object GroupBox3: TGroupBox
+    Left = 8
+    Top = 245
+    Width = 142
+    Height = 140
+    Caption = #36830#36890#24615#20998#26512
+    TabOrder = 7
+    object Label1: TLabel
+      Left = 3
+      Top = 32
+      Width = 57
+      Height = 13
+      AutoSize = False
+      Caption = #36215#22987#33410#28857
+    end
+    object Label2: TLabel
+      Left = 80
+      Top = 32
+      Width = 60
+      Height = 13
+      AutoSize = False
+      Caption = #32456#27490#33410#28857
+    end
+    object Button4: TButton
+      Left = 3
+      Top = 88
+      Width = 136
+      Height = 26
+      Caption = #21487#36798#24615#20998#26512
+      TabOrder = 0
+    end
+    object StartComboBox: TComboBox
+      Left = 3
+      Top = 51
+      Width = 57
+      Height = 21
+      TabOrder = 1
+    end
+    object EndComboBox: TComboBox
+      Left = 82
+      Top = 51
+      Width = 57
+      Height = 21
+      TabOrder = 2
+    end
   end
 end
