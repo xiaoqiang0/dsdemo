@@ -50,7 +50,7 @@ void __fastcall Tsearch_stringForm::Find(TObject *Sender)
     int newpos;
 
     if ((cd = dynamic_cast<TFindDialog *> (Sender)) == 0)
-		MessageBox(NULL, _T("Dynamic Cast Failed!"), _T("Find/Rep"), MB_OK);
+		MessageBox(NULL, _T("Dynamic Cast Failed!"), _T("ËÑË÷/Ìæ»»"), MB_OK);
 
     if (cd->Options.Contains(frMatchCase))
         st << stMatchCase;
@@ -72,7 +72,7 @@ void __fastcall Tsearch_stringForm::Find(TObject *Sender)
     }
 	else
 	{
-		MessageBox(NULL, _T("End of document reached."), _T("Find/Rep"), MB_OK);
+		MessageBox(NULL, _T("ËÑË÷½áÊø."), _T("ËÑË÷/Ìæ»»"), MB_OK);
 		RichEdit1->SelStart = 0;
     }
 }
@@ -101,7 +101,6 @@ void __fastcall Tsearch_stringForm::searchBtnClick(TObject *Sender)
 {
     FindDialog1->FindText = RichEdit1->SelText;
     FindDialog1->Execute();
-
 }
 //---------------------------------------------------------------------------
 

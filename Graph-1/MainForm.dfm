@@ -15,8 +15,6 @@ object dsdemo_MainForm: Tdsdemo_MainForm
   OldCreateOrder = False
   WindowState = wsMaximized
   OnResize = FormResize
-  ExplicitWidth = 320
-  ExplicitHeight = 240
   PixelsPerInch = 96
   TextHeight = 13
   object Image1: TImage
@@ -36707,6 +36705,7 @@ object dsdemo_MainForm: Tdsdemo_MainForm
     Caption = 'ToolBar1'
     Images = ToolbarImageList
     TabOrder = 1
+    ExplicitTop = -6
     object ToolButton2: TToolButton
       Left = 0
       Top = 0

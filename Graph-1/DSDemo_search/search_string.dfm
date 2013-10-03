@@ -35,9 +35,7 @@ object search_stringForm: Tsearch_stringForm
       'Edit menu to find and replace text in this RichEdit control.')
     ParentFont = False
     TabOrder = 0
-    ExplicitLeft = 136
-    ExplicitTop = 8
-    ExplicitHeight = 225
+    ExplicitLeft = 152
   end
   object Panel1: TPanel
     Left = 0
@@ -96,14 +94,14 @@ object search_stringForm: Tsearch_stringForm
   object FindDialog1: TFindDialog
     Options = [frDown, frHideUpDown]
     OnFind = Find
-    Left = 392
-    Top = 248
+    Left = 440
+    Top = 88
   end
   object ReplaceDialog1: TReplaceDialog
     Options = [frDown, frHideUpDown]
     OnFind = Find
     OnReplace = Replace
-    Left = 304
-    Top = 248
+    Left = 376
+    Top = 88
   end
 end
