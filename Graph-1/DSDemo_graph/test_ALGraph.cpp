@@ -26,7 +26,7 @@ int main()
     }
 
     exist_Path_len(&ALG, 0, 7, 4);
-    ALGraph_exist_path_DFS(&ALG, 0, 7);
+    ALGraph_exist_path_DFS(&ALG, 0, 4);
     cout <<endl;
     exist_path_BFS(&ALG, 0, 7);
 
