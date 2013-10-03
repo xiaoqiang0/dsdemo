@@ -56,6 +56,16 @@ int ALGraph_Add_Arc (ALGraph *G, int i, int j, int d)
     G->vertics[i].firstarc = node;
     G->arcnum++;
 }
+
+int ALGraph_LocateVertex(ALGraph *G, VertexType v)
+{
+    int i;
+    for (i=0; i<G->vexnum; i++)
+        if (G->vertics[i].data.data == v.data)
+            return i;
+    return -1;
+}
+
 void PrintALG(ALGraph *G)
 {
     int i;
@@ -153,20 +163,25 @@ void BFSTraverse(ALGraph *G)
 }
 
 
-int exist_path_DFS(ALGraph *G,int i, int j)
+int ALGraph_exist_path_DFS(ALGraph *G,int i, int j, stringstream &path)
 {
     ArcNode	*node;
     int w;
 
     if (i == j){
-        printf("Exist Path ...:=)\n");
+        if (G->print){
+            path << G->vertics[i].data.data;
+        } else
+            printf("path exist");
         return 1;
     }
+
+    path << G->vertics[i].data.data << "->";
     visit[i] = 1;
     node = G->vertics[i].firstarc;
     while(node){
         w =  node->adjvex;
-        if (!visit[w] && exist_path_DFS(G, w, j))
+        if (!visit[w] && ALGraph_exist_path_DFS(G, w, j, path))
             return 1;
         node = node->next;
     }

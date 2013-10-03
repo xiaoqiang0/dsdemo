@@ -162,6 +162,7 @@ object GraphTraverseForm: TGraphTraverseForm
       Height = 26
       Caption = #21487#36798#24615#20998#26512
       TabOrder = 0
+      OnClick = Button4Click
     end
     object StartComboBox: TComboBox
       Left = 3
