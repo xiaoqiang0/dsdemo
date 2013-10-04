@@ -4,12 +4,12 @@
 #pragma hdrstop
 
 USEFORM("DSDemo_search\search_string.cpp", search_stringForm);
-USEFORM("DSDemo_graph\graph_traverse.cpp", GraphTraverseForm);
+USEFORM("DSDemo_search\binary_search.cpp", BinarySearchForm);
 USEFORM("MainForm.cpp", dsdemo_MainForm);
 USEFORM("DSDemo_sort\ThSort.cpp", ThreadSortForm);
+USEFORM("DSDemo_graph\graph_traverse.cpp", GraphTraverseForm);
 USEFORM("DSDemo_graph\graph_shortest_path.cpp", GraphAlgorithmForm);
 USEFORM("DSDemo_graph\graph_intro.cpp", GraphIntroduceForm);
-USEFORM("DSDemo_search\binary_search.cpp", BinarySearchForm);
 //---------------------------------------------------------------------------
 WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 {

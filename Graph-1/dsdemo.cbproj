@@ -172,6 +172,10 @@
             <DependentOn>DSDemo_search\binary_search.h</DependentOn>
             <BuildOrder>12</BuildOrder>
         </CppCompile>
+        <CppCompile Include="DSDemo_search\SearchThds.cpp">
+            <DependentOn>DSDemo_search\SearchThds.h</DependentOn>
+            <BuildOrder>13</BuildOrder>
+        </CppCompile>
         <CppCompile Include="DSDemo_search\search_string.cpp">
             <Form>search_stringForm</Form>
             <FormType>dfm</FormType>
@@ -195,12 +199,12 @@
             <BuildOrder>6</BuildOrder>
         </CppCompile>
         <FormResources Include="DSDemo_search\search_string.dfm"/>
-        <FormResources Include="DSDemo_graph\graph_traverse.dfm"/>
+        <FormResources Include="DSDemo_search\binary_search.dfm"/>
         <FormResources Include="MainForm.dfm"/>
         <FormResources Include="DSDemo_sort\ThSort.dfm"/>
+        <FormResources Include="DSDemo_graph\graph_traverse.dfm"/>
         <FormResources Include="DSDemo_graph\graph_shortest_path.dfm"/>
         <FormResources Include="DSDemo_graph\graph_intro.dfm"/>
-        <FormResources Include="DSDemo_search\binary_search.dfm"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>
