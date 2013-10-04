@@ -198,8 +198,8 @@
             <DependentOn>MainForm.h</DependentOn>
             <BuildOrder>6</BuildOrder>
         </CppCompile>
-        <FormResources Include="DSDemo_search\search_string.dfm"/>
         <FormResources Include="DSDemo_search\binary_search.dfm"/>
+        <FormResources Include="DSDemo_search\search_string.dfm"/>
         <FormResources Include="MainForm.dfm"/>
         <FormResources Include="DSDemo_sort\ThSort.dfm"/>
         <FormResources Include="DSDemo_graph\graph_traverse.dfm"/>

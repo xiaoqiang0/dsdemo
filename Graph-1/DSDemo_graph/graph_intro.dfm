@@ -32,8 +32,6 @@ object GraphIntroduceForm: TGraphIntroduceForm
     TabPosition = tpBottom
     object TabSheet1: TTabSheet
       Caption = #22270#20171#32461
-      ExplicitWidth = 906
-      ExplicitHeight = 436
       object RichEdit1: TRichEdit
         Left = 0
         Top = 0
@@ -49,16 +47,11 @@ object GraphIntroduceForm: TGraphIntroduceForm
         ParentFont = False
         ScrollBars = ssVertical
         TabOrder = 0
-        ExplicitLeft = 48
-        ExplicitWidth = 906
-        ExplicitHeight = 436
       end
     end
     object TabSheet2: TTabSheet
       Caption = #22270#30340#36941#21382
       ImageIndex = 1
-      ExplicitWidth = 906
-      ExplicitHeight = 436
       object RichEdit2: TRichEdit
         Left = 0
         Top = 0
@@ -80,8 +73,6 @@ object GraphIntroduceForm: TGraphIntroduceForm
     object TabSheet4: TTabSheet
       Caption = #26368#23567#29983#25104#26641
       ImageIndex = 3
-      ExplicitWidth = 906
-      ExplicitHeight = 413
       object RichEdit4: TRichEdit
         Left = 0
         Top = 0
@@ -103,8 +94,6 @@ object GraphIntroduceForm: TGraphIntroduceForm
     object TabSheet3: TTabSheet
       Caption = #26368#30701#36335#24452
       ImageIndex = 2
-      ExplicitWidth = 906
-      ExplicitHeight = 446
       object RichEdit3: TRichEdit
         Left = 0
         Top = 0

@@ -23,9 +23,12 @@ object BinarySearchForm: TBinarySearchForm
     BackWall.Brush.Style = bsClear
     Foot.Font.Height = -12
     Foot.Frame.Color = clScrollBar
+    Title.CustomPosition = True
     Title.Frame.Color = clWhite
+    Title.Left = 260
     Title.Text.Strings = (
       #20108#20998#26597#25214#21644#32447#24615#39034#24207#26597#25214#27604#36739)
+    Title.Top = 15
     BottomAxis.Automatic = False
     BottomAxis.AutomaticMinimum = False
     BottomAxis.DateTimeFormat = 'MM/dd/yy'
@@ -53,9 +56,8 @@ object BinarySearchForm: TBinarySearchForm
     Zoom.Pen.Mode = pmNotXor
     Align = alClient
     TabOrder = 0
-    ExplicitLeft = 336
-    ExplicitWidth = 488
-    ExplicitHeight = 375
+    ExplicitLeft = 385
+    ExplicitTop = -32
     DefaultCanvas = 'TGDIPlusCanvas'
     PrintMargins = (
       15
@@ -91,8 +93,6 @@ object BinarySearchForm: TBinarySearchForm
       Align = alClient
       ItemHeight = 13
       TabOrder = 0
-      ExplicitLeft = 0
-      ExplicitTop = 29
     end
     object Panel2: TPanel
       Left = 1
@@ -101,7 +101,6 @@ object BinarySearchForm: TBinarySearchForm
       Height = 24
       Align = alTop
       TabOrder = 1
-      ExplicitWidth = 144
       object Button1: TButton
         Left = 61
         Top = 1
@@ -111,7 +110,8 @@ object BinarySearchForm: TBinarySearchForm
         Caption = #29983#25104#25968#25454
         TabOrder = 0
         OnClick = Button1Click
-        ExplicitLeft = 64
+        ExplicitLeft = 58
+        ExplicitTop = -4
       end
       object ComboBox1: TComboBox
         Left = 0
@@ -143,11 +143,8 @@ object BinarySearchForm: TBinarySearchForm
       Align = alClient
       Caption = #36873#25321#26597#25214#26041#27861
       TabOrder = 0
-      ExplicitLeft = -4
-      ExplicitTop = 0
-      ExplicitWidth = 126
       object CheckBox1: TCheckBox
-        Left = 7
+        Left = 5
         Top = 24
         Width = 68
         Height = 17
@@ -214,8 +211,6 @@ object BinarySearchForm: TBinarySearchForm
     Height = 374
     Align = alRight
     TabOrder = 3
-    ExplicitLeft = 824
-    ExplicitHeight = 375
     object GroupBox2: TGroupBox
       Left = 1
       Top = 1
@@ -224,9 +219,6 @@ object BinarySearchForm: TBinarySearchForm
       Align = alClient
       Caption = #22270#26631#25805#20316
       TabOrder = 0
-      ExplicitLeft = 56
-      ExplicitWidth = 128
-      ExplicitHeight = 373
       object ThreeDCheckBox: TCheckBox
         Left = 11
         Top = 47
@@ -260,7 +252,7 @@ object BinarySearchForm: TBinarySearchForm
         OnClick = BitBtn1Click
       end
       object BitBtn2: TBitBtn
-        Left = 9
+        Left = 13
         Top = 70
         Width = 89
         Height = 33
@@ -356,31 +348,11 @@ object BinarySearchForm: TBinarySearchForm
         TabOrder = 3
         OnClick = BitBtn4Click
       end
-      object BitBtn3: TBitBtn
-        Left = 9
-        Top = 189
-        Width = 93
-        Height = 33
-        Caption = #20445#23384
-        Glyph.Data = {
-          42010000424D4201000000000000760000002800000011000000110000000100
-          040000000000CC00000000000000000000001000000010000000000000000000
-          BF0000BF000000BFBF00BF000000BF00BF00BFBF0000C0C0C000808080000000
-          FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00DDDDDDDDDDDD
-          DDDDD0000000D00DDDDDDDDDDDDDD0000000D000DDDDDDDDDDDDD0000000DD00
-          0DDDDDDDDDDDD0000000DDD000D800008DDDD0000000DDDD0000777700DDD000
-          0000DDDDD08EE777780DD0000000DDDD807E70077708D0000000DDDD07E77007
-          7770D0000000DDDD077000000770D0000000DDDD077000000E70D0000000DDDD
-          077770077E70D0000000DDDD80777007EE08D0000000DDDDD08777EEE80DD000
-          0000DDDDDD00777700DDD0000000DDDDDDD800008DDDD0000000DDDDDDDDDDDD
-          DDDDD0000000}
-        TabOrder = 4
-      end
     end
   end
   object SavePictureDialog1: TSavePictureDialog
     DefaultExt = '.bmp'
     Left = 1023
-    Top = 240
+    Top = 264
   end
 end

@@ -37,6 +37,7 @@ void __fastcall TBinarySearchForm::Button1Click(TObject *Sender)
                 for (int i = 0; i < array_size; i++){
                         ListBox1->Items->Add(x[i]);
                 }
+                BitBtn9->Enabled = true;
 }
 //---------------------------------------------------------------------------
 
@@ -93,6 +94,7 @@ void __fastcall TBinarySearchForm::BitBtn4Click(TObject *Sender)
 void __fastcall TBinarySearchForm::FormShow(TObject *Sender)
 {
      BarSeries1->Clear();
+     BitBtn9->Enabled = false;
 }
 //---------------------------------------------------------------------------
 
@@ -100,15 +102,22 @@ void __fastcall TBinarySearchForm::BitBtn9Click(TObject *Sender)
 {
     c = 1;
     BarSeries1->Clear();
-    TBinarySearchThread  *bsearch= new TBinarySearchThread(x, "二分查找");
-    bsearch->OnTerminate = ThreadDone;
 
-    TSequentialSearchThread *ssearch= new TSequentialSearchThread(x, "顺序查找");
-    ssearch->OnTerminate = ThreadDone;
+    if (CheckBox1->Checked == true) {
+        TSequentialSearchThread *ssearch= new TSequentialSearchThread(x, "顺序查找");
+        ssearch->OnTerminate = ThreadDone;
+    }
 
-    TBinarySearchThread_opt *bsearch_opt= new TBinarySearchThread_opt(x, "二分查找优化");
-    bsearch_opt->OnTerminate = ThreadDone;
+    if (CheckBox2->Checked == true) {
+        TBinarySearchThread  *bsearch= new TBinarySearchThread(x, "二分查找");
+        bsearch->OnTerminate = ThreadDone;
+    }
 
+    if (CheckBox3->Checked == true) {
+        TBinarySearchThread_opt *bsearch_opt= new TBinarySearchThread_opt(x, "二分查找优化");
+        bsearch_opt->OnTerminate = ThreadDone;
+    }
 }
 //---------------------------------------------------------------------------
+
 

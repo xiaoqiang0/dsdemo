@@ -40,7 +40,6 @@ __published:	// IDE-managed Components
     TBitBtn *BitBtn2;
     TSavePictureDialog *SavePictureDialog1;
     TBitBtn *BitBtn4;
-    TBitBtn *BitBtn3;
     TBitBtn *BitBtn9;
     void __fastcall Button1Click(TObject *Sender);
     void __fastcall ThreeDCheckBoxClick(TObject *Sender);
