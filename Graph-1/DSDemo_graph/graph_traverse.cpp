@@ -339,7 +339,6 @@ void __fastcall TGraphTraverseForm::Button4Click(TObject *Sender)
 
      start_idx = ALGraph_LocateVertex(&ALG, start);
      end_idx = ALGraph_LocateVertex(&ALG, end);
-
      if (! ALGraph_exist_path_DFS(&ALG, start_idx, end_idx))
         ShowMessage("从" + StartComboBox->Text + "到" + EndComboBox->Text + "没有路径");
 }

@@ -8,8 +8,9 @@
 #define DEBUG
 
 int visit[MAX_VERTEX_NUM];
+char ALG_path[MAX_VERTEX_NUM];
 static char path[MAX_VERTEX_NUM];
-static char path_idx = 0;
+char ALG_path_idx = 0;
 
 int InitALG(ALGraph *G)
 {
@@ -166,16 +167,26 @@ void BFSTraverse(ALGraph *G)
 
 int ALGraph_exist_path_DFS(ALGraph *G,int i, int j)
 {
+    ALG_path_idx = 0;
+    for (int i = 0; i < MAX_VERTEX_NUM; i++) {
+        visit[i] = 0;
+        ALG_path[i] = 0;
+    }
+
+    _ALGraph_exist_path_DFS(G, i, j);
+
+}
+int _ALGraph_exist_path_DFS(ALGraph *G,int i, int j)
+{
     ArcNode	*node;
     int w;
     stringstream output;
     if (i == j){
         stringstream output;
-        output << "从" << path[0] << "到" << G->vertics[j].data.data << "的详细路径是";
-        for (int t = 0; t < path_idx; t++)
-            output << path[t] << "-->";
-        output << G->vertics[i].data.data;
-
+        output << "从" << ALG_path[0] << "到" << G->vertics[j].data.data << "的详细路径是";
+        for (int t = 0; t < ALG_path_idx; t++)
+            output << ALG_path[t];
+        output << G->vertics[j].data.data;
         if (G->print){
             G->print(output.str());
         } else
@@ -183,18 +194,17 @@ int ALGraph_exist_path_DFS(ALGraph *G,int i, int j)
         return 1;
     }
 
-    path[path_idx++] = G->vertics[i].data.data;
+    ALG_path[ALG_path_idx++] = G->vertics[i].data.data;
     visit[i] = 1;
     node = G->vertics[i].firstarc;
     while(node){
         w =  node->adjvex;
-        if (!visit[w] && ALGraph_exist_path_DFS(G, w, j))
+        if (!visit[w] && _ALGraph_exist_path_DFS(G, w, j))
             return 1;
         node = node->next;
     }
-
     //回溯
-    path_idx--;
+    ALG_path_idx--;
     visit[i] = 0;
 
     return 0;

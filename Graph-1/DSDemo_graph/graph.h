@@ -55,6 +55,7 @@ void DFS(ALGraph *G, int v);
 void DFSTraverse(ALGraph *G);
 void BFSTraverse(ALGraph *G);
 int ALGraph_exist_path_DFS(ALGraph *G,int i, int j);
+int _ALGraph_exist_path_DFS(ALGraph *G,int i, int j);
 int exist_path_BFS(ALGraph *G,int i, int j);
 int exist_Path_len(ALGraph *G,int u,int v,int k); //求有向图G中顶点u到v之间的所有简单路径,k表示当前路径长度
 int Find_All_Path(ALGraph *G,int u,int v,int k); //求有向图G中顶点u到v之间的所有简单路径,k表示当前路径长度
@@ -68,4 +69,6 @@ void ShortestPath_FLOYD(MGraph *G);
 void ShortestPath_DIJ(MGraph * G, int v0);
 
 extern int visit[MAX_VERTEX_NUM];
+extern char ALG_path[MAX_VERTEX_NUM];
+extern char ALG_path_idx;
 #endif
