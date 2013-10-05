@@ -330,17 +330,32 @@ void __fastcall TGraphTraverseForm::TraverseBFSBtnClick(TObject *Sender)
 //---------------------------------------------------------------------------
 void __fastcall TGraphTraverseForm::Button4Click(TObject *Sender)
 {
-     VertexType start, end;
-     int start_idx, end_idx;
+    VertexType start, end;
+    int start_idx, end_idx;
 
-     start.data = StartComboBox->Text[1];
+    start.data = StartComboBox->Text[1];
 
-     end.data   = EndComboBox->Text[1];
+    end.data   = EndComboBox->Text[1];
 
-     start_idx = ALGraph_LocateVertex(&ALG, start);
-     end_idx = ALGraph_LocateVertex(&ALG, end);
-     if (! ALGraph_exist_path_DFS(&ALG, start_idx, end_idx))
+    start_idx = ALGraph_LocateVertex(&ALG, start);
+    end_idx = ALGraph_LocateVertex(&ALG, end);
+    if (! ALGraph_exist_path_DFS(&ALG, start_idx, end_idx))
         ShowMessage("从" + StartComboBox->Text + "到" + EndComboBox->Text + "没有路径");
+    //加粗路径
+    else {
+        img->Canvas->Pen->Color = clBlue;
+        img->Canvas->Pen->Width = 3;
+        img->Canvas->MoveTo(ALG.vertics[start_idx].x, ALG.vertics[start_idx].y);
+        for (int i = 1; i < ALG_path_idx; i++){
+            start.data = ALG_path[i];
+            int idx = ALGraph_LocateVertex(&ALG, start);
+            img->Canvas->LineTo(ALG.vertics[idx].x, ALG.vertics[idx].y);
+        }
+
+        img->Canvas->Pen->Color = clBlack;
+        img->Canvas->Pen->Width = 1;
+
+    }
 }
 //---------------------------------------------------------------------------
 

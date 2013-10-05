@@ -185,8 +185,9 @@ int _ALGraph_exist_path_DFS(ALGraph *G,int i, int j)
         stringstream output;
         output << "从" << ALG_path[0] << "到" << G->vertics[j].data.data << "的详细路径是";
         for (int t = 0; t < ALG_path_idx; t++)
-            output << ALG_path[t];
+            output << ALG_path[t] << "->";
         output << G->vertics[j].data.data;
+        ALG_path[ALG_path_idx++] = G->vertics[i].data.data;
         if (G->print){
             G->print(output.str());
         } else
