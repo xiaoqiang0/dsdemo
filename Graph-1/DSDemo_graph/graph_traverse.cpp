@@ -236,10 +236,11 @@ void __fastcall TGraphTraverseForm::imgMouseUp(TObject * Sender,
 
     end = searchPoint(X, Y);
     if (start != -1 && end != -1 && start != end) {
-        dist = StrToInt(InputBox("节点距离", "请输入节点距离: ", "5"));    //默认值5
+        //dist = StrToInt(InputBox("节点距离", "请输入节点距离: ", "5"));    //默认值5
+        dist = 1;
         img->Canvas->MoveTo(ALG.vertics[start].x, ALG.vertics[start].y);
         img->Canvas->LineTo(ALG.vertics[end].x, ALG.vertics[end].y);
-        img->Canvas->TextOut((ALG.vertics[start].x + ALG.vertics[end].x) / 2, (ALG.vertics[start].y + ALG.vertics[end].y) / 2, dist);
+        //img->Canvas->TextOut((ALG.vertics[start].x + ALG.vertics[end].x) / 2, (ALG.vertics[start].y + ALG.vertics[end].y) / 2, dist);
 
         //如果是有向图画箭头
         if (direct == 1) {
