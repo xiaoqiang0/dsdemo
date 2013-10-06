@@ -17,6 +17,7 @@ int CreateMG(MGraph *G, FILE *fp)
     for (i = 0; i < G->vexnum; i++){
         for (j = 0; j < G->vexnum; j++){
             fscanf(fp, "%d ",&G->arcs[i][j]);
+            if (G->arcs[i][j] != MAX) G->arcnum ++;
         }
     }
 
@@ -47,6 +48,7 @@ int MGraph_Add_Node (MGraph *G)
 int MGraph_Add_Arc (MGraph *G, int i, int j, int d)
 {
     G->arcs[i][j] = d;
+    G->arcnum++;
 }
 
 int Get_Path(MGraph *G,int p[MAX_VERTEX_NUM][MAX_VERTEX_NUM],int i, int j, stringstream &path)
@@ -272,5 +274,119 @@ void MG_Prim_MST(MGraph *G, int v0)
         G->print (output.str());
     else
         cout << output.str() <<endl;
-    
+}
+
+//============================disjoint-set operations =====================
+/*
+MAKE-SET(x)
+1  p[x] ¡û x
+2  rank[x] ¡û 0
+
+UNION(x, y)
+1  LINK(FIND-SET(x), FIND-SET(y))
+
+LINK(x, y)
+1  if rank[x] > rank[y]
+2     then p[y] ¡û x
+3     else p[x] ¡û y
+4          if rank[x] = rank[y]
+5             then rank[y] ¡û rank[y] + 1
+
+The FIND-SET procedure with path compression is quite simple.
+
+FIND-SET(x)
+1  if x ¡Ù p[x]
+2     then p[x] ¡û FIND-SET(p[x])
+3  return p[x]
+*/
+
+DS ds[MAX_VERTEX_NUM];
+
+void Make_Set(DS *x)
+{
+    x->rank = 0;
+    x->p    = x;
+}
+
+DS * Find_Set(DS *x)
+{
+    if (x != x->p)
+        x->p = Find_Set(x->p);
+    return x->p;
+}
+
+void Link(DS *x, DS *y)
+{
+    if (x->rank > y->rank)
+        y->p = x;
+    else {
+        x->p = y;
+        if (x->rank == y->rank)
+            y->rank = y->rank + 1;
+    }
+}
+void Union(DS *x, DS *y)
+{
+    Link(Find_Set(x), Find_Set(y));
+}
+//---------------------------------------------Kruskal's algorithm-----------------------------
+
+void MG_Kruskal_MST(MGraph *G)
+{
+    int i, j, k;
+    int vexnum = G->vexnum;
+    int arcnum = G->arcnum / 2;
+    Arc *arcs;
+
+    for (i = 0; i < vexnum * 2; i++) {
+        MST_path[i] = -1;
+    }
+
+    for (i = 0; i < vexnum; i++) {
+        Make_Set(&ds[i]);
+    }
+    arcs = (Arc *) malloc (sizeof (Arc) * arcnum);
+    k = 0;
+    for (i = 0; i < vexnum; i++)
+        for (j = i+1; j < vexnum; j++) {
+            if (G->arcs[i][j] == MAX ) continue;
+            arcs[k].start = i;
+            arcs[k].end = j;
+            arcs[k].d = G->arcs[i][j];
+            k++;
+        }
+    //Sort arcs list
+    for (i = 0; i < arcnum - 2; i++)
+        for (j = arcnum - 1; j > i+1; j--) {
+            if (arcs[i].d > arcs[j].d) {
+                Arc tmp;
+                tmp.start = arcs[i].start; tmp.end = arcs[i].end; tmp.d = arcs[i].d;
+                arcs[i].start = arcs[j].start; arcs[i].end = arcs[j].end; arcs[i].d = arcs[j].d;
+                arcs[j].start = tmp.start; arcs[j].end = tmp.end;arcs[j].d = tmp.d;
+            }
+        }
+
+    MST_idx = 0;
+    for (i = 0; i < arcnum; i++) {
+        int u = arcs[i].start;
+        int v = arcs[i].end;
+        
+        if (Find_Set(&ds[u]) == Find_Set(&ds[v])) continue;
+        //Add u->v
+        MST_path[MST_idx++] = u;
+        MST_path[MST_idx++] = v;
+        Union(&ds[u], &ds[v]);
+    }
+
+    free(arcs);
+
+    stringstream output;
+    for (i = 0; i < MST_idx / 2; i++){
+        output << G->vexs[MST_path[i*2]].data << "->" << G->vexs[MST_path[i*2 + 1]].data << "\r\n";
+    }
+
+    if (G->print)
+        G->print (output.str());
+    else
+        cout << output.str() <<endl;
 }

@@ -68,7 +68,22 @@ int Get_Path(MGraph *G,int p[MAX_VERTEX_NUM][MAX_VERTEX_NUM],int i, int j, strin
 void ShortestPath_FLOYD(MGraph *G);
 void ShortestPath_DIJ(MGraph * G, int v0);
 void MG_Prim_MST(MGraph * G, int v0);
+void MG_Kruskal_MST(MGraph *G);
 extern int visit[MAX_VERTEX_NUM];
 extern char ALG_path[MAX_VERTEX_NUM];
 extern char ALG_path_idx;
+
+typedef struct Arc
+{
+    int start, end;
+    int d;
+}Arc;
+
+typedef struct DS
+{
+    int i;
+    int rank;
+    struct DS *p;
+}DS;
+
 #endif

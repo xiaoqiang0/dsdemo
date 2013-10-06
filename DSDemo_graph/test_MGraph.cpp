@@ -16,5 +16,6 @@ int main()
     for (i = 0; i < G.vexnum; i++)
         ShortestPath_DIJ(&G, i);
     MG_Prim_MST(&G, 0);   
+    MG_Kruskal_MST(&G);
     return 0;
 }
