@@ -356,13 +356,13 @@ void MG_Kruskal_MST(MGraph *G)
             k++;
         }
     //Sort arcs list
-    for (i = 0; i < arcnum - 2; i++)
-        for (j = arcnum - 1; j > i+1; j--) {
-            if (arcs[i].d > arcs[j].d) {
+    for (i = arcnum -1; i > 0; --i)
+        for (j = 0; j < arcnum - 1; ++j) {
+            if (arcs[j].d > arcs[j+1].d) {
                 ARC tmp;
-                tmp.start = arcs[i].start; tmp.end = arcs[i].end; tmp.d = arcs[i].d;
-                arcs[i].start = arcs[j].start; arcs[i].end = arcs[j].end; arcs[i].d = arcs[j].d;
-                arcs[j].start = tmp.start; arcs[j].end = tmp.end;arcs[j].d = tmp.d;
+                tmp.start = arcs[j].start; tmp.end = arcs[j].end; tmp.d = arcs[j].d;
+                arcs[j].start = arcs[j+1].start; arcs[j].end = arcs[j+1].end; arcs[j].d = arcs[j+1].d;
+                arcs[j+1].start = tmp.start; arcs[j+1].end = tmp.end;arcs[j+1].d = tmp.d;
             }
         }
 
