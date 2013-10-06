@@ -168,11 +168,10 @@ void BFSTraverse(ALGraph *G)
 int ALGraph_exist_path_DFS(ALGraph *G,int i, int j)
 {
     ALG_path_idx = 0;
-    for (int i = 0; i < MAX_VERTEX_NUM; i++) {
-        visit[i] = 0;
-        ALG_path[i] = 0;
+    for (int v = 0; v < MAX_VERTEX_NUM; v++) {
+        visit[v] = 0;
+        ALG_path[v] = 0;
     }
-
     _ALGraph_exist_path_DFS(G, i, j);
 
 }
