@@ -219,7 +219,7 @@ void __fastcall TGraphAlgorithmForm::imgMouseDown(TObject * Sender, //鼠标按下事
             x[n] = X;
             y[n] = Y;        //存储新顶点坐标，圆的中心
             n++;
-            MGraph_Inc_Node(&MG);
+            MGraph_Add_Node(&MG);
             ALGraph_Add_Node(&ALG, X, Y);
             StartComboBox->Items->Add(ALG.vertics[ALG.vexnum - 1].data.data);
             EndComboBox->Items->Add(ALG.vertics[ALG.vexnum - 1].data.data);

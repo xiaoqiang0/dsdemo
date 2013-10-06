@@ -62,7 +62,7 @@ int Find_All_Path(ALGraph *G,int u,int v,int k); //求有向图G中顶点u到v之间的所有
 void freeALGraph(ALGraph *G);
 
 int CreateMG(MGraph *G, FILE *fp);
-int MGraph_Inc_Node (MGraph *G);
+int MGraph_Add_Node (MGraph *G);
 int MGraph_Add_Arc (MGraph *G, int i, int j, int d);
 int Get_Path(MGraph *G,int p[MAX_VERTEX_NUM][MAX_VERTEX_NUM],int i, int j, stringstream & path);
 void ShortestPath_FLOYD(MGraph *G);

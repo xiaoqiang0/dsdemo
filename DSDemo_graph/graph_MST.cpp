@@ -216,7 +216,7 @@ void __fastcall TGraphMSTForm::imgMouseDown(TObject * Sender, //Êó±ê°´ÏÂÊÂ¼þ,¼ÇÂ
             lb[N]->Top = Y - 5;
             N++;
             ALGraph_Add_Node(&ALG, X, Y);
-            MGraph_Inc_Node(&MG);
+            MGraph_Add_Node(&MG);
         }
         //¶¥µã¼ÆÊýÆ÷¼Ó1
         return;

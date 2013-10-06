@@ -38,7 +38,7 @@ int CreateMG(MGraph *G, FILE *fp)
     return 0;
 }
 
-int MGraph_Inc_Node (MGraph *G)
+int MGraph_Add_Node (MGraph *G)
 {
     G->vexs[G->vexnum].data = G->vexnum + 'A';
     G->vexnum += 1;
