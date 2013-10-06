@@ -151,6 +151,12 @@
             <DependentOn>graph_intro.h</DependentOn>
             <BuildOrder>7</BuildOrder>
         </CppCompile>
+        <CppCompile Include="DSDemo_graph\graph_MST.cpp">
+            <Form>GraphMSTForm</Form>
+            <FormType>dfm</FormType>
+            <DependentOn>DSDemo_graph\graph_MST.h</DependentOn>
+            <BuildOrder>14</BuildOrder>
+        </CppCompile>
         <CppCompile Include="DSDemo_graph\graph_shortest_path.cpp">
             <BuildOrder>8</BuildOrder>
             <Form>GraphAlgorithmForm</Form>
@@ -204,6 +210,7 @@
         <FormResources Include="DSDemo_sort\ThSort.dfm"/>
         <FormResources Include="DSDemo_graph\graph_traverse.dfm"/>
         <FormResources Include="DSDemo_graph\graph_shortest_path.dfm"/>
+        <FormResources Include="DSDemo_graph\graph_MST.dfm"/>
         <FormResources Include="DSDemo_graph\graph_intro.dfm"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>

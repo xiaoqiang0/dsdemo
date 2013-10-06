@@ -11,6 +11,7 @@
 #include "search_string.h"
 #include "graph_traverse.h"
 #include "binary_search.h"
+#include "graph_MST.h"
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 #pragma resource "*.dfm"
@@ -89,6 +90,12 @@ void __fastcall Tdsdemo_MainForm::N21Click(TObject *Sender)
 void __fastcall Tdsdemo_MainForm::N24Click(TObject *Sender)
 {
     BinarySearchForm->ShowModal();
+}
+//---------------------------------------------------------------------------
+
+void __fastcall Tdsdemo_MainForm::N23Click(TObject *Sender)
+{
+      GraphMSTForm->ShowModal();
 }
 //---------------------------------------------------------------------------
 

@@ -66,6 +66,7 @@ __published:	// IDE-managed Components
     void __fastcall N21Click(TObject *Sender);
     void __fastcall N22Click(TObject *Sender);
     void __fastcall N24Click(TObject *Sender);
+    void __fastcall N23Click(TObject *Sender);
 private:	// User declarations
 public:		// User declarations
     __fastcall Tdsdemo_MainForm(TComponent* Owner);
