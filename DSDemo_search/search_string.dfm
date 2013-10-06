@@ -35,7 +35,6 @@ object search_stringForm: Tsearch_stringForm
       'Edit menu to find and replace text in this RichEdit control.')
     ParentFont = False
     TabOrder = 0
-    ExplicitLeft = 152
   end
   object Panel1: TPanel
     Left = 0
@@ -44,7 +43,6 @@ object search_stringForm: Tsearch_stringForm
     Height = 322
     Align = alClient
     TabOrder = 1
-    ExplicitLeft = -6
     object searchBtn: TButton
       Left = 24
       Top = 32

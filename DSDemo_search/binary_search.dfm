@@ -12,6 +12,7 @@ object BinarySearchForm: TBinarySearchForm
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = False
+  Position = poMainFormCenter
   OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13
@@ -56,8 +57,6 @@ object BinarySearchForm: TBinarySearchForm
     Zoom.Pen.Mode = pmNotXor
     Align = alClient
     TabOrder = 0
-    ExplicitLeft = 385
-    ExplicitTop = -32
     DefaultCanvas = 'TGDIPlusCanvas'
     PrintMargins = (
       15
@@ -110,8 +109,6 @@ object BinarySearchForm: TBinarySearchForm
         Caption = #29983#25104#25968#25454
         TabOrder = 0
         OnClick = Button1Click
-        ExplicitLeft = 58
-        ExplicitTop = -4
       end
       object ComboBox1: TComboBox
         Left = 0

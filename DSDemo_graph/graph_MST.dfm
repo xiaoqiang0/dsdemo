@@ -11,6 +11,7 @@ object GraphMSTForm: TGraphMSTForm
   Font.Name = 'MS Sans Serif'
   Font.Style = []
   OldCreateOrder = False
+  Position = poMainFormCenter
   OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 13
@@ -39,10 +40,8 @@ object GraphMSTForm: TGraphMSTForm
       Transparent = True
       OnMouseDown = imgMouseDown
       OnMouseUp = imgMouseUp
-      ExplicitLeft = -162
-      ExplicitTop = -448
-      ExplicitWidth = 617
-      ExplicitHeight = 497
+      ExplicitLeft = 4
+      ExplicitTop = 3
     end
   end
   object Panel1: TPanel

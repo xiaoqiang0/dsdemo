@@ -11,6 +11,7 @@ object GraphIntroduceForm: TGraphIntroduceForm
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = False
+  Position = poMainFormCenter
   OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 13
@@ -19,7 +20,7 @@ object GraphIntroduceForm: TGraphIntroduceForm
     Top = 0
     Width = 894
     Height = 485
-    ActivePage = TabSheet3
+    ActivePage = TabSheet1
     Align = alClient
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
@@ -52,6 +53,10 @@ object GraphIntroduceForm: TGraphIntroduceForm
     object TabSheet2: TTabSheet
       Caption = #22270#30340#36941#21382
       ImageIndex = 1
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object RichEdit2: TRichEdit
         Left = 0
         Top = 0
@@ -73,6 +78,10 @@ object GraphIntroduceForm: TGraphIntroduceForm
     object TabSheet4: TTabSheet
       Caption = #26368#23567#29983#25104#26641
       ImageIndex = 3
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object RichEdit4: TRichEdit
         Left = 0
         Top = 0
