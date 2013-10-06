@@ -21,10 +21,15 @@ __published:	// IDE-managed Components
         TImage *img;
         TTimer *Timer1;
         TButton *Button3;
+    TPanel *Panel1;
+    TPanel *Panel2;
+    TMemo *Memo1;
+    TLabel *Label1;
         void __fastcall Button5Click(TObject *Sender);
         void __fastcall Button2Click(TObject *Sender);
         void __fastcall Timer1Timer(TObject *Sender);
         void __fastcall Button3Click(TObject *Sender);
+    void __fastcall einKeyPress(TObject *Sender, System::WideChar &Key);
 private:	// User declarations
 public:		// User declarations
         __fastcall TForm1(TComponent* Owner);

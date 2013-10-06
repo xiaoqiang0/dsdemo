@@ -186,7 +186,8 @@ void __fastcall TForm1::Button2Click(TObject *Sender)       //搜寻二叉树结点
 //---------------------------------------------------------------------------
 
 void __fastcall TForm1::Timer1Timer(TObject *Sender)
-{                                       //熟悉计数器的使用有助于动画及效果的表现
+{
+//熟悉计数器的使用有助于动画及效果的表现
    static int t=0;
    if(timer==1)
    {
@@ -210,4 +211,12 @@ void __fastcall TForm1::Timer1Timer(TObject *Sender)
 
 
 
+
+void __fastcall TForm1::einKeyPress(TObject *Sender, System::WideChar &Key)
+{
+     if (Key == 13) {
+           Button3->Click();
+     }
+}
+//---------------------------------------------------------------------------
 
