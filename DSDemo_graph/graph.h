@@ -73,11 +73,11 @@ extern int visit[MAX_VERTEX_NUM];
 extern char ALG_path[MAX_VERTEX_NUM];
 extern char ALG_path_idx;
 
-typedef struct Arc
+typedef struct ARC
 {
     int start, end;
     int d;
-}Arc;
+}ARC;
 
 typedef struct DS
 {

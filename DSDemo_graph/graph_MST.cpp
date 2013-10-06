@@ -318,7 +318,7 @@ void __fastcall TGraphMSTForm::ResetBtnClick(TObject * Sender)
 void __fastcall TGraphMSTForm::KruskalBtnClick(TObject *Sender)
 {
      memo->Lines->Add("用Kruskal算法生成最小生成树结果如下:");
-     DFSTraverse(&ALG);
+     MG_Kruskal_MST(&MG);
 }
 //---------------------------------------------------------------------------
 

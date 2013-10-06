@@ -336,7 +336,7 @@ void MG_Kruskal_MST(MGraph *G)
     int i, j, k;
     int vexnum = G->vexnum;
     int arcnum = G->arcnum / 2;
-    Arc *arcs;
+    ARC *arcs;
 
     for (i = 0; i < vexnum * 2; i++) {
         MST_path[i] = -1;
@@ -345,7 +345,7 @@ void MG_Kruskal_MST(MGraph *G)
     for (i = 0; i < vexnum; i++) {
         Make_Set(&ds[i]);
     }
-    arcs = (Arc *) malloc (sizeof (Arc) * arcnum);
+    arcs = (ARC *) malloc (sizeof (ARC) * arcnum);
     k = 0;
     for (i = 0; i < vexnum; i++)
         for (j = i+1; j < vexnum; j++) {
@@ -359,7 +359,7 @@ void MG_Kruskal_MST(MGraph *G)
     for (i = 0; i < arcnum - 2; i++)
         for (j = arcnum - 1; j > i+1; j--) {
             if (arcs[i].d > arcs[j].d) {
-                Arc tmp;
+                ARC tmp;
                 tmp.start = arcs[i].start; tmp.end = arcs[i].end; tmp.d = arcs[i].d;
                 arcs[i].start = arcs[j].start; arcs[i].end = arcs[j].end; arcs[i].d = arcs[j].d;
                 arcs[j].start = tmp.start; arcs[j].end = tmp.end;arcs[j].d = tmp.d;
