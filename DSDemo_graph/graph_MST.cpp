@@ -273,18 +273,6 @@ void __fastcall TGraphMSTForm::BtClearMemoClick(TObject * Sender)
 //---------------------------------------------------------------------------
 
 
-void __fastcall TGraphMSTForm::DirectBtnClick(TObject * Sender)
-{
-    direct = 1;
-}
-
-//---------------------------------------------------------------------------
-
-void __fastcall TGraphMSTForm::NoDirectBtnClick(TObject * Sender)
-{
-    direct = 0;
-}
-
 //---------------------------------------------------------------------------
 
 
