@@ -4,7 +4,7 @@
 #include <stdio.h>
 #include <iostream>
 #include <sstream>
-#define  MAX_VERTEX_NUM 8
+#define  MAX_VERTEX_NUM 9
 
 using std::cout;
 using std::endl;
@@ -67,7 +67,7 @@ int MGraph_Add_Arc (MGraph *G, int i, int j, int d);
 int Get_Path(MGraph *G,int p[MAX_VERTEX_NUM][MAX_VERTEX_NUM],int i, int j, stringstream & path);
 void ShortestPath_FLOYD(MGraph *G);
 void ShortestPath_DIJ(MGraph * G, int v0);
-
+void MG_Prim_MST(MGraph * G, int v0);
 extern int visit[MAX_VERTEX_NUM];
 extern char ALG_path[MAX_VERTEX_NUM];
 extern char ALG_path_idx;

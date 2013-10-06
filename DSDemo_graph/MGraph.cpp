@@ -7,6 +7,9 @@
 #define	MAX	10000
 //#define DEBUG
 
+int MST_path[MAX_VERTEX_NUM * 2];
+int MST_idx;
+
 int CreateMG(MGraph *G, FILE *fp)
 {
     int i,j;
@@ -212,4 +215,62 @@ void ShortestPath_DIJ(MGraph * G, int v0)
     free(final);
     /*----------------------------------------------*/
     return ;
+}
+
+void MG_Prim_MST(MGraph *G, int v0)
+{
+    int i, j, k, l;
+    MST_idx = 0;
+    int key[MAX_VERTEX_NUM];
+    int P[MAX_VERTEX_NUM];
+    int vexnum = G->vexnum;
+
+    for (i = 0; i < vexnum * 2; i++) {
+        MST_path[i] = -1;
+    }
+    for (i = 0; i < vexnum; i++) {
+        key[i] = MAX;
+        P[i] = -1;
+    }
+
+    key[v0] = 0;
+    
+    for (i = 0; i < vexnum; i++) {
+        int u, v;
+        int cost = MAX;
+        for (j = 0; j < vexnum; j ++) {
+            if (key[j] < cost && key[j] != -10000) {
+                cost = key[j];
+                u = j;
+            }
+        }
+        if (P[u] != -1)
+            MST_path[MST_idx++] = P[u];
+        else
+            MST_path[MST_idx++] = -1;
+        MST_path[MST_idx++] = u;
+        key[u] = -10000;
+
+        for(v = 0; v < vexnum; v++) {
+            int selected = 0;
+            if (G->arcs[u][v] == MAX) continue;
+            for (k = 0; k < 2 * vexnum; k ++)
+                if (MST_path[k] == v) {selected = 1; break;}
+            if (!selected && G->arcs[u][v] < key[v]) {
+                P[v] = u;
+                key[v] = G->arcs[u][v];
+            }
+        }        
+    }
+
+    stringstream output;
+    for (i = 1; i < vexnum; i++){
+        output << G->vexs[MST_path[i*2]].data << "->" << G->vexs[MST_path[i*2 + 1]].data << "\r\n";
+    }
+
+    if (G->print)
+        G->print (output.str());
+    else
+        cout << output.str() <<endl;
+    
 }
