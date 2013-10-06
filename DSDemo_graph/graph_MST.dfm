@@ -99,7 +99,7 @@ object GraphMSTForm: TGraphMSTForm
     Caption = #26368#23567#29983#25104#26641#31639#27861
     TabOrder = 5
     object PrimBtn: TButton
-      Left = 4
+      Left = 3
       Top = 34
       Width = 138
       Height = 26

@@ -156,7 +156,7 @@ void __fastcall TGraphMSTForm::FormCreate(TObject * Sender)    //¶¥µã¼ä³õÊ¼ÉèÖÃÎ
 
     for (i = 0; i < MAX_VERTEX_NUM; i++)
         for (j = 0; j < MAX_VERTEX_NUM; j++) {
-            MG.arcs[i][j] = 99999;
+            MG.arcs[i][j] = 10000;
         }
 }
 
@@ -216,6 +216,7 @@ void __fastcall TGraphMSTForm::imgMouseDown(TObject * Sender, //Êó±ê°´ÏÂÊÂ¼ş,¼ÇÂ
             lb[N]->Top = Y - 5;
             N++;
             ALGraph_Add_Node(&ALG, X, Y);
+            MGraph_Inc_Node(&MG);
         }
         //¶¥µã¼ÆÊıÆ÷¼Ó1
         return;
@@ -324,6 +325,6 @@ void __fastcall TGraphMSTForm::KruskalBtnClick(TObject *Sender)
 void __fastcall TGraphMSTForm::PrimBtnClick(TObject *Sender)
 {
  memo->Lines->Add("ÓÃPrimËã·¨Éú³É×îĞ¡Éú³ÉÊ÷½á¹ûÈçÏÂ:");
-
+ MG_Prim_MST(&MG, 0);
 }
 
