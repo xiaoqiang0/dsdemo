@@ -4,7 +4,7 @@ object BiTreeForm: TBiTreeForm
   Caption = #20108#21449#26641#30340#22522#26412#25805#20316
   ClientHeight = 478
   ClientWidth = 1045
-  Color = clMoneyGreen
+  Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -11
@@ -23,8 +23,6 @@ object BiTreeForm: TBiTreeForm
     Height = 478
     Align = alClient
     TabOrder = 0
-    ExplicitWidth = 821
-    ExplicitHeight = 476
     object pn: TPanel
       Left = 1
       Top = 1
@@ -32,10 +30,9 @@ object BiTreeForm: TBiTreeForm
       Height = 411
       Align = alClient
       BevelInner = bvLowered
-      Color = clTeal
+      Color = clMoneyGreen
+      ParentBackground = False
       TabOrder = 0
-      ExplicitWidth = 819
-      ExplicitHeight = 409
       object img: TImage
         Left = 2
         Top = 2
@@ -62,11 +59,10 @@ object BiTreeForm: TBiTreeForm
       ShowHint = False
       TabOrder = 1
       ExplicitLeft = -3
-      ExplicitTop = 421
-      ExplicitWidth = 804
+      ExplicitTop = 416
       object ein: TEdit
         Left = 16
-        Top = 24
+        Top = 13
         Width = 73
         Height = 25
         AutoSize = False
@@ -81,35 +77,27 @@ object BiTreeForm: TBiTreeForm
       end
       object Button2: TButton
         Left = 207
-        Top = 24
+        Top = 13
         Width = 73
         Height = 25
-        Caption = #26597#25214
+        Caption = #20013#24207#36941#21382
         TabOrder = 1
-      end
-      object Button5: TButton
-        Left = 304
-        Top = 24
-        Width = 73
-        Height = 25
-        Caption = #32467#26463
-        TabOrder = 2
       end
       object Button3: TButton
         Left = 128
-        Top = 24
+        Top = 13
         Width = 73
         Height = 25
-        Caption = #21152#20837
-        TabOrder = 3
+        Caption = #21069#24207#36941#21382
+        TabOrder = 2
       end
       object Button1: TButton
-        Left = 392
-        Top = 24
+        Left = 286
+        Top = 13
         Width = 73
         Height = 25
-        Caption = #32467#26463
-        TabOrder = 4
+        Caption = #21518#24207#36941#21382
+        TabOrder = 3
         OnClick = Button1Click
       end
       object StatusBar1: TStatusBar
@@ -121,7 +109,31 @@ object BiTreeForm: TBiTreeForm
           item
             Width = 50
           end>
-        ExplicitLeft = -22
+      end
+      object Button4: TButton
+        Left = 376
+        Top = 13
+        Width = 73
+        Height = 25
+        Caption = #26641#30340#28145#24230
+        TabOrder = 5
+      end
+      object Button5: TButton
+        Left = 455
+        Top = 13
+        Width = 73
+        Height = 25
+        Caption = #26597#25214
+        TabOrder = 6
+      end
+      object Button6: TButton
+        Left = 534
+        Top = 13
+        Width = 73
+        Height = 25
+        Caption = #32467#26463
+        TabOrder = 7
+        OnClick = Button1Click
       end
     end
   end
@@ -132,8 +144,6 @@ object BiTreeForm: TBiTreeForm
     Height = 478
     Align = alRight
     TabOrder = 1
-    ExplicitLeft = 821
-    ExplicitHeight = 476
     object Label1: TLabel
       Left = 1
       Top = 1
@@ -149,11 +159,7 @@ object BiTreeForm: TBiTreeForm
       Width = 242
       Height = 463
       Align = alClient
-      Lines.Strings = (
-        'Memo1')
       TabOrder = 0
-      ExplicitLeft = 3
-      ExplicitHeight = 468
     end
   end
   object Timer1: TTimer

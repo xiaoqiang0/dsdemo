@@ -19,7 +19,6 @@ __published:    // IDE-managed Components
         TGroupBox *GroupBox1;
         TEdit *ein;
         TButton *Button2;
-        TButton *Button5;
         TPanel *pn;
         TImage *img;
         TTimer *Timer1;
@@ -30,6 +29,9 @@ __published:    // IDE-managed Components
         TLabel *Label1;
         TButton *Button1;
         TStatusBar *StatusBar1;
+    TButton *Button4;
+    TButton *Button5;
+    TButton *Button6;
         void __fastcall FormCreate(TObject *Sender);
         void __fastcall FormResize(TObject *Sender);
         void __fastcall Button1Click(TObject *Sender);
