@@ -128,8 +128,10 @@
         <BCC_Defines>NDEBUG;$(BCC_Defines);$(BCC_Defines)</BCC_Defines>
     </PropertyGroup>
     <ItemGroup>
+        <CppCompile Include="BiTree.cpp">
+            <BuildOrder>3</BuildOrder>
+        </CppCompile>
         <CppCompile Include="cd5_3p.cpp">
-            <BuildOrder>2</BuildOrder>
             <BuildOrder>2</BuildOrder>
         </CppCompile>
         <ResFiles Include="cd5_3p.res">
@@ -138,7 +140,7 @@
         </ResFiles>
         <CppCompile Include="cd5_3u.cpp">
             <BuildOrder>8</BuildOrder>
-            <Form>Form1</Form>
+            <Form>BiTreeForm</Form>
             <DependentOn>cd5_3u.h</DependentOn>
             <BuildOrder>0</BuildOrder>
         </CppCompile>

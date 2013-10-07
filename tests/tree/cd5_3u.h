@@ -9,10 +9,13 @@
 #include <Forms.hpp>
 #include <Grids.hpp>
 #include <ExtCtrls.hpp>
+#include "tree.h"
+#include <Vcl.ComCtrls.hpp>
+
 //---------------------------------------------------------------------------
-class TForm1 : public TForm
+class TBiTreeForm : public TForm
 {
-__published:	// IDE-managed Components
+__published:    // IDE-managed Components
         TGroupBox *GroupBox1;
         TEdit *ein;
         TButton *Button2;
@@ -21,20 +24,29 @@ __published:	// IDE-managed Components
         TImage *img;
         TTimer *Timer1;
         TButton *Button3;
-    TPanel *Panel1;
-    TPanel *Panel2;
-    TMemo *Memo1;
-    TLabel *Label1;
-        void __fastcall Button5Click(TObject *Sender);
-        void __fastcall Button2Click(TObject *Sender);
-        void __fastcall Timer1Timer(TObject *Sender);
-        void __fastcall Button3Click(TObject *Sender);
-    void __fastcall einKeyPress(TObject *Sender, System::WideChar &Key);
-private:	// User declarations
-public:		// User declarations
-        __fastcall TForm1(TComponent* Owner);
+        TPanel *Panel1;
+        TPanel *Panel2;
+        TMemo *Memo1;
+        TLabel *Label1;
+        TButton *Button1;
+        TStatusBar *StatusBar1;
+        void __fastcall FormCreate(TObject *Sender);
+        void __fastcall FormResize(TObject *Sender);
+        void __fastcall Button1Click(TObject *Sender);
+
+    private:    // User declarations
+        int max_depth;
+        int height, width;
+        BiTree T;
+        int get_pos_x (BiTree T);
+        int get_pos_y (BiTree T);
+        void  PaintTree(BiTree T);
+        void RepaintTree();
+
+    public:        // User declarations
+        __fastcall TBiTreeForm(TComponent* Owner);
 };
 //---------------------------------------------------------------------------
-extern PACKAGE TForm1 *Form1;
+extern PACKAGE TBiTreeForm *BiTreeForm;
 //---------------------------------------------------------------------------
 #endif

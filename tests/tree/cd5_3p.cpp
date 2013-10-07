@@ -2,16 +2,15 @@
 
 #include <vcl.h>
 #pragma hdrstop
-USERES("cd5_3p.res");
-USEFORM("cd5_3u.cpp", Form1);
+USEFORM("cd5_3u.cpp", BiTreeForm);
 //---------------------------------------------------------------------------
 WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 {
         try
         {
                  Application->Initialize();
-                 Application->CreateForm(__classid(TForm1), &Form1);
-                 Application->Run();
+                 Application->CreateForm(__classid(TBiTreeForm), &BiTreeForm);
+         Application->Run();
         }
         catch (Exception &exception)
         {
