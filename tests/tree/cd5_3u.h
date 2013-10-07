@@ -36,14 +36,17 @@ __published:    // IDE-managed Components
         void __fastcall FormResize(TObject *Sender);
         void __fastcall Button1Click(TObject *Sender);
         void __fastcall FormDestroy(TObject *Sender);
+    void __fastcall Button3Click(TObject *Sender);
 
     private:    // User declarations
+        BiTree T;
         int max_depth;
         int height, width;
-        BiTree T;
+
         int get_pos_x (BiTree T);
         int get_pos_y (BiTree T);
-        void  PaintTree(BiTree T);
+       // void traverse_visit(void * data);
+        void PaintTree(BiTree T);
         void RepaintTree();
 
     public:        // User declarations

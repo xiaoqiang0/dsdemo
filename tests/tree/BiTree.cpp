@@ -1,4 +1,4 @@
-#include <stdio.h>
+﻿#include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
 #include "tree.h"
@@ -128,14 +128,14 @@ void re_org_tree(BiTree T)
     re_org_tree(T->right);
 }
 
-void PreOrderTraverse(BiTree T)
+void PreOrderTraverse(BiTree T, void (*visit)(void*))
 {
     if (!T)
 	return;
-    printf("%c", T->data);
-    PreOrderTraverse(T->left);
+    visit((void *)T);
+    PreOrderTraverse(T->left, visit);
     //printf("%c",',');
-    PreOrderTraverse(T->right);
+    PreOrderTraverse(T->right, visit);
     //printf("%c",')');
 }
 

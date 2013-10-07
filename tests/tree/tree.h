@@ -24,7 +24,7 @@ BiTree createBiTree();
 void re_org_tree(BiTree T);
 void assign_parent(BiTree T, BiTree p);
 
-void PreOrderTraverse(BiTree T);
+void PreOrderTraverse(BiTree T, void (*visit)(void*));
 
 void generic_Traverse(BiTree T, int flag);
 

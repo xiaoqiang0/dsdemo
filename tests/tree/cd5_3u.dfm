@@ -89,6 +89,7 @@ object BiTreeForm: TBiTreeForm
         Height = 25
         Caption = #21069#24207#36941#21382
         TabOrder = 2
+        OnClick = Button3Click
       end
       object Button1: TButton
         Left = 286
