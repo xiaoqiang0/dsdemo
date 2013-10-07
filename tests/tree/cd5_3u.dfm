@@ -13,6 +13,7 @@ object BiTreeForm: TBiTreeForm
   OldCreateOrder = False
   WindowState = wsMaximized
   OnCreate = FormCreate
+  OnDestroy = FormDestroy
   OnResize = FormResize
   PixelsPerInch = 96
   TextHeight = 13
@@ -58,8 +59,6 @@ object BiTreeForm: TBiTreeForm
       ParentShowHint = False
       ShowHint = False
       TabOrder = 1
-      ExplicitLeft = -3
-      ExplicitTop = 416
       object ein: TEdit
         Left = 16
         Top = 13

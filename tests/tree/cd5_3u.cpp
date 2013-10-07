@@ -116,3 +116,9 @@ void __fastcall TBiTreeForm::Button1Click(TObject * Sender)
 }
 
 //---------------------------------------------------------------------------
+void __fastcall TBiTreeForm::FormDestroy(TObject *Sender)
+{
+     freeBiTree(T);
+}
+//---------------------------------------------------------------------------
+

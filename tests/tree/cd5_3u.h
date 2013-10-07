@@ -29,12 +29,13 @@ __published:    // IDE-managed Components
         TLabel *Label1;
         TButton *Button1;
         TStatusBar *StatusBar1;
-    TButton *Button4;
-    TButton *Button5;
-    TButton *Button6;
+        TButton *Button4;
+        TButton *Button5;
+        TButton *Button6;
         void __fastcall FormCreate(TObject *Sender);
         void __fastcall FormResize(TObject *Sender);
         void __fastcall Button1Click(TObject *Sender);
+        void __fastcall FormDestroy(TObject *Sender);
 
     private:    // User declarations
         int max_depth;
