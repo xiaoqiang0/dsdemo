@@ -20,7 +20,7 @@ struct node_c {
 
 /*------------------------BiTree------------------------------------*/
 BiTree CTree(char *pre, int pl, int pu, char *in, int il, int iu);
-BiTree createBiTree();
+BiTree createBiTree(const char *s);
 BiTree CreateBiTreeFromArray(const char *s, int i);
 void re_org_tree(BiTree T);
 void assign_parent(BiTree T, BiTree p);

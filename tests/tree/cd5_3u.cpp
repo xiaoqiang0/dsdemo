@@ -141,30 +141,33 @@ void __fastcall TBiTreeForm::Button3Click(TObject *Sender)
 
 void __fastcall TBiTreeForm::BitBtn1Click(TObject *Sender)
 {
-//
-  switch (PageControl1->TabIndex) {
-    case 0:
-        break;
-    case 1:
-        break;
-    case 2:
-       // String s = TreeArrayEdit->Text;
-        int i;
-        char s[1024];
-        AnsiString txt = TreeArrayEdit->Text;
-        T = CreateBiTreeFromArray(txt.c_str(), 0);
-        img->Canvas->Pen->Color = clWhite;	//将画笔颜色设为白色
-        img->Canvas->Pen->Width = img->Height * 2;	//设置画笔宽度为8
-        img->Canvas->MoveTo(0, 0);
-        img->Canvas->LineTo(img->Width, 0);
-        img->Canvas->Pen->Color = clBlack;
-        img->Canvas->Pen->Width = 1;
+    AnsiString pre = PreOrderEdit->Text;
+    AnsiString ino = InOrderEdit->Text;
+    AnsiString table = TableEdit->Text;
+    AnsiString txt = TreeArrayEdit->Text;
+    switch (PageControl1->TabIndex) {
+        case 0:
+            T = CTree(pre.c_str(), 0, 5, ino.c_str(), 0, 5);
+            break;
+        case 1:
+            T = createBiTree(table.c_str());
+            break;
+        case 2:
+            T = CreateBiTreeFromArray(txt.c_str(), 0);
+            break;
 
-        RepaintTree();
+    }
 
-        break;
+    img->Canvas->Pen->Color = clWhite;	//将画笔颜色设为白色
+    img->Canvas->Pen->Width = img->Height * 2;	//设置画笔宽度为8
+    img->Canvas->MoveTo(0, 0);
+    img->Canvas->LineTo(img->Width, 0);
+    img->Canvas->Pen->Color = clBlack;
+    img->Canvas->Pen->Width = 1;
 
-  }
+    RepaintTree();
+
+
 
 }
 //---------------------------------------------------------------------------

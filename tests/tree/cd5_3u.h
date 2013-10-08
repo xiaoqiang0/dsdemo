@@ -18,7 +18,6 @@ class TBiTreeForm : public TForm
 {
 __published:    // IDE-managed Components
         TGroupBox *GroupBox1;
-    TEdit *PreOrderEdit;
         TButton *Button2;
         TPanel *pn;
         TImage *img;
@@ -31,9 +30,10 @@ __published:    // IDE-managed Components
         TButton *Button1;
         TButton *Button4;
         TButton *Button6;
-    TEdit *TreeArrayEdit;
-    TEdit *TableEdit;
+    TEdit *PreOrderEdit;
     TEdit *InOrderEdit;
+    TEdit *TableEdit;
+    TEdit *TreeArrayEdit;
     TPanel *Panel3;
     TPageControl *PageControl1;
     TTabSheet *TabSheet1;

@@ -36,7 +36,7 @@ BiTree CTree(char *pre, int pl, int pu, char *in, int il, int iu)
     return p;
 }
 
-BiTree createBiTree()
+BiTree createBiTree(const char *s)
 {
     //A(B(,C),D(E(F,G),H))
 
@@ -46,10 +46,10 @@ BiTree createBiTree()
     BiTree p = T;
     char c;
     int flag = -1;
+    int i = 0;
 
     printf("Input Data:\n\t");
-    while ((c = getchar()) != EOF && c != '\n') {
-	putchar(c);
+    while ((c = s[i++]) != '\0') {
 	switch (c) {
 	case '(':
 	    flag = 1;
