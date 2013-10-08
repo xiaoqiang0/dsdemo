@@ -3,6 +3,7 @@
 #pragma hdrstop
 #include <math.h>
 #include "cd5_3u.h"
+#include <string.h>
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 #pragma resource "*.dfm"
@@ -91,7 +92,9 @@ void __fastcall TBiTreeForm::FormCreate(TObject * Sender)
 {
     char pre[] = "ABDCEF";
     char in[]  = "BDAEFC";
-    T = CTree(pre, 0, 5, in, 0, 5);
+    char s[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZABCDE";
+    //T = CTree(pre, 0, 5, in, 0, 5);
+//    T = CreateBiTreeFromArray(s, 0);
 }
 
 //---------------------------------------------------------------------------
@@ -105,11 +108,9 @@ void __fastcall TBiTreeForm::FormResize(TObject * Sender)
     img->Canvas->Pen->Width = 1;
 
     RepaintTree();
-    StatusBar1->Panels->Items[0]->Text =
-	IntToStr(img->Width) + ", " + IntToStr(img->Height);
     if (flag == 1) {
-	flag = 0;
-	WindowState = wsNormal;
+    	flag = 0;
+	    WindowState = wsNormal;
     }
 }
 
@@ -133,6 +134,38 @@ void __fastcall TBiTreeForm::Button3Click(TObject *Sender)
 {
      memo_local->Lines->Add("前序遍历结果如下:");
      PreOrderTraverse(T, traverse_visit);
+}
+//---------------------------------------------------------------------------
+
+
+
+void __fastcall TBiTreeForm::BitBtn1Click(TObject *Sender)
+{
+//
+  switch (PageControl1->TabIndex) {
+    case 0:
+        break;
+    case 1:
+        break;
+    case 2:
+       // String s = TreeArrayEdit->Text;
+        int i;
+        char s[1024];
+        AnsiString txt = TreeArrayEdit->Text;
+        T = CreateBiTreeFromArray(txt.c_str(), 0);
+        img->Canvas->Pen->Color = clWhite;	//将画笔颜色设为白色
+        img->Canvas->Pen->Width = img->Height * 2;	//设置画笔宽度为8
+        img->Canvas->MoveTo(0, 0);
+        img->Canvas->LineTo(img->Width, 0);
+        img->Canvas->Pen->Color = clBlack;
+        img->Canvas->Pen->Width = 1;
+
+        RepaintTree();
+
+        break;
+
+  }
+
 }
 //---------------------------------------------------------------------------
 

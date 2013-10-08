@@ -1,5 +1,6 @@
 ﻿#include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include <math.h>
 #include "tree.h"
 #define Max_depth    20
@@ -84,6 +85,21 @@ BiTree createBiTree()
     return T;
 }
 
+BiTree CreateBiTreeFromArray(const char *s, int i)
+{    
+    BiTree p;
+    if (strlen(s) <= i || s[i] == ' ') return NULL;
+
+    p = (BiTree) malloc(sizeof(struct TreeNode));
+    p->data = s[i];
+    p->left = CreateBiTreeFromArray(s, (i+1) * 2 - 1);
+    p->right = CreateBiTreeFromArray(s, (i+1) * 2);
+    
+    assign_parent(p, 0);
+    return p;
+
+
+}
 void assign_parent(BiTree T, BiTree p)
 {
     if (!T)
@@ -132,7 +148,10 @@ void PreOrderTraverse(BiTree T, void (*visit)(void*))
 {
     if (!T)
 	return;
-    visit((void *)T);
+    if (visit)
+        visit((void *)T);
+    else
+        printf("%c", T->data);
     PreOrderTraverse(T->left, visit);
     //printf("%c",',');
     PreOrderTraverse(T->right, visit);
@@ -235,7 +254,7 @@ void InOrderTraverse(BiTree T)
 
 void LevelOrderTraverse(BiTree T)
 {
-    BiTree Q[20];
+    BiTree Q[200];
     BiTree h;
     int front = 0, end = 0;
 
