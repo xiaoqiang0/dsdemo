@@ -85,6 +85,7 @@
           Height = 24
           Caption = #20013#24207#36941#21382
           TabOrder = 1
+          OnClick = Button2Click
         end
         object Button3: TButton
           Left = 2
@@ -102,15 +103,16 @@
           Height = 25
           Caption = #26641#30340#28145#24230
           TabOrder = 3
+          OnClick = Button4Click
         end
         object Button6: TButton
           Left = 81
           Top = 31
           Width = 73
           Height = 25
-          Caption = #32467#26463
+          Caption = #21494#23376#33410#28857
           TabOrder = 4
-          OnClick = Button1Click
+          OnClick = Button6Click
         end
         object Button5: TButton
           Left = 160
@@ -119,7 +121,7 @@
           Height = 25
           Caption = #32467#26463
           TabOrder = 5
-          OnClick = Button1Click
+          OnClick = Button5Click
         end
       end
       object Panel4: TPanel
@@ -266,9 +268,8 @@
       Width = 242
       Height = 539
       Align = alClient
+      ScrollBars = ssVertical
       TabOrder = 0
-      ExplicitTop = 14
-      ExplicitHeight = 545
     end
   end
   object Timer1: TTimer
