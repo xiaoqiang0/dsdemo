@@ -153,10 +153,34 @@ void PreOrderTraverse(BiTree T, void (*visit)(void*))
     else
         printf("%c", T->data);
     PreOrderTraverse(T->left, visit);
-    //printf("%c",',');
     PreOrderTraverse(T->right, visit);
-    //printf("%c",')');
 }
+
+void InOrderTraverse_recurse(BiTree T, void (*visit)(void*))
+{
+    if (!T)
+	return;
+    InOrderTraverse_recurse(T->left, visit);
+    if (visit)
+        visit((void *)T);
+    else
+        printf("%c", T->data);
+    InOrderTraverse_recurse(T->right, visit);
+}
+
+
+void PostOrderTraverse(BiTree T, void (*visit)(void*))
+{
+    if (!T)
+	return;
+    PostOrderTraverse(T->left, visit);
+    PostOrderTraverse(T->right, visit);
+    if (visit)
+        visit((void *)T);
+    else
+        printf("%c", T->data);
+}
+
 
 void generic_Traverse(BiTree T, int flag)
 {

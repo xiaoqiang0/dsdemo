@@ -26,6 +26,8 @@ void re_org_tree(BiTree T);
 void assign_parent(BiTree T, BiTree p);
 
 void PreOrderTraverse(BiTree T, void (*visit)(void*));
+void InOrderTraverse_recurse(BiTree T, void (*visit)(void*));
+void PostOrderTraverse(BiTree T, void (*visit)(void*));
 
 void generic_Traverse(BiTree T, int flag);
 
