@@ -87,6 +87,15 @@ void TBiTreeForm::RepaintTree()
     PaintTree(T);
 
 }
+void TBiTreeForm::ClearImage()
+{
+    img->Canvas->Pen->Color = clWhite;	//将画笔颜色设为白色
+    img->Canvas->Pen->Width = img->Height * 2;	//设置画笔宽度为8
+    img->Canvas->MoveTo(0, 0);
+    img->Canvas->LineTo(img->Width, 0);
+    img->Canvas->Pen->Color = clBlack;
+    img->Canvas->Pen->Width = 1;
+}
 
 void __fastcall TBiTreeForm::FormCreate(TObject * Sender)
 {
@@ -100,17 +109,11 @@ void __fastcall TBiTreeForm::FormCreate(TObject * Sender)
 //---------------------------------------------------------------------------
 void __fastcall TBiTreeForm::FormResize(TObject * Sender)
 {
-    img->Canvas->Pen->Color = clWhite;	//将画笔颜色设为白色
-    img->Canvas->Pen->Width = img->Height * 2;	//设置画笔宽度为8
-    img->Canvas->MoveTo(0, 0);
-    img->Canvas->LineTo(img->Width, 0);
-    img->Canvas->Pen->Color = clBlack;
-    img->Canvas->Pen->Width = 1;
-
+    ClearImage();
     RepaintTree();
     if (flag == 1) {
-    	flag = 0;
-	    WindowState = wsNormal;
+        flag = 0;
+        WindowState = wsNormal;
     }
 }
 
@@ -145,6 +148,7 @@ void __fastcall TBiTreeForm::BitBtn1Click(TObject *Sender)
     AnsiString ino = InOrderEdit->Text;
     AnsiString table = TableEdit->Text;
     AnsiString txt = TreeArrayEdit->Text;
+    freeBiTree(T);
     switch (PageControl1->TabIndex) {
         case 0:
             T = CTree(pre.c_str(), 0, 5, ino.c_str(), 0, 5);
@@ -158,17 +162,7 @@ void __fastcall TBiTreeForm::BitBtn1Click(TObject *Sender)
 
     }
 
-    img->Canvas->Pen->Color = clWhite;	//将画笔颜色设为白色
-    img->Canvas->Pen->Width = img->Height * 2;	//设置画笔宽度为8
-    img->Canvas->MoveTo(0, 0);
-    img->Canvas->LineTo(img->Width, 0);
-    img->Canvas->Pen->Color = clBlack;
-    img->Canvas->Pen->Width = 1;
-
+    ClearImage();
     RepaintTree();
-
-
-
 }
 //---------------------------------------------------------------------------
-

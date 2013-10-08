@@ -344,6 +344,7 @@ void freeBiTree(BiTree T)
 	freeBiTree(T->left);
 	freeBiTree(T->right);
 	free(T);
+        T = NULL;
     }
     return;
 }
