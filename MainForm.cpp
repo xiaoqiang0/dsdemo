@@ -12,6 +12,7 @@
 #include "graph_traverse.h"
 #include "binary_search.h"
 #include "graph_MST.h"
+#include "tree_BiTree.h"
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 #pragma resource "*.dfm"
@@ -96,6 +97,13 @@ void __fastcall Tdsdemo_MainForm::N24Click(TObject *Sender)
 void __fastcall Tdsdemo_MainForm::N23Click(TObject *Sender)
 {
       GraphMSTForm->ShowModal();
+}
+//---------------------------------------------------------------------------
+
+
+void __fastcall Tdsdemo_MainForm::N20Click(TObject *Sender)
+{
+     BiTreeForm->ShowModal();
 }
 //---------------------------------------------------------------------------
 

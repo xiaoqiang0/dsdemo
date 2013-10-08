@@ -9,8 +9,9 @@ USEFORM("MainForm.cpp", dsdemo_MainForm);
 USEFORM("DSDemo_sort\ThSort.cpp", ThreadSortForm);
 USEFORM("DSDemo_graph\graph_traverse.cpp", GraphTraverseForm);
 USEFORM("DSDemo_graph\graph_shortest_path.cpp", GraphAlgorithmForm);
-USEFORM("DSDemo_graph\graph_intro.cpp", GraphIntroduceForm);
 USEFORM("DSDemo_graph\graph_MST.cpp", GraphMSTForm);
+USEFORM("DSDemo_graph\graph_intro.cpp", GraphIntroduceForm);
+USEFORM("DSDemo_tree\tree_BiTree.cpp", BiTreeForm);
 //---------------------------------------------------------------------------
 WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 {
@@ -25,6 +26,7 @@ WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
          Application->CreateForm(__classid(TGraphTraverseForm), &GraphTraverseForm);
          Application->CreateForm(__classid(TBinarySearchForm), &BinarySearchForm);
          Application->CreateForm(__classid(TGraphMSTForm), &GraphMSTForm);
+         Application->CreateForm(__classid(TBiTreeForm), &BiTreeForm);
          Application->Run();
         }
         catch (Exception &exception)

@@ -59,7 +59,7 @@
         <Base>true</Base>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base)'!=''">
-        <IncludePath>DSDemo_graph\;DSDemo_search\;DSDemo_sort\;$(IncludePath)</IncludePath>
+        <IncludePath>DSDemo_tree\;DSDemo_graph\;DSDemo_search\;DSDemo_sort\;$(IncludePath)</IncludePath>
         <VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
         <VerInfo_Locale>1028</VerInfo_Locale>
         <DCC_Namespace>Vcl;Vcl.Imaging;Vcl.Touch;Vcl.Samples;Vcl.Shell;System;Xml;Data;Datasnap;Web;Soap;$(DCC_Namespace)</DCC_Namespace>
@@ -67,7 +67,7 @@
         <ILINK_AppType>Windows</ILINK_AppType>
         <FinalOutputDir>.</FinalOutputDir>
         <DCC_IncludePath>.\;$(BDS)\lib;$(BDS)\lib\obj;$(DCC_IncludePath)</DCC_IncludePath>
-        <ILINK_LibraryPath>DSDemo_graph\;DSDemo_search\;DSDemo_sort\;$(BDS)\lib\obj;$(BDS)\lib;$(BDS)\lib\psdk;$(ILINK_LibraryPath)</ILINK_LibraryPath>
+        <ILINK_LibraryPath>DSDemo_tree\;DSDemo_graph\;DSDemo_search\;DSDemo_sort\;$(BDS)\lib\obj;$(BDS)\lib;$(BDS)\lib\psdk;$(ILINK_LibraryPath)</ILINK_LibraryPath>
         <TASM_IncludePath>$(BDS)\include;$(BDS)\include\vcl;$(TASM_IncludePath)</TASM_IncludePath>
         <DCC_AdditionalSwitches> -M</DCC_AdditionalSwitches>
         <BCC_OptimizationLevel>Level2</BCC_OptimizationLevel>
@@ -198,6 +198,15 @@
             <DependentOn>DSDemo_sort\ThSort.h</DependentOn>
             <BuildOrder>10</BuildOrder>
         </CppCompile>
+        <CppCompile Include="DSDemo_tree\BiTree.cpp">
+            <BuildOrder>15</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="DSDemo_tree\tree_BiTree.cpp">
+            <Form>BiTreeForm</Form>
+            <FormType>dfm</FormType>
+            <DependentOn>DSDemo_tree\tree_BiTree.h</DependentOn>
+            <BuildOrder>16</BuildOrder>
+        </CppCompile>
         <CppCompile Include="MainForm.cpp">
             <Form>dsdemo_MainForm</Form>
             <FormType>dfm</FormType>
@@ -212,6 +221,7 @@
         <FormResources Include="DSDemo_graph\graph_shortest_path.dfm"/>
         <FormResources Include="DSDemo_graph\graph_MST.dfm"/>
         <FormResources Include="DSDemo_graph\graph_intro.dfm"/>
+        <FormResources Include="DSDemo_tree\tree_BiTree.dfm"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>
