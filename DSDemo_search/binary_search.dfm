@@ -1,7 +1,6 @@
 object BinarySearchForm: TBinarySearchForm
   Left = 0
   Top = 0
-  Align = alCustom
   Caption = #20108#20998#26597#25214' & '#39034#24207#26597#25214
   ClientHeight = 374
   ClientWidth = 1095

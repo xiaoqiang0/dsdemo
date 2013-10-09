@@ -12,7 +12,7 @@ object search_stringForm: Tsearch_stringForm
   Font.Name = 'Default'
   Font.Style = []
   OldCreateOrder = False
-  Position = poScreenCenter
+  Position = poMainFormCenter
   OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 13
@@ -77,7 +77,7 @@ object search_stringForm: Tsearch_stringForm
       Left = 24
       Top = 224
       Width = 97
-      Height = 49
+      Height = 42
       Caption = #36864#20986
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText

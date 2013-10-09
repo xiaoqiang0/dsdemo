@@ -11,6 +11,7 @@
   Font.Name = 'MS Sans Serif'
   Font.Style = []
   OldCreateOrder = False
+  Position = poMainFormCenter
   WindowState = wsMaximized
   OnCreate = FormCreate
   OnDestroy = FormDestroy
@@ -24,7 +25,6 @@
     Height = 558
     Align = alClient
     TabOrder = 0
-    ExplicitHeight = 560
     object pn: TPanel
       Left = 1
       Top = 1
@@ -35,7 +35,6 @@
       Color = clMoneyGreen
       ParentBackground = False
       TabOrder = 0
-      ExplicitHeight = 471
       object img: TImage
         Left = 2
         Top = 2
@@ -131,7 +130,6 @@
         Height = 58
         Align = alLeft
         TabOrder = 1
-        ExplicitHeight = 70
         object BitBtn1: TBitBtn
           Left = 327
           Top = 1
@@ -141,14 +139,13 @@
           Caption = #21019#24314#20108#21449#26641
           TabOrder = 0
           OnClick = BitBtn1Click
-          ExplicitHeight = 68
         end
         object PageControl1: TPageControl
           Left = 1
           Top = 1
           Width = 312
           Height = 56
-          ActivePage = 数组线性序列
+          ActivePage = TabSheet1
           Align = alLeft
           Font.Charset = ANSI_CHARSET
           Font.Color = clWindowText
@@ -158,12 +155,8 @@
           MultiLine = True
           ParentFont = False
           TabOrder = 1
-          ExplicitTop = 0
-          ExplicitHeight = 68
           object TabSheet1: TTabSheet
-            Caption = #21069#24207#21644#20013#24207#24207#21015'  '
-            ExplicitWidth = 312
-            ExplicitHeight = 42
+            Caption = #21069#24207#21644#20013#24207#24207#21015'   '
             object InOrderEdit: TEdit
               Left = 159
               Top = 1
@@ -200,8 +193,6 @@
           object 树的广义表: TTabSheet
             Caption = '   '#26641#30340#24191#20041#34920'   '
             ImageIndex = 1
-            ExplicitWidth = 312
-            ExplicitHeight = 40
             object TableEdit: TEdit
               Left = 3
               Top = 1
@@ -220,7 +211,6 @@
           object 数组线性序列: TTabSheet
             Caption = #25968#32452#32447#24615#24207#21015'    '
             ImageIndex = 2
-            ExplicitHeight = 25
             object TreeArrayEdit: TEdit
               Left = 0
               Top = 1
@@ -247,12 +237,11 @@
     Height = 558
     Align = alRight
     TabOrder = 1
-    ExplicitHeight = 560
     object Label1: TLabel
       Left = 1
       Top = 1
       Width = 242
-      Height = 17
+      Height = 16
       Align = alTop
       Caption = #36755#20986#20449#24687#26174#31034
       Font.Charset = DEFAULT_CHARSET
@@ -261,12 +250,13 @@
       Font.Name = 'MS Sans Serif'
       Font.Style = []
       ParentFont = False
+      ExplicitWidth = 72
     end
     object Memo1: TMemo
       Left = 1
-      Top = 18
+      Top = 17
       Width = 242
-      Height = 539
+      Height = 540
       Align = alClient
       ScrollBars = ssVertical
       TabOrder = 0

@@ -1,7 +1,6 @@
 object dsdemo_MainForm: Tdsdemo_MainForm
   Left = 0
   Top = 0
-  Align = alCustom
   Caption = ' '#25968#25454#32467#26500#31639#27861#28436#31034#31995#32479
   ClientHeight = 398
   ClientWidth = 763
@@ -13,6 +12,7 @@ object dsdemo_MainForm: Tdsdemo_MainForm
   Font.Style = []
   Menu = MainMenu1
   OldCreateOrder = False
+  Position = poDefault
   WindowState = wsMaximized
   OnResize = FormResize
   PixelsPerInch = 96
@@ -36825,14 +36825,14 @@ object dsdemo_MainForm: Tdsdemo_MainForm
   end
   object date_Timer: TTimer
     OnTimer = date_TimerTimer
-    Left = 472
-    Top = 184
+    Left = 640
+    Top = 192
   end
   object ToolbarImageList: TImageList
     Left = 64
     Top = 32
     Bitmap = {
-      494C0101030008006C0010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C010103000800700010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000400000001000000001002000000000000010
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
