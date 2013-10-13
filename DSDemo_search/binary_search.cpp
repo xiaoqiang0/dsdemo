@@ -73,10 +73,21 @@ void __fastcall TBinarySearchForm::BitBtn1Click(TObject *Sender)
 {
   BitBtn1->Enabled=false;
   BitBtn2->Enabled=false;
-  Chart1->ZoomPercent(115);
+  Chart1->UndoZoom();
   BitBtn1->Enabled=true;
   BitBtn2->Enabled=true;
 
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TBinarySearchForm::BitBtn3Click(TObject *Sender)
+{
+  BitBtn1->Enabled=false;
+  BitBtn2->Enabled=false;
+  Chart1->ZoomPercent(115);
+  //Chart1->UndoZoom();
+  BitBtn1->Enabled=true;
+  BitBtn2->Enabled=true;
 }
 //---------------------------------------------------------------------------
 

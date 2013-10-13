@@ -41,6 +41,7 @@ __published:	// IDE-managed Components
     TSavePictureDialog *SavePictureDialog1;
     TBitBtn *BitBtn4;
     TBitBtn *BitBtn9;
+    TBitBtn *BitBtn3;
     void __fastcall Button1Click(TObject *Sender);
     void __fastcall ThreeDCheckBoxClick(TObject *Sender);
     void __fastcall BitBtn2Click(TObject *Sender);
@@ -48,6 +49,7 @@ __published:	// IDE-managed Components
     void __fastcall BitBtn4Click(TObject *Sender);
     void __fastcall FormShow(TObject *Sender);
     void __fastcall BitBtn9Click(TObject *Sender);
+    void __fastcall BitBtn3Click(TObject *Sender);
 private:	// User declarations
     void __fastcall ThreadDone(TObject *Sender);
 public:		// User declarations
