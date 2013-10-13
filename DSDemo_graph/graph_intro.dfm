@@ -12,14 +12,15 @@ object GraphIntroduceForm: TGraphIntroduceForm
   Font.Style = []
   OldCreateOrder = False
   Position = poMainFormCenter
-  OnCreate = FormCreate
+  OnActivate = FormActivate
+  OnClose = FormClose
   PixelsPerInch = 96
   TextHeight = 13
   object PageControl2: TPageControl
     Left = 0
     Top = 0
     Width = 894
-    Height = 485
+    Height = 460
     ActivePage = TabSheet1
     Align = alClient
     Font.Charset = DEFAULT_CHARSET
@@ -37,7 +38,7 @@ object GraphIntroduceForm: TGraphIntroduceForm
         Left = 0
         Top = 0
         Width = 886
-        Height = 449
+        Height = 424
         Align = alClient
         Alignment = taRightJustify
         Font.Charset = GB2312_CHARSET
@@ -53,15 +54,11 @@ object GraphIntroduceForm: TGraphIntroduceForm
     object TabSheet2: TTabSheet
       Caption = #22270#30340#36941#21382
       ImageIndex = 1
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       object RichEdit2: TRichEdit
         Left = 0
         Top = 0
         Width = 886
-        Height = 449
+        Height = 424
         Align = alClient
         Font.Charset = GB2312_CHARSET
         Font.Color = clWindowText
@@ -78,15 +75,11 @@ object GraphIntroduceForm: TGraphIntroduceForm
     object TabSheet4: TTabSheet
       Caption = #26368#23567#29983#25104#26641
       ImageIndex = 3
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       object RichEdit4: TRichEdit
         Left = 0
         Top = 0
         Width = 886
-        Height = 449
+        Height = 424
         Align = alClient
         Font.Charset = GB2312_CHARSET
         Font.Color = clWindowText
@@ -107,7 +100,7 @@ object GraphIntroduceForm: TGraphIntroduceForm
         Left = 0
         Top = 0
         Width = 886
-        Height = 449
+        Height = 424
         Align = alClient
         Font.Charset = GB2312_CHARSET
         Font.Color = clWindowText
@@ -121,5 +114,15 @@ object GraphIntroduceForm: TGraphIntroduceForm
         TabOrder = 0
       end
     end
+  end
+  object Button1: TButton
+    Left = 0
+    Top = 460
+    Width = 894
+    Height = 25
+    Align = alBottom
+    Caption = #26174#31034
+    TabOrder = 1
+    OnClick = Button1Click
   end
 end
