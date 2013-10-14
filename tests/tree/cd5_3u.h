@@ -42,6 +42,7 @@ __published:    // IDE-managed Components
     TBitBtn *BitBtn1;
     TPanel *Panel4;
     TButton *Button5;
+    TRadioGroup *RadioGroup1;
     void __fastcall FormCreate(TObject *Sender);
     void __fastcall FormResize(TObject *Sender);
     void __fastcall Button1Click(TObject *Sender);

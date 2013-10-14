@@ -16,6 +16,8 @@
 #include <VCLTee.TeeDraw3D.hpp>
 #include <VclTee.TeeGDIPlus.hpp>
 #include <VCLTee.TeeProcs.hpp>
+#include <System.Actions.hpp>
+#include <Vcl.ActnList.hpp>
 //---------------------------------------------------------------------------
 class Tdsdemo_MainForm : public TForm
 {
@@ -57,18 +59,27 @@ __published:	// IDE-managed Components
     TMenuItem *N23;
     TMenuItem *N24;
     TMenuItem *N20;
-    void __fastcall N7Click(TObject *Sender);
+    TToolButton *ToolButton1;
+    TActionList *ActionList1;
+    TAction *tree_BiTree_Action;
+    TAction *graph_MST_Action;
+    TAction *graph_shortest_path_Action;
+    TAction *graph_traverse_Action;
+    TAction *search_BinarySearch_Action;
+    TAction *sort_compare_Action;
+    TToolButton *ToolButton5;
     void __fastcall N2Click(TObject *Sender);
     void __fastcall date_TimerTimer(TObject *Sender);
     void __fastcall N6Click(TObject *Sender);
     void __fastcall FormResize(TObject *Sender);
-    void __fastcall N18Click(TObject *Sender);
-    void __fastcall SortCompareTBtnClick(TObject *Sender);
     void __fastcall N21Click(TObject *Sender);
-    void __fastcall N22Click(TObject *Sender);
-    void __fastcall N24Click(TObject *Sender);
-    void __fastcall N23Click(TObject *Sender);
-    void __fastcall N20Click(TObject *Sender);
+    void __fastcall tree_BiTree_ActionExecute(TObject *Sender);
+    void __fastcall graph_MST_ActionExecute(TObject *Sender);
+    void __fastcall graph_traverse_ActionExecute(TObject *Sender);
+    void __fastcall graph_shortest_path_ActionExecute(TObject *Sender);
+    void __fastcall search_BinarySearch_ActionExecute(TObject *Sender);
+    void __fastcall sort_compare_ActionExecute(TObject *Sender);
+
 private:	// User declarations
 public:		// User declarations
     __fastcall Tdsdemo_MainForm(TComponent* Owner);
