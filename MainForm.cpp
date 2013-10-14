@@ -103,3 +103,27 @@ void __fastcall Tdsdemo_MainForm::sort_compare_ActionExecute(TObject *Sender)
     ThreadSortForm->ShowModal();
 }
 //---------------------------------------------------------------------------
+
+void __fastcall Tdsdemo_MainForm::Image1Click(TObject *Sender)
+{
+     Image1->Picture->LoadFromFile(AppPath + "\\data\\" + flist[(imgidx++) % flist.size()]);
+}
+//---------------------------------------------------------------------------
+
+void __fastcall Tdsdemo_MainForm::FormCreate(TObject *Sender)
+{
+     AppPath = ExtractFileDir (Application->ExeName);
+	 TSearchRec sr;
+
+     imgidx = 0;
+	//²éÕÒÍ¼Æ¬ÎÄ¼þ
+	if (FindFirst(AppPath+"\\data\\*.jpg", faAnyFile, sr) == 0) {
+		do {
+                flist.push_back(sr.Name);
+		} while (FindNext(sr) == 0);
+		FindClose(sr);
+	}
+    Image1->Picture->LoadFromFile(AppPath + "\\data\\" + flist[imgidx++]);
+}
+//---------------------------------------------------------------------------
+
