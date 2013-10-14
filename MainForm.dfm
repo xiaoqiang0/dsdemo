@@ -24,6 +24,7 @@ object dsdemo_MainForm: Tdsdemo_MainForm
     Width = 912
     Height = 412
     Align = alClient
+    PopupMenu = PopupMenu1
     Stretch = True
     OnClick = Image1Click
     ExplicitTop = 35
@@ -212,7 +213,7 @@ object dsdemo_MainForm: Tdsdemo_MainForm
     Left = 200
     Top = 88
     Bitmap = {
-      494C01010400200144011E001E00FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C0101040020016C011E001E00FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000780000003C00000001002000000000008070
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
@@ -1185,6 +1186,14 @@ object dsdemo_MainForm: Tdsdemo_MainForm
       Caption = #25490#24207#24615#33021#27604#36739
       ImageIndex = 2
       OnExecute = sort_compare_ActionExecute
+    end
+  end
+  object PopupMenu1: TPopupMenu
+    Left = 696
+    Top = 256
+    object N25: TMenuItem
+      Caption = #19979#19968#22270#29255
+      OnClick = N25Click
     end
   end
 end

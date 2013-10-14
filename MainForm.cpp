@@ -127,3 +127,9 @@ void __fastcall Tdsdemo_MainForm::FormCreate(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 
+void __fastcall Tdsdemo_MainForm::N25Click(TObject *Sender)
+{
+      Image1->Picture->LoadFromFile(AppPath + "\\data\\" + flist[(imgidx++) % flist.size()]);
+}
+//---------------------------------------------------------------------------
+

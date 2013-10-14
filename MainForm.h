@@ -71,6 +71,8 @@ __published:	// IDE-managed Components
     TAction *search_BinarySearch_Action;
     TAction *sort_compare_Action;
     TToolButton *ToolButton5;
+    TPopupMenu *PopupMenu1;
+    TMenuItem *N25;
     void __fastcall N2Click(TObject *Sender);
     void __fastcall date_TimerTimer(TObject *Sender);
     void __fastcall N6Click(TObject *Sender);
@@ -84,6 +86,7 @@ __published:	// IDE-managed Components
     void __fastcall sort_compare_ActionExecute(TObject *Sender);
     void __fastcall Image1Click(TObject *Sender);
     void __fastcall FormCreate(TObject *Sender);
+    void __fastcall N25Click(TObject *Sender);
 
 private:	// User declarations
     AnsiString AppPath;
