@@ -1,7 +1,7 @@
 //---------------------------------------------------------------------------
 
-#ifndef Main_uH
-#define Main_uH
+#ifndef ds_flashH
+#define ds_flashH
 //---------------------------------------------------------------------------
 #include <System.Classes.hpp>
 #include <Vcl.Controls.hpp>
@@ -9,23 +9,28 @@
 #include <Vcl.Forms.hpp>
 #include "ShockwaveFlashObjects_OCX.h"
 #include <Vcl.OleCtrls.hpp>
-#include <Vcl.OleCtrls.hpp>
 #include <Vcl.ExtCtrls.hpp>
+#include <Vcl.Buttons.hpp>
 //---------------------------------------------------------------------------
-class TForm1 : public TForm
+class TFlashForm : public TForm
 {
 __published:	// IDE-managed Components
-	TButton *Button1;
-    TPanel *Panel2;
-    TButton *Button2;
-    TButton *Button3;
-	void __fastcall Button1Click(TObject *Sender);
-    void __fastcall Button3Click(TObject *Sender);
+    TShockwaveFlash *flash;
+    TPanel *Panel1;
+    TBitBtn *BitBtn1;
+    TBitBtn *BitBtn2;
+    TBitBtn *BitBtn3;
+    void __fastcall FormActivate(TObject *Sender);
+    void __fastcall BitBtn3Click(TObject *Sender);
+    void __fastcall BitBtn2Click(TObject *Sender);
+    void __fastcall BitBtn1Click(TObject *Sender);
+    void __fastcall FormResize(TObject *Sender);
 private:	// User declarations
 public:		// User declarations
-	__fastcall TForm1(TComponent* Owner);
+    __fastcall TFlashForm(TComponent* Owner);
 };
 //---------------------------------------------------------------------------
-extern PACKAGE TForm1 *Form1;
+extern PACKAGE TFlashForm *FlashForm;
+extern void ShowFlashDemo(TComponent*parent, AnsiString title, AnsiString flash_file);
 //---------------------------------------------------------------------------
 #endif
