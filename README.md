@@ -19,3 +19,9 @@ Structure
   - MainForm.h        #主界面头文件
   - tests             #项目测试需要的文件
   - data              #项目运行时需要的数据文档
+
+References
+==========
+
+[1] http://ds.fzu.edu.cn/fine/resources/index.asp
+
