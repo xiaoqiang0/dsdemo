@@ -13,6 +13,7 @@
 #include "binary_search.h"
 #include "graph_MST.h"
 #include "tree_BiTree.h"
+#include "ds_flash.h"
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 #pragma resource "*.dfm"
@@ -130,6 +131,12 @@ void __fastcall Tdsdemo_MainForm::FormCreate(TObject *Sender)
 void __fastcall Tdsdemo_MainForm::N25Click(TObject *Sender)
 {
       Image1->Picture->LoadFromFile(AppPath + "\\data\\" + flist[(imgidx++) % flist.size()]);
+}
+//---------------------------------------------------------------------------
+
+void __fastcall Tdsdemo_MainForm::N26Click(TObject *Sender)
+{
+     ShowFlashDemo(this, "数组插入操作", "\\data\\disarrayinsert.swf");
 }
 //---------------------------------------------------------------------------
 
