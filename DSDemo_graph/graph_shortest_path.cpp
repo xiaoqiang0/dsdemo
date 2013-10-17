@@ -15,22 +15,22 @@ TGraphAlgorithmForm *GraphAlgorithmForm;
 
 static TShape *sp[MAX_VERTEX_NUM];                           //节点Shap数组
 static TLabel *lb[MAX_VERTEX_NUM];                           //节点Shap上的标签数组，画板->Shap->Label
-int graph[MAX_VERTEX_NUM][MAX_VERTEX_NUM] = { 9999 };       //存储图的矩阵结构 graph[i][i] = n:代表第i个节点到第j个节点的距离是n
+static int graph[MAX_VERTEX_NUM][MAX_VERTEX_NUM] = { 9999 };       //存储图的矩阵结构 graph[i][i] = n:代表第i个节点到第j个节点的距离是n
 
 static int direct = 1;                                 //默认是有向图
 
-int x[MAX_VERTEX_NUM], y[MAX_VERTEX_NUM];                   //存储图在屏幕的坐标位置
-int n;                                          //n:记录节点总数
+static int x[MAX_VERTEX_NUM], y[MAX_VERTEX_NUM];                   //存储图在屏幕的坐标位置
+static int n;                                          //n:记录节点总数
 static int start, end;                                 //start:设置连线时起始点的索引, end:设置连线时结束点的索引
 
 static int i, j;
 static bool input_node = false;
-int node_R = 20;
+static int node_R = 20;
 
-MGraph MG;      //矩阵存储
-ALGraph ALG;    //临接链表存储
+static MGraph MG;      //矩阵存储
+static ALGraph ALG;    //临接链表存储
 
-TMemo *memo_local;
+static TMemo *memo_local;
 
 //---------------------------------------------------------------------------
 int searchPoint(int X, int Y)                   //搜索给定坐标点落在图中哪个点

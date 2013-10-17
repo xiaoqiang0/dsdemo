@@ -10,7 +10,7 @@
 TBinarySearchForm *BinarySearchForm;
 typedef int DataType;
 
-TSearchArrary x;
+static TSearchArrary x;
 static int c = 1;
 //---------------------------------------------------------------------------
 __fastcall TBinarySearchForm::TBinarySearchForm(TComponent* Owner)
