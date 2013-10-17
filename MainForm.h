@@ -85,10 +85,10 @@ __published:	// IDE-managed Components
     void __fastcall graph_shortest_path_ActionExecute(TObject *Sender);
     void __fastcall search_BinarySearch_ActionExecute(TObject *Sender);
     void __fastcall sort_compare_ActionExecute(TObject *Sender);
-    void __fastcall Image1Click(TObject *Sender);
     void __fastcall FormCreate(TObject *Sender);
     void __fastcall N25Click(TObject *Sender);
     void __fastcall N26Click(TObject *Sender);
+    void __fastcall Image1DblClick(TObject *Sender);
 
 private:	// User declarations
     AnsiString AppPath;

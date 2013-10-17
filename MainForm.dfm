@@ -22,18 +22,18 @@ object dsdemo_MainForm: Tdsdemo_MainForm
     Left = 0
     Top = 37
     Width = 912
-    Height = 412
+    Height = 406
     Align = alClient
     PopupMenu = PopupMenu1
     Stretch = True
-    OnClick = Image1Click
+    OnDblClick = Image1DblClick
     ExplicitTop = 35
     ExplicitWidth = 763
     ExplicitHeight = 350
   end
   object welcomeLabel: TLabel
-    Left = -17
-    Top = 120
+    Left = 8
+    Top = 112
     Width = 896
     Height = 78
     Caption = #27426#36814#36827#20837#25968#25454#32467#26500#31639#27861#23398#20064#31995#32479
@@ -46,9 +46,9 @@ object dsdemo_MainForm: Tdsdemo_MainForm
   end
   object main_StatusBar: TStatusBar
     Left = 0
-    Top = 449
+    Top = 443
     Width = 912
-    Height = 19
+    Height = 25
     Panels = <
       item
         Width = 200
@@ -56,6 +56,7 @@ object dsdemo_MainForm: Tdsdemo_MainForm
       item
         Width = 100
       end>
+    ExplicitTop = 449
   end
   object ToolBar1: TToolBar
     Left = 0
@@ -217,7 +218,7 @@ object dsdemo_MainForm: Tdsdemo_MainForm
     Left = 200
     Top = 88
     Bitmap = {
-      494C01010400200170011E001E00FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C01010400200174011E001E00FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000780000003C00000001002000000000008070
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000

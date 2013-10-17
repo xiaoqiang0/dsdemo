@@ -34,10 +34,14 @@ void __fastcall Tdsdemo_MainForm::date_TimerTimer(TObject *Sender)
 {
     TDateTime datetime = Now();
     unsigned short hour, min, sec, msec;
+    AnsiString weeks [] = {"星期日", "星期一", "星期二","星期三", "星期四",
+                           "星期五", "星期六"};
 
-    main_StatusBar->Panels->Items[1]->Text = FormatDateTime("yyyy 年 mm 月dd 日 hh:mm:ss", datetime);
+    main_StatusBar->Panels->Items[1]->Text = \
+                 FormatDateTime("yyyy 年 mm 月dd 日 hh:mm:ss     ", datetime) +\
+                 weeks[DayOfWeek (datetime) - 1];
     datetime.DecodeTime(&hour, &min, &sec, &msec) ;
-    main_StatusBar->Panels->Items[0]->Text = IntToStr(sec * 1000 + msec);
+    main_StatusBar->Panels->Items[0]->Text = "齐鲁师范学院 计算机系";
     //FloatToStr(CompToDouble(TimeStampToMSecs(DateTimeToTimeStamp(datetime))));
 }
 
@@ -45,8 +49,8 @@ void __fastcall Tdsdemo_MainForm::date_TimerTimer(TObject *Sender)
 void __fastcall Tdsdemo_MainForm::FormResize(TObject *Sender)
 {
 
-    main_StatusBar->Panels->Items[0]->Width = dsdemo_MainForm->Width - 200;
-    main_StatusBar->Panels->Items[1]->Width = 200;
+    main_StatusBar->Panels->Items[0]->Width = dsdemo_MainForm->Width - 260;
+    main_StatusBar->Panels->Items[1]->Width = 260;
     welcomeLabel->Left = dsdemo_MainForm->Width/2 - welcomeLabel->Width / 2;
     welcomeLabel->Top = dsdemo_MainForm->Height/4 ;
 }
@@ -105,11 +109,6 @@ void __fastcall Tdsdemo_MainForm::sort_compare_ActionExecute(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 
-void __fastcall Tdsdemo_MainForm::Image1Click(TObject *Sender)
-{
-     Image1->Picture->LoadFromFile(AppPath + "\\data\\" + flist[(imgidx++) % flist.size()]);
-}
-//---------------------------------------------------------------------------
 
 void __fastcall Tdsdemo_MainForm::FormCreate(TObject *Sender)
 {
@@ -139,4 +138,11 @@ void __fastcall Tdsdemo_MainForm::N26Click(TObject *Sender)
      ShowFlashDemo(this, "数组插入操作", "\\data\\disarrayinsert.swf");
 }
 //---------------------------------------------------------------------------
+
+void __fastcall Tdsdemo_MainForm::Image1DblClick(TObject *Sender)
+{
+     Image1->Picture->LoadFromFile(AppPath + "\\data\\" + flist[(imgidx++) % flist.size()]);
+}
+//---------------------------------------------------------------------------
+
 
