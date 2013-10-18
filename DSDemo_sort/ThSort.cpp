@@ -80,10 +80,11 @@ void __fastcall TThreadSortForm::StartBtnClick(TObject *)
     RandomizeArrays();
     ThreadsRunning = 3;
     start_time = Now();
-    TBubbleSort *BubbleSort = new TBubbleSort(BubbleSortBox, BubbleSortArray, clGreen);
-    BubbleSort->OnTerminate = ThreadDone;
+
     TSelectionSort *SelectionSort = new TSelectionSort(SelectionSortBox, SelectionSortArray, clRed);
     SelectionSort->OnTerminate = ThreadDone;
+    TBubbleSort *BubbleSort = new TBubbleSort(BubbleSortBox, BubbleSortArray, clGreen);
+    BubbleSort->OnTerminate = ThreadDone;
     TQuickSort *QuickSort = new TQuickSort(QuickSortBox, QuickSortArray, clBlue);
     QuickSort->OnTerminate = ThreadDone;
     StartBtn->Enabled = false;

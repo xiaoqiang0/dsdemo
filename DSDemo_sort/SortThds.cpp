@@ -151,10 +151,9 @@ __fastcall TSelectionSort::TSelectionSort(TPaintBox *Box, TSortArray &SortArray,
 
 void __fastcall TSelectionSort::Sort(TSortArray &A)
 {
-    for(int i = 0; i < N - 2; i++)
-        for(int j = N - 1; j > i + 1; j--)
+    for(int i = 0; i < N - 1; i++)
+        for(int j = N - 1; j >= i + 1; j--)
             if( A[i] > A[j] )
-
             {
                 VisualSwap(A[i], A[j], i, j);
                 int t = A[i];
