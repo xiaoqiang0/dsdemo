@@ -111,7 +111,7 @@
     <PropertyGroup Condition="'$(Cfg_1_Win32)'!=''">
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
         <VerInfo_Locale>1033</VerInfo_Locale>
-        <Icon_MainIcon>dsdemo_Icon.ico</Icon_MainIcon>
+        <Icon_MainIcon>Icons\dsdemo_Icon.ico</Icon_MainIcon>
         <BCC_Defines>_DEBUG;$(BCC_Defines);$(BCC_Defines)</BCC_Defines>
         <LinkPackageStatics>rtl.lib;vcl.lib;bindengine.lib;vclimg.lib;Tee.lib;dbrtl.lib;TeeDB.lib;TeeUI.lib;vclx.lib;vcldb.lib;My_ActiveX.lib</LinkPackageStatics>
         <BCC_UserSuppliedOptions> -tWM -Vx -Ve -k</BCC_UserSuppliedOptions>
