@@ -27,9 +27,8 @@ object dsdemo_MainForm: Tdsdemo_MainForm
     PopupMenu = PopupMenu1
     Stretch = True
     OnDblClick = Image1DblClick
-    ExplicitTop = 35
-    ExplicitWidth = 763
-    ExplicitHeight = 350
+    ExplicitLeft = -144
+    ExplicitTop = 31
   end
   object welcomeLabel: TLabel
     Left = 8
@@ -56,7 +55,6 @@ object dsdemo_MainForm: Tdsdemo_MainForm
       item
         Width = 100
       end>
-    ExplicitTop = 449
   end
   object ToolBar1: TToolBar
     Left = 0
@@ -121,8 +119,8 @@ object dsdemo_MainForm: Tdsdemo_MainForm
     end
   end
   object MainMenu1: TMainMenu
-    Left = 112
-    Top = 96
+    Left = 96
+    Top = 120
     object N1: TMenuItem
       Caption = #25991#20214'(&F)'
       object N2: TMenuItem
@@ -133,20 +131,82 @@ object dsdemo_MainForm: Tdsdemo_MainForm
     object xit1: TMenuItem
       Caption = #32447#24615#34920'(&L)'
       object N26: TMenuItem
-        Caption = #32447#24615#34920
-        OnClick = N26Click
+        Caption = #26377#24207#25968#32452
+        object N28: TMenuItem
+          Action = arrayinsert_Action
+        end
+        object N29: TMenuItem
+          Action = arrayfind_Action
+        end
+        object N30: TMenuItem
+          Action = arraydelete_Action
+        end
+      end
+      object N27: TMenuItem
+        Caption = #26080#24207#25968#32452
+        object N31: TMenuItem
+          Action = disarrayinsert_Action
+        end
+        object N32: TMenuItem
+          Action = disarrayfind_Action
+        end
+        object N33: TMenuItem
+          Action = disarraydelete_Action
+        end
+      end
+      object N34: TMenuItem
+        Caption = #21333#38142#34920
+        object N36: TMenuItem
+          Action = listinsert_Action
+        end
+        object N37: TMenuItem
+          Action = listfind_Action
+        end
+        object N38: TMenuItem
+          Action = listdelete_Action
+        end
+      end
+      object N35: TMenuItem
+        Caption = #21452#21521#38142#34920
+        object N39: TMenuItem
+          Action = dlistinsert_Action
+        end
+        object N40: TMenuItem
+          Action = dlistfind_Action
+        end
+        object N41: TMenuItem
+          Action = dlistdelete_Action
+        end
       end
     end
     object N11: TMenuItem
       Caption = #26632#21644#38431#21015'(&Q)'
-      object N12: TMenuItem
-        Caption = #26632#38431#21015#20171#32461
-      end
       object N13: TMenuItem
         Caption = #26632#31639#27861#28436#31034
+        object N42: TMenuItem
+          Action = stackarray_Action
+        end
+        object N43: TMenuItem
+          Action = stacklist_Action
+        end
+        object N44: TMenuItem
+          Action = stackfunc_Action
+        end
       end
       object N14: TMenuItem
         Caption = #38431#21015#31639#27861#28436#31034
+        object N12: TMenuItem
+          Action = queuearray_Action
+        end
+        object N45: TMenuItem
+          Action = queuelist_Action
+        end
+        object N46: TMenuItem
+          Action = queuelinkinsert_Action
+        end
+        object N47: TMenuItem
+          Action = queuelinkdel_Action
+        end
       end
     end
     object N3: TMenuItem
@@ -209,8 +269,8 @@ object dsdemo_MainForm: Tdsdemo_MainForm
   end
   object date_Timer: TTimer
     OnTimer = date_TimerTimer
-    Left = 640
-    Top = 192
+    Left = 616
+    Top = 184
   end
   object ToolbarImageList: TImageList
     Height = 30
@@ -218,7 +278,7 @@ object dsdemo_MainForm: Tdsdemo_MainForm
     Left = 200
     Top = 88
     Bitmap = {
-      494C01010400200174011E001E00FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C0101040020017C011E001E00FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000780000003C00000001002000000000008070
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
@@ -1161,8 +1221,8 @@ object dsdemo_MainForm: Tdsdemo_MainForm
   end
   object ActionList1: TActionList
     Images = ToolbarImageList
-    Left = 200
-    Top = 152
+    Left = 24
+    Top = 224
     object tree_BiTree_Action: TAction
       Caption = #20108#21449#26641#25805#20316
       Hint = #20108#21449#26641#25805#20316
@@ -1191,6 +1251,82 @@ object dsdemo_MainForm: Tdsdemo_MainForm
       Caption = #25490#24207#24615#33021#27604#36739
       ImageIndex = 2
       OnExecute = sort_compare_ActionExecute
+    end
+    object arrayinsert_Action: TAction
+      Caption = #26377#24207#25968#32452#30340#25554#20837
+      OnExecute = arrayinsert_ActionExecute
+    end
+    object arrayfind_Action: TAction
+      Caption = #26377#24207#25968#32452#30340#26597#25214
+      OnExecute = arrayfind_ActionExecute
+    end
+    object arraydelete_Action: TAction
+      Caption = #26377#24207#25968#32452#30340#21024#38500
+      OnExecute = arraydelete_ActionExecute
+    end
+    object disarrayinsert_Action: TAction
+      Caption = #26080#24207#25968#32452#30340#25554#20837
+      OnExecute = disarrayinsert_ActionExecute
+    end
+    object disarrayfind_Action: TAction
+      Caption = #26080#24207#25968#32452#30340#26597#25214
+      OnExecute = disarrayfind_ActionExecute
+    end
+    object disarraydelete_Action: TAction
+      Caption = #26080#24207#25968#32452#30340#21024#38500
+      OnExecute = disarraydelete_ActionExecute
+    end
+    object listinsert_Action: TAction
+      Caption = #21333#38142#34920#30340#25554#20837
+      OnExecute = listinsert_ActionExecute
+    end
+    object listfind_Action: TAction
+      Caption = #21333#38142#34920#30340#26597#25214
+      OnExecute = listfind_ActionExecute
+    end
+    object listdelete_Action: TAction
+      Caption = #21333#38142#34920#30340#21024#38500
+      OnExecute = listdelete_ActionExecute
+    end
+    object dlistinsert_Action: TAction
+      Caption = #21452#21521#38142#34920#30340#25554#20837
+      OnExecute = dlistinsert_ActionExecute
+    end
+    object dlistfind_Action: TAction
+      Caption = #21452#21521#38142#34920#30340#26597#25214
+      OnExecute = dlistfind_ActionExecute
+    end
+    object dlistdelete_Action: TAction
+      Caption = #21452#21521#38142#34920#30340#21024#38500
+      OnExecute = dlistdelete_ActionExecute
+    end
+    object stackarray_Action: TAction
+      Caption = #26632#30340#25968#32452#34920#31034
+      OnExecute = stackarray_ActionExecute
+    end
+    object stacklist_Action: TAction
+      Caption = #26632#30340#38142#34920#34920#31034
+      OnExecute = stacklist_ActionExecute
+    end
+    object stackfunc_Action: TAction
+      Caption = #26632#30340#25805#20316
+      OnExecute = stackfunc_ActionExecute
+    end
+    object queuearray_Action: TAction
+      Caption = #29992#24490#29615#25968#32452#23454#29616#38431#21015
+      OnExecute = queuearray_ActionExecute
+    end
+    object queuelist_Action: TAction
+      Caption = #29992#38142#34920#34920#31034#30340#38431#21015
+      OnExecute = queuelist_ActionExecute
+    end
+    object queuelinkinsert_Action: TAction
+      Caption = #38431#21015#30340#25554#20837#36816#31639
+      OnExecute = queuelinkinsert_ActionExecute
+    end
+    object queuelinkdel_Action: TAction
+      Caption = #38431#21015#30340#21024#38500#36816#31639
+      OnExecute = queuelinkdel_ActionExecute
     end
   end
   object PopupMenu1: TPopupMenu
