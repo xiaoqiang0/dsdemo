@@ -49,6 +49,8 @@ class TGraphAlgorithmForm : public TForm
         void __fastcall ResetBtnClick(TObject *Sender);
     void __fastcall FloydBtnClick(TObject *Sender);
     void __fastcall DijBtnClick(TObject *Sender);
+    void __fastcall CircleCheckBtnClick(TObject *Sender);
+    void __fastcall TopologicalSortBtnClick(TObject *Sender);
 
     private:	        // User declarations
     public:		// User declarations

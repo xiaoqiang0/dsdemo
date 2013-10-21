@@ -299,7 +299,8 @@ int _circle_check(ALGraph  *G, int u)
         if(!visit[l]) {
             ALG_path[ALG_path_idx++] = G->vertics[l].data.data;
             visit[l] = 1;
-            _circle_check (G, l);
+            if (_circle_check (G, l))
+               return 1;
         } else
             return 1;
         visit[l] = 0;

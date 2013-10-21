@@ -122,6 +122,7 @@ object GraphAlgorithmForm: TGraphAlgorithmForm
       Height = 26
       Caption = #29615#21028#26029
       TabOrder = 0
+      OnClick = CircleCheckBtnClick
     end
     object TopologicalSortBtn: TButton
       Left = 11
@@ -130,6 +131,7 @@ object GraphAlgorithmForm: TGraphAlgorithmForm
       Height = 26
       Caption = #25299#25169#25490#24207#24207#21015
       TabOrder = 1
+      OnClick = TopologicalSortBtnClick
     end
     object FloydBtn: TButton
       Left = 11

@@ -251,8 +251,11 @@ void __fastcall TGraphAlgorithmForm::imgMouseUp(TObject * Sender,
         if (direct == 1) {
             paintArrow(img, x[start], y[start], x[end], y[end]);
             graph[start][end] = dist;    //有向图
+            ALGraph_Add_Arc(&ALG, start, end, dist);
             MGraph_Add_Arc(&MG, start, end, dist);
         } else {
+           ALGraph_Add_Arc(&ALG, start, end, dist);
+            ALGraph_Add_Arc(&ALG, end, start, dist);
             //无向图是对称矩阵
             graph[start][end] = graph[end][start] = dist;
             MGraph_Add_Arc(&MG, start, end, dist);
@@ -388,7 +391,44 @@ void __fastcall TGraphAlgorithmForm::DijBtnClick(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 
+void __fastcall TGraphAlgorithmForm::CircleCheckBtnClick(TObject *Sender)
+{
+     memo->Lines->Add("=====环判断=====");
+    if (circle_check(&ALG)) {
+        VertexType start, end;
+        start.data = ALG_path[0];
+        int start_idx = ALGraph_LocateVertex(&ALG, start);;
+        img->Canvas->Pen->Color = clBlue;
+        img->Canvas->Pen->Width = 2;
+        img->Canvas->MoveTo(ALG.vertics[start_idx].x, ALG.vertics[start_idx].y);
+        for (int i = ALG_path_idx - 1; i >= 0; i--){
+            start.data = ALG_path[i];
+            int idx = ALGraph_LocateVertex(&ALG, start);
+            img->Canvas->LineTo(ALG.vertics[idx].x, ALG.vertics[idx].y);
+        }
+        img->Canvas->Pen->Color = clBlack;
+        img->Canvas->Pen->Width = 1;
+
+        /*AnsiString s;
+        for (int i = 0; i < ALG_path_idx; i++){
+            s +=  ALG_path[i] + "->";
+        }
+        s += ALG_path[0];
+        memo->Lines->Add(s); */
+    } else
+      Application->MessageBox(PWideChar(WideString("不存在环")), Caption.c_str(), MB_ICONINFORMATION | MB_OK);
 
 
+}
+//---------------------------------------------------------------------------
 
+void __fastcall TGraphAlgorithmForm::TopologicalSortBtnClick(TObject *Sender)
+{
+     memo->Lines->Add("=====拓扑排序=====");
+     //
+     if (!topologicalSort(&ALG)) {
+         memo->Lines->Add(ALG_path);
+     }
+}
+//---------------------------------------------------------------------------
 
