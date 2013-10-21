@@ -10,7 +10,7 @@
 int visit[MAX_VERTEX_NUM];
 char ALG_path[MAX_VERTEX_NUM];
 static char path[MAX_VERTEX_NUM];
-char ALG_path_idx = 0;
+int ALG_path_idx = 0;
 
 int InitALG(ALGraph *G)
 {
@@ -291,6 +291,84 @@ int Find_All_Path(ALGraph *G,int u,int v,int k)//求有向图G中顶点u到v之间的所有简
     path[k]=0; //回溯
 }//Find_All_Path 
 
+int _circle_check(ALGraph  *G, int u)
+{
+    ArcNode	*p;
+    for(p = G->vertics[u].firstarc; p; p = p->next) {
+        int l = p->adjvex;
+        if(!visit[l]) {
+            ALG_path[ALG_path_idx++] = G->vertics[l].data.data;
+            visit[l] = 1;
+            _circle_check (G, l);
+        } else
+            return 1;
+        visit[l] = 0;
+        ALG_path_idx --;
+    }
+
+    return 0;
+}
+
+int circle_check (ALGraph *G)
+{
+    int i;
+
+    for (i = 0; i < G->vexnum; i++){
+        ALG_path_idx = 0;
+        for (int v = 0; v < G->vexnum; v++) {
+            visit[v] = 0;
+        }
+        ALG_path[ALG_path_idx++] = G->vertics[i].data.data;
+        visit[i] = 1;
+        if (_circle_check(G, i) == 1)
+            return 1;
+    }
+
+    return 0;
+}
+
+
+int topologicalSort(ALGraph *G)
+{
+    int *indegree, *stack;
+    ArcNode	*p;
+    int idx = 0;
+    int n = G->vexnum;
+    int i;
+
+    if (circle_check(G))
+        return -1;
+
+    indegree = (int *) malloc(sizeof(int) * n);
+    stack = (int *) malloc(sizeof(int) * n);
+    ALG_path_idx = 0;
+
+
+    for (i = 0; i < n; i ++) indegree[i] = 0;
+
+    //Calculate indegree;
+    for (i = 0; i < n; i++){
+        for(p = G->vertics[i].firstarc; p; p = p->next) {
+            indegree[p->adjvex] ++;
+        }
+    }
+    for (i = 0; i < n; i++)
+        if (indegree[i] == 0) stack[idx++] = i;
+
+    
+    while(n > 0) {
+        int cur = stack[--idx];
+        ALG_path[ALG_path_idx++] = G->vertics[cur].data.data;
+
+        for(p = G->vertics[cur].firstarc; p; p = p->next) {
+            int k = p->adjvex;
+            if (!(--indegree[k])) stack[idx++] = k;
+        }
+        n --;
+    }
+
+    return 0;
+}
 
 void freeALGraph(ALGraph *G)
 {

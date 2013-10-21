@@ -29,7 +29,11 @@ int main()
     ALGraph_exist_path_DFS(&ALG, 0, 4);
     cout <<endl;
     exist_path_BFS(&ALG, 0, 7);
-
+    if (circle_check(&ALG)) {
+        for (int i = 0; i < ALG_path_idx; i++)
+            printf ("%c->", ALG_path[i]);
+        printf("%c\n", ALG_path[0]);
+    }
     freeALGraph(&ALG);
 
     return 0;
