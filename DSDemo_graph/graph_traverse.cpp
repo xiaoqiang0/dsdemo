@@ -156,7 +156,7 @@ void __fastcall TGraphTraverseForm::FormCreate(TObject * Sender)    //∂•µ„º‰≥ı º
 
     for (i = 0; i < MAX_VERTEX_NUM; i++)
         for (j = 0; j < MAX_VERTEX_NUM; j++) {
-            MG.arcs[i][j] = 99999;
+            MG.arcs[i][j] = MAX;
         }
 }
 

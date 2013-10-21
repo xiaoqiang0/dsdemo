@@ -30,10 +30,19 @@ int main()
     cout <<endl;
     exist_path_BFS(&ALG, 0, 7);
     if (circle_check(&ALG)) {
+        printf("circle exist:");
         for (int i = 0; i < ALG_path_idx; i++)
             printf ("%c->", ALG_path[i]);
         printf("%c\n", ALG_path[0]);
     }
+    
+    if (!topologicalSort(&ALG)) {
+        printf ("Topological order:");
+        for (int i = 0; i < ALG_path_idx; i++)
+            printf ("%c->", ALG_path[i]);
+        printf("\n");
+    }
+
     freeALGraph(&ALG);
 
     return 0;

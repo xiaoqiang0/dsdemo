@@ -4,6 +4,8 @@
 #include <stdio.h>
 #include <iostream>
 #include <sstream>
+
+#define	MAX	10000
 #define  MAX_VERTEX_NUM 9
 
 using std::cout;
@@ -60,6 +62,7 @@ int exist_path_BFS(ALGraph *G,int i, int j);
 int exist_Path_len(ALGraph *G,int u,int v,int k); //求有向图G中顶点u到v之间的所有简单路径,k表示当前路径长度
 int Find_All_Path(ALGraph *G,int u,int v,int k); //求有向图G中顶点u到v之间的所有简单路径,k表示当前路径长度
 int circle_check (ALGraph *G);
+int topologicalSort(ALGraph *G);
 void freeALGraph(ALGraph *G);
 
 int CreateMG(MGraph *G, FILE *fp);
@@ -72,7 +75,7 @@ void MG_Prim_MST(MGraph * G, int v0);
 void MG_Kruskal_MST(MGraph *G);
 extern int visit[MAX_VERTEX_NUM];
 extern char ALG_path[MAX_VERTEX_NUM];
-extern char ALG_path_idx;
+extern int ALG_path_idx;
 
 typedef struct ARC
 {

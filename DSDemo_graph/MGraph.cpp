@@ -4,7 +4,6 @@
 
 #include "graph.h"
 
-#define	MAX	10000
 //#define DEBUG
 
 int MST_path[MAX_VERTEX_NUM * 2];

@@ -15,7 +15,7 @@ TGraphAlgorithmForm *GraphAlgorithmForm;
 
 static TShape *sp[MAX_VERTEX_NUM];                           //½ÚµãShapÊı×é
 static TLabel *lb[MAX_VERTEX_NUM];                           //½ÚµãShapÉÏµÄ±êÇ©Êı×é£¬»­°å->Shap->Label
-static int graph[MAX_VERTEX_NUM][MAX_VERTEX_NUM] = { 9999 };       //´æ´¢Í¼µÄ¾ØÕó½á¹¹ graph[i][i] = n:´ú±íµÚi¸ö½Úµãµ½µÚj¸ö½ÚµãµÄ¾àÀëÊÇn
+static int graph[MAX_VERTEX_NUM][MAX_VERTEX_NUM] = { MAX };       //´æ´¢Í¼µÄ¾ØÕó½á¹¹ graph[i][i] = n:´ú±íµÚi¸ö½Úµãµ½µÚj¸ö½ÚµãµÄ¾àÀëÊÇn
 
 static int direct = 1;                                 //Ä¬ÈÏÊÇÓĞÏòÍ¼
 
@@ -156,8 +156,8 @@ void __fastcall TGraphAlgorithmForm::FormCreate(TObject * Sender)    //¶¥µã¼ä³õÊ
     ALG.print = showInMemo;
     for (i = 0; i < MAX_VERTEX_NUM; i++)
         for (j = 0; j < MAX_VERTEX_NUM; j++) {
-            graph[i][j] = 9999;
-            MG.arcs[i][j] = 99999;
+            graph[i][j] = MAX;
+            MG.arcs[i][j] = MAX;
         }
 
 }
@@ -286,7 +286,7 @@ void __fastcall TGraphAlgorithmForm::ShortestPathBtnClick(TObject * Sender)    /
     } while (target >= n || target < 0);           //¿ØÖÆÊäÈë·¶Î§
 
     ShortestPathBtn->Enabled = false;
-    int edg = 1, min = 9999, vtx;                  //ªìedg¡¢min¡¢vtx·Ö±ğ±íÊ¾Ê¼±ß,×îĞ¡±ß,¶¥µã
+    int edg = 1, min = MAX, vtx;                  //ªìedg¡¢min¡¢vtx·Ö±ğ±íÊ¾Ê¼±ß,×îĞ¡±ß,¶¥µã
     vst[0] = true;                                 //´Ó¶¥µã0£¨Ô­µã£©¿ªÊ¼¼ÆËãÂ·¾¶
 
     for (i = 1; i < n; i++)                        //¼ÇÂ¼ÏàÁÚÔ­µãµÄÂ·¾­Öµ
@@ -295,7 +295,7 @@ void __fastcall TGraphAlgorithmForm::ShortestPathBtnClick(TObject * Sender)    /
     while (edg < n - 1)                            //×î¶ÌÂ·¾¶½â¾ö·½·¨
     {
         edg++;                                     //±ßÏß¼ÆÊıÆ÷¼Ó1
-        min = 9999;                                //Éè¶¨±È½Ï»ùÖµ
+        min = MAX;                                //Éè¶¨±È½Ï»ùÖµ
         for (i = 1; i < n; i++) {
             if (vst[i] == false && min > dte[i])   //Ã»ÓĞ·ÃÎÊ¹ıµÄÏàÁÚ½Ó¶¨µã
             {
